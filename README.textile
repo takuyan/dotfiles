@@ -4,6 +4,6 @@ h2. Usage
 
 original .vimrc is this. 
 
-blockquoat.  source ~/config/.vimrc 
+bq.  source ~/config/.vimrc 
 
 
