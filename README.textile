@@ -1,3 +1,9 @@
-h1. MyConfig 
+h1. Rails Engineer Config on Ubuntu
+
+h2. Usage 
+
+original .vimrc is this. 
+
+blockquoat.  source ~/config/.vimrc 
 
 

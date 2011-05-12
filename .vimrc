@@ -29,7 +29,6 @@ Bundle 'molokai'
 
 filetype plugin indent on     " required!
 " }}}
-
 "BASIC " {{{ 
 set gfn=ゆたぽん（コーディング）\ 10
 " 行番号
@@ -67,8 +66,6 @@ let g:molokai_original=1
 
 set helplang=ja,en
 " }}}
-
-
 " Other " {{{
 " rails.vim {
 let g:rails_level=4
