@@ -4,6 +4,7 @@ call vundle#rc()
 
 "set cursorline
 set wrap
+set nowrapscan
 set wildmenu    
 set smartindent
 set ignorecase smartcase
@@ -47,6 +48,8 @@ set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
+set smarttab
+set showmatch
 
 set splitright 
 set splitbelow 
@@ -67,6 +70,31 @@ colorscheme molokai
 let g:molokai_original=1
 
 set helplang=ja,en
+
+" 挿入モード時、ステータスラインの色を変える
+"autocmd InsertEnter * highlight StatusLine ctermfg=red
+"autocmd InsertLeave * highlight StatusLine ctermfg=white
+
+"タブ文字、行末など不可視文字を表示する
+"set list 
+"listで表示される文字のフォーマットを指定する
+"set listchars=eol:$,tab:>\ ,extends:<
+
+" 挿入モード時、ステータスラインのカラーを変更
+augroup InsertHook
+autocmd!
+autocmd InsertEnter * highlight StatusLine guifg=#ccdc90 guibg=#2E4340
+autocmd InsertLeave * highlight StatusLine guifg=#2E4340 guibg=#ccdc90
+augroup END
+
+" 検索語を中央に表示する
+nmap n nzz 
+nmap N Nzz 
+nmap * *zz 
+nmap # #zz 
+nmap g* g*zz 
+nmap g# g#zz
+
 " }}}
 " Other " {{{
 " rails.vim {
