@@ -68,6 +68,7 @@ set helplang=ja,en
 " COLOR
 colorscheme molokai
 let g:molokai_original=1
+set antialias                " アンチエイリアシング
 
 set helplang=ja,en
 
@@ -83,9 +84,11 @@ set helplang=ja,en
 " 挿入モード時、ステータスラインのカラーを変更
 augroup InsertHook
 autocmd!
-autocmd InsertEnter * highlight StatusLine guifg=#ccdc90 guibg=#2E4340
-autocmd InsertLeave * highlight StatusLine guifg=#2E4340 guibg=#ccdc90
+autocmd InsertEnter * highlight StatusLine guibg=#AE81FF guifg=#080808
+autocmd InsertLeave * highlight StatusLine guifg=#808080 guibg=#080808
 augroup END
+" color ? 
+" hoge
 
 " 検索語を中央に表示する
 nmap n nzz 
