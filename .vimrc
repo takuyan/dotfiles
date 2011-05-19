@@ -4,7 +4,6 @@ call vundle#rc()
 
 "set cursorline
 set wrap
-set nowrapscan
 set wildmenu    
 set smartindent
 set ignorecase smartcase
@@ -87,16 +86,14 @@ autocmd!
 autocmd InsertEnter * highlight StatusLine guibg=#AE81FF guifg=#080808
 autocmd InsertLeave * highlight StatusLine guifg=#808080 guibg=#080808
 augroup END
-" color ? 
-" hoge
 
 " 検索語を中央に表示する
-nmap n nzz 
-nmap N Nzz 
-nmap * *zz 
-nmap # #zz 
-nmap g* g*zz 
-nmap g# g#zz
+nmap n nzz
+nmap N Nzz
+nmap * *zz
+"nmap # #zz
+"nmap g* g*zz
+"nmap g# g#zz
 
 " }}}
 " Other " {{{
