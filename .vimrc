@@ -20,8 +20,10 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/unite.vim'
+Bundle 'csexton/rvm.vim'
 "Bundle 'msanders/snipmate.vim'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'cucumber/cucumber'
 
 " vim-scripts repos
 Bundle 'molokai'
@@ -58,7 +60,7 @@ set nocompatible               " be iMproved
 filetype off                   " required!
 syntax enable
 
-"helpの言語の優先順位
+" helpの言語の優先順位
 set helplang=ja,en
 
 " window size 
@@ -91,9 +93,9 @@ augroup END
 nmap n nzz
 nmap N Nzz
 nmap * *zz
-"nmap # #zz
-"nmap g* g*zz
-"nmap g# g#zz
+nmap # #zz
+nmap g* g*zz
+nmap g# g#zz
 
 " }}}
 " Other " {{{
