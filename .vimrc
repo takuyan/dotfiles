@@ -52,6 +52,8 @@ set shiftwidth=2
 set smarttab
 set showmatch
 
+set nobackup
+
 set splitright 
 set splitbelow 
 set visualbell
