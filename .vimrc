@@ -57,7 +57,13 @@ if exists('&ambiwidth')
 endif
 " }}}
 "Vim Bundles "  {{{
-set rtp+=~/.vim/vundle.git/ 
+"How to set up .
+"git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+"
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle/ 
 call vundle#rc()
 
 "set cursorline
@@ -116,8 +122,6 @@ set splitright
 set splitbelow 
 set visualbell
 
-set nocompatible               " be iMproved
-filetype off                   " required!
 syntax enable
 
 " helpの言語の優先順位
