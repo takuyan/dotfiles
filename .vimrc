@@ -88,9 +88,12 @@ Bundle 'csexton/rvm.vim'
 "Bundle 'msanders/snipmate.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'cucumber/cucumber'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'thinca/vim-quickrun'
+Bundle 'tomasr/molokai'
 
 " vim-scripts repos
-Bundle 'molokai'
+" Bundle 'molokai'
 
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
@@ -98,7 +101,8 @@ Bundle 'molokai'
 filetype plugin indent on     " required!
 " }}}
 "BASIC " {{{ 
-set gfn=ゆたぽん（コーディング）\ 10
+" set gfn=ゆたぽん（コーディング）\ 10
+set gfn=ゆたぽん（COD）K:h14
 " 行番号
 set number 
 set foldmethod=marker
