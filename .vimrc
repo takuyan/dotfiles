@@ -61,7 +61,7 @@ endif
 "git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 "
 set nocompatible               " be iMproved
-filetype off                   " required!
+"filetype off                   " required!
 
 set rtp+=~/.vim/bundle/vundle/ 
 call vundle#rc()
@@ -91,6 +91,10 @@ Bundle 'cucumber/cucumber'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'thinca/vim-quickrun'
 Bundle 'tomasr/molokai'
+Bundle 'Shougo/vimshell'
+Bundle 'Shougo/vimproc'
+Bundle 'leshill/vim-json'
+
 
 " vim-scripts repos
 " Bundle 'molokai'
@@ -245,4 +249,7 @@ let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 " }
 "
+
+let mapleader=","
+
 " " }}}
