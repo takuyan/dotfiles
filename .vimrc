@@ -106,7 +106,7 @@ filetype plugin indent on     " required!
 " }}}
 "BASIC " {{{ 
 " set gfn=ゆたぽん（コーディング）\ 10
-set gfn=ゆたぽん（COD）K:h13
+set gfn=ゆたぽん（COD）K:h15
 " 行番号
 set number 
 set foldmethod=marker
