@@ -61,7 +61,7 @@ endif
 "git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 "
 set nocompatible               " be iMproved
-"filetype off                   " required!
+filetype off                   " required!
 
 set rtp+=~/.vim/bundle/vundle/ 
 call vundle#rc()
@@ -75,6 +75,8 @@ set ignorecase smartcase
 " My Bundles here:
 "
 " original repos on github
+Bundle 'gmarik/vundle'
+
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-haml'
@@ -94,7 +96,6 @@ Bundle 'tomasr/molokai'
 Bundle 'Shougo/vimshell'
 Bundle 'Shougo/vimproc'
 Bundle 'leshill/vim-json'
-
 
 " vim-scripts repos
 " Bundle 'molokai'
