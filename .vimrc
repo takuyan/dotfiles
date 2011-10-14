@@ -78,7 +78,7 @@ set ignorecase smartcase
 "
 " original repos on github
 
-Bundle 'tpope/vim-fugitive'
+"Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-surround'
@@ -96,6 +96,7 @@ Bundle 'tomasr/molokai'
 Bundle 'Shougo/vimshell'
 Bundle 'Shougo/vimproc'
 Bundle 'leshill/vim-json'
+Bundle 'taku-o/vim-ro-when-swapfound'
 
 " vim-scripts repos
 " Bundle 'molokai'
