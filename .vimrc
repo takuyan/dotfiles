@@ -78,25 +78,31 @@ set ignorecase smartcase
 "
 " original repos on github
 
-"Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-endwise'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/unite.vim'
-Bundle 'csexton/rvm.vim'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'cucumber/cucumber'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'thinca/vim-quickrun'
-Bundle 'tomasr/molokai'
 Bundle 'Shougo/vimshell'
 Bundle 'Shougo/vimproc'
-Bundle 'leshill/vim-json'
+Bundle 'csexton/rvm.vim'
+Bundle 'altercation/vim-colors-solarized'
+"Bundle 'cucumber/cucumber'
+"Bundle 'kchmck/vim-coffee-script'
+Bundle 'thinca/vim-quickrun'
+Bundle 'tomasr/molokai'
+"Bundle 'leshill/vim-json'
 Bundle 'taku-o/vim-ro-when-swapfound'
+Bundle 'taku-o/vim-toggle'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'mattn/calendar-vim'
+
+Bundle 'smartchr'
 
 " vim-scripts repos
 " Bundle 'molokai'
@@ -125,9 +131,7 @@ set softtabstop=2
 set shiftwidth=2
 set smarttab
 set showmatch
-
 set nobackup
-
 set splitright 
 set splitbelow 
 set visualbell
@@ -146,6 +150,21 @@ let g:molokai_original=1
 "syntax enable
 "set background=dark
 "colorscheme solarized
+
+" % def ~ end 
+runtime macros/matchit.vim
+
+" indent guide enable
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_guide_size=1
+let g:indent_guides_auto_colors=1
+
+" ESC + ESC = no hi
+nnoremap <Esc><Esc> :nohlsearch<CR>
+
+inoremap <expr> = smartchr#loop(' = ', '=', ' == ')
+inoremap <expr> , smartchr#one_of(', ', ',')
+
 
 
 set antialias                " アンチエイリアシング
@@ -215,11 +234,11 @@ inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
 " SuperTab like snippets behavior.
-"imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
-inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+"inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
@@ -235,7 +254,7 @@ inoremap <expr><Up>    neocomplcache#close_popup() . "\<Up>"
 inoremap <expr><Down>  neocomplcache#close_popup() . "\<Down>"
 
 " AutoComplPop like behavior.
-"let g:neocomplcache_enable_auto_select = 1
+let g:neocomplcache_enable_auto_select = 1
 
 " Shell like behavior(not recommended).
 "set completeopt+=longest
