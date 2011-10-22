@@ -1,3 +1,59 @@
+"Vim Bundles "  {{{
+"How to set up .
+"git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+"
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle/ 
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+"set cursorline
+set wrap
+set wildmenu    
+set smartindent
+set ignorecase smartcase
+
+" My Bundles here:
+"
+" original repos on github
+
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-endwise'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/vimshell'
+Bundle 'Shougo/vimproc'
+Bundle 'csexton/rvm.vim'
+Bundle 'altercation/vim-colors-solarized'
+"Bundle 'cucumber/cucumber'
+"Bundle 'kchmck/vim-coffee-script'
+Bundle 'thinca/vim-quickrun'
+Bundle 'tomasr/molokai'
+"Bundle 'leshill/vim-json'
+Bundle 'taku-o/vim-ro-when-swapfound'
+Bundle 'taku-o/vim-toggle'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'mattn/calendar-vim'
+
+Bundle 'smartchr'
+
+" vim-scripts repos
+" Bundle 'molokai'
+
+" non github repos
+"Bundle 'git://git.wincent.com/command-t.git'
+
+filetype plugin indent on     " required!
+" }}}
 " Japanese " {{{
 " from http://www.kawaz.jp/pukiwiki/?vim
 if &encoding !=# 'utf-8'
@@ -56,62 +112,6 @@ if exists('&ambiwidth')
   set ambiwidth=double
 endif
 " }}}
-"Vim Bundles "  {{{
-"How to set up .
-"git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-"
-set nocompatible               " be iMproved
-filetype off                   " required!
-
-set rtp+=~/.vim/bundle/vundle/ 
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
-
-"set cursorline
-set wrap
-set wildmenu    
-set smartindent
-set ignorecase smartcase
-
-" My Bundles here:
-"
-" original repos on github
-
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-endwise'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/vimshell'
-Bundle 'Shougo/vimproc'
-Bundle 'csexton/rvm.vim'
-Bundle 'altercation/vim-colors-solarized'
-"Bundle 'cucumber/cucumber'
-"Bundle 'kchmck/vim-coffee-script'
-Bundle 'thinca/vim-quickrun'
-Bundle 'tomasr/molokai'
-"Bundle 'leshill/vim-json'
-Bundle 'taku-o/vim-ro-when-swapfound'
-Bundle 'taku-o/vim-toggle'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'mattn/calendar-vim'
-
-Bundle 'smartchr'
-
-" vim-scripts repos
-" Bundle 'molokai'
-
-" non github repos
-"Bundle 'git://git.wincent.com/command-t.git'
-
-filetype plugin indent on     " required!
-" }}}
 "BASIC " {{{ 
 " set gfn=ゆたぽん（コーディング）\ 10
 set gfn=ゆたぽん（COD）K:h13
@@ -162,8 +162,13 @@ let g:indent_guides_auto_colors=1
 " ESC + ESC = no hi
 nnoremap <Esc><Esc> :nohlsearch<CR>
 
-inoremap <expr> = smartchr#loop(' = ', '=', ' == ')
+"inoremap <expr> = smartchr#loop(' = ', '=', ' == ')
+"autocmd FileType ruby inoremap <expr> = smartchr#loop(' = ', ' => ', '=', ' == ')
+"autocmd FileType eruby inoremap <expr> = smartchr#loop('<%= ', ' = ', '=', ' == ')
+"autocmd FileType haml inoremap <expr> = smartchr#loop('= ', ' => ', '=', ' == ')
 inoremap <expr> , smartchr#one_of(', ', ',')
+
+imap <C-j> <C-[>
 
 
 
