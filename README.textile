@@ -1,9 +1,0 @@
-h1. Rails Engineer Config on Ubuntu
-
-h2. Usage 
-
-original .vimrc is this. 
-
-bq.  source ~/config/.vimrc 
-
-
