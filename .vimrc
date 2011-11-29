@@ -35,7 +35,6 @@ Bundle 'Shougo/vimproc'
 Bundle 'csexton/rvm.vim'
 Bundle 'altercation/vim-colors-solarized'
 "Bundle 'cucumber/cucumber'
-"Bundle 'kchmck/vim-coffee-script'
 Bundle 'thinca/vim-quickrun'
 Bundle 'tomasr/molokai'
 "Bundle 'leshill/vim-json'
@@ -43,8 +42,12 @@ Bundle 'taku-o/vim-ro-when-swapfound'
 Bundle 'taku-o/vim-toggle'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'mattn/calendar-vim'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'ujihisa/rdoc.vim'
+"Bundle 'pekepeke/titanium-vim'
 
 Bundle 'smartchr'
+"Bundle 'ref.vim'
 
 " vim-scripts repos
 " Bundle 'molokai'
@@ -169,6 +172,7 @@ nnoremap <Esc><Esc> :nohlsearch<CR>
 inoremap <expr> , smartchr#one_of(', ', ',')
 
 imap <C-j> <C-[>
+nmap <C-j> <C-[>
 
 
 
@@ -287,5 +291,8 @@ let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
 let mapleader=","
 
+
+autocmd BufRead, BufNewFile *.rd, *.rdoc set filetype=rdoc
+
 " " }}}
-"
+
