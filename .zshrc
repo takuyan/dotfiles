@@ -27,7 +27,6 @@ export EC2_PRIVATE_KEY=$HOME/Dropbox/aws/dev_freebell_net/pk-C7QZZPDKQ4HTSEOANS6
 export EC2_URL=https://ec2.ap-northeast-1b.amazonaws.com
 export EC2_REGION=ap-northeast-1
 
-[[ -s "/Users/takuyan/.rvm/scripts/rvm" ]] && source "/Users/takuyan/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 
 
