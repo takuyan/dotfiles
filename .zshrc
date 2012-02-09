@@ -3,10 +3,13 @@ alias r='rails'
 alias rs='bundle exec rspec --drb --color'
 
 alias gb='git branch'
-alias gc='git checkout'
+alias gch='git checkout'
 alias gs='git status'
 alias ga='git add'
-alias gc='git commit'
+alias gco='git commit'
+alias gl='git log'
+alias gd='git diff'
+alias ti='~/Library/Application\ Support/Titanium/mobilesdk/osx/1.7.6.v20111220130134/titanium.py'
 
 #function parse_git_branch {
   #git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
@@ -21,13 +24,13 @@ alias gc='git commit'
 
 export JAVA_HOME=/Library/Java/Home 
 export AWS_RDS_HOME=$HOME/Dropbox/aws/RDSCli-1.4.007
-export PATH=$AWS_RDS_HOME/bin:$PATH
+export PATH=$AWS_RDS_HOME/bin:/usr/local/sbin:$PATH
 export EC2_CERT=$HOME/Dropbox/aws/dev_freebell_net/cert-C7QZZPDKQ4HTSEOANS6GUTK3QXWUWQRS.pem
 export EC2_PRIVATE_KEY=$HOME/Dropbox/aws/dev_freebell_net/pk-C7QZZPDKQ4HTSEOANS6GUTK3QXWUWQRS.pem
 export EC2_URL=https://ec2.ap-northeast-1b.amazonaws.com
 export EC2_REGION=ap-northeast-1
 
-[[ -s "/Users/takuyan/.rvm/scripts/rvm" ]] && source "/Users/takuyan/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+#[[ -s "/Users/takuyan/.rvm/scripts/rvm" ]] && source "/Users/takuyan/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 
 
