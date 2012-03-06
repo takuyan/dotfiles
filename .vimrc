@@ -5,14 +5,14 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/ 
+set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
 "set cursorline
 set wrap
-set wildmenu    
+set wildmenu
 set smartindent
 set ignorecase smartcase
 
@@ -20,6 +20,7 @@ set ignorecase smartcase
 "
 " original repos on github
 
+Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-haml'
@@ -48,6 +49,7 @@ Bundle 'ujihisa/rdoc.vim'
 Bundle 'briancollins/vim-jst'
 Bundle 'bbommarito/vim-slim'
 "Bundle 'pekepeke/titanium-vim'
+Bundle 'groenewege/vim-less'
 
 Bundle 'smartchr'
 "Bundle 'ref.vim'
@@ -118,11 +120,11 @@ if exists('&ambiwidth')
   set ambiwidth=double
 endif
 " }}}
-"BASIC " {{{ 
+"BASIC " {{{
 " set gfn=ゆたぽん（コーディング）\ 10
 set gfn=ゆたぽん（COD）K:h13
 " 行番号
-set number 
+set number
 set foldmethod=marker
 " インクリメンタルサーチ
 set incsearch
@@ -138,8 +140,8 @@ set shiftwidth=2
 set smarttab
 set showmatch
 set nobackup
-set splitright 
-set splitbelow 
+set splitright
+set splitbelow
 set visualbell
 
 syntax enable
@@ -147,7 +149,7 @@ syntax enable
 " helpの言語の優先順位
 set helplang=ja,en
 
-" window size 
+" window size
 " please push Alt+F10
 
 " COLOR
@@ -157,7 +159,7 @@ let g:molokai_original=1
 "set background=dark
 "colorscheme solarized
 
-" % def ~ end 
+" % def ~ end
 runtime macros/matchit.vim
 
 " indent guide enable
@@ -177,7 +179,10 @@ inoremap <expr> , smartchr#one_of(', ', ',')
 imap <C-j> <C-[>
 nmap <C-j> <C-[>
 
-
+" 保存時に行末の空白を除去する
+autocmd BufWritePre * :%s/\s\+$//ge
+" " 保存時にtabをスペースに変換する
+autocmd BufWritePre * :%s/\t/ /ge
 
 set antialias                " アンチエイリアシング
 
@@ -186,16 +191,46 @@ set antialias                " アンチエイリアシング
 "autocmd InsertLeave * highlight StatusLine ctermfg=white
 
 "タブ文字、行末など不可視文字を表示する
-"set list 
+"set list
 "listで表示される文字のフォーマットを指定する
 "set listchars=eol:$,tab:>\ ,extends:<
 
 " 挿入モード時、ステータスラインのカラーを変更
 augroup InsertHook
 autocmd!
-autocmd InsertEnter * highlight StatusLine guibg=#AE81FF guifg=#080808
+autocmd InsertEnter * highlight StatusLine guifg=#080808 guibg=#859900
 autocmd InsertLeave * highlight StatusLine guifg=#808080 guibg=#080808
 augroup END
+
+function! GetB()
+  let c = matchstr(getline('.'),  '.',  col('.') - 1)
+  let c = iconv(c,  &enc,  &fenc)
+  return String2Hex(c)
+endfunction
+
+"help eval-examples
+" The function Nr2Hex() returns the Hex string of a number.
+func! Nr2Hex(nr)
+  let n = a:nr
+  let r = ""
+  while n
+    let r = '0123456789ABCDEF'[n % 16] . r
+    let n = n / 16
+  endwhile
+  return r
+endfunc
+
+" The function String2Hex() converts each character in a string to a two
+" character Hex string.
+func! String2Hex(str)
+  let out = ''
+  let ix = 0
+  while ix < strlen(a:str)
+    let out = out . Nr2Hex(char2nr(a:str[ix]))
+    let ix = ix + 1
+  endwhile
+  return out
+endfunc
 
 " 検索語を中央に表示する
 nmap n nzz
