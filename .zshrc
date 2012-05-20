@@ -2,6 +2,7 @@ alias ll='ls -la'
 alias r='rails'
 alias rs='bundle exec rspec --drb --color'
 alias be='bundle exec'
+alias rm='rm -i'
 
 alias gb='git branch'
 alias gch='git checkout'
@@ -31,9 +32,7 @@ export EC2_PRIVATE_KEY=$HOME/Dropbox/aws/dev_freebell_net/pk-C7QZZPDKQ4HTSEOANS6
 export EC2_URL=https://ec2.ap-northeast-1b.amazonaws.com
 export EC2_REGION=ap-northeast-1
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-
-
+#[[ -s "/Users/takuyan/.rvm/scripts/rvm" ]] && source "/Users/takuyan/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 # users generic .zshrc file for zsh(1)
 
@@ -226,3 +225,5 @@ esac
 ## load user .zshrc configuration file
 #
 [ -f ${HOME}/.zshrc.mine ] && source ${HOME}/.zshrc.mine
+
+
