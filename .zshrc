@@ -33,8 +33,6 @@ export EC2_REGION=ap-northeast-1
 
 #[[ -s "/Users/takuyan/.rvm/scripts/rvm" ]] && source "/Users/takuyan/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
-
-
 # users generic .zshrc file for zsh(1)
 
 ## Environment variable configuration
