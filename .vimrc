@@ -36,9 +36,10 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimshell'
 Bundle 'Shougo/vimproc'
-Bundle 'csexton/rvm.vim'
+Bundle 'Shougo/neocomplcache-snippets-complete'
+"Bundle 'csexton/rvm.vim'
 Bundle 'altercation/vim-colors-solarized'
-"Bundle 'cucumber/cucumber'
+Bundle 'cucumber/cucumber'
 Bundle 'thinca/vim-quickrun'
 Bundle 'tomasr/molokai'
 "Bundle 'leshill/vim-json'
@@ -48,11 +49,13 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'mattn/calendar-vim'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'ujihisa/rdoc.vim'
+Bundle 'ujihisa/neco-ruby'
 "Bundle 'hallettj/jslint.vim'
 Bundle 'briancollins/vim-jst'
 Bundle 'bbommarito/vim-slim'
 "Bundle 'pekepeke/titanium-vim'
 Bundle 'groenewege/vim-less'
+Bundle 'thinca/vim-qfreplace'
 
 Bundle 'smartchr'
 "Bundle 'ref.vim'
@@ -124,6 +127,7 @@ if exists('&ambiwidth')
 endif
 " }}}
 "BASIC " {{{
+let mapleader=","
 " set gfn=ゆたぽん（コーディング）\ 10
 set gfn=ゆたぽん（COD）K:h13
 " 行番号
@@ -184,8 +188,8 @@ nmap <C-j> <C-[>
 
 " 保存時に行末の空白を除去する
 autocmd BufWritePre * :%s/\s\+$//ge
-" " 保存時にtabをスペースに変換する
-autocmd BufWritePre * :%s/\t/ /ge
+" " 保存時にtabを2スペースに変換する
+autocmd BufWritePre * :%s/\t/  /ge
 
 set antialias                " アンチエイリアシング
 
@@ -244,11 +248,7 @@ nmap g* g*zz
 nmap g# g#zz
 
 " }}}
-" Other " {{{
-" rails.vim {
-"let g:rails_level=4
-let g:rails_default_file="app/controllers/application_controller.rb"
-
+" Neocomplcache" {{{
 
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
@@ -269,7 +269,7 @@ let g:neocomplcache_dictionary_filetype_lists = {
     \ 'default' : '',
     \ 'vimshell' : $HOME.'/.vimshell_hist',
     \ 'scheme' : $HOME.'/.gosh_completions'
-    \ }
+        \ }
 
 " Define keyword.
 if !exists('g:neocomplcache_keyword_patterns')
@@ -278,17 +278,12 @@ endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
 " Plugin key-mappings.
-imap <C-k>     <Plug>(neocomplcache_snippets_expand)
-smap <C-k>     <Plug>(neocomplcache_snippets_expand)
 inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
-" SuperTab like snippets behavior.
-imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
-"inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+"inoremap <expr><CR>  neocomplcache#close_popup() . "\<CR>"
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
@@ -298,13 +293,15 @@ inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 " For cursor moving in insert mode(Not recommended)
-inoremap <expr><Left>  neocomplcache#close_popup() . "\<Left>"
-inoremap <expr><Right> neocomplcache#close_popup() . "\<Right>"
-inoremap <expr><Up>    neocomplcache#close_popup() . "\<Up>"
-inoremap <expr><Down>  neocomplcache#close_popup() . "\<Down>"
+"inoremap <expr><Left>  neocomplcache#close_popup() . "\<Left>"
+"inoremap <expr><Right> neocomplcache#close_popup() . "\<Right>"
+"inoremap <expr><Up>    neocomplcache#close_popup() . "\<Up>"
+"inoremap <expr><Down>  neocomplcache#close_popup() . "\<Down>"
+" Or set this.
+"let g:neocomplcache_enable_cursor_hold_i = 1
 
 " AutoComplPop like behavior.
-let g:neocomplcache_enable_auto_select = 1
+"let g:neocomplcache_enable_auto_select = 1
 
 " Shell like behavior(not recommended).
 "set completeopt+=longest
@@ -330,10 +327,11 @@ let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
-let mapleader=","
+imap <C-s>  <Plug>(neocomplcache_start_unite_snippet)
 
-
-autocmd BufRead, BufNewFile *.rd, *.rdoc set filetype=rdoc
+"autocmd BufRead, BufNewFile *.rd, *.rdoc set filetype=rdoc
 
 " " }}}
+" Other " {{{
 
+" " }}}
