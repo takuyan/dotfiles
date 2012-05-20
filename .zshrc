@@ -1,6 +1,7 @@
 alias ll='ls -la'
 alias r='rails'
 alias rs='bundle exec rspec --drb --color'
+alias be='bundle exec'
 
 alias gb='git branch'
 alias gch='git checkout'
