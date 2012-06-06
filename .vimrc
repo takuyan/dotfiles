@@ -20,7 +20,6 @@ set ignorecase smartcase
 "
 " original repos on github
 
-Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-haml'
@@ -29,36 +28,35 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-rake'
 Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-rvm'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimshell'
 Bundle 'Shougo/vimproc'
 Bundle 'Shougo/neocomplcache-snippets-complete'
-"Bundle 'csexton/rvm.vim'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'cucumber/cucumber'
+Bundle 'thinca/vim-qfreplace'
+Bundle 'thinca/vim-ref'
 Bundle 'thinca/vim-quickrun'
-Bundle 'tomasr/molokai'
-"Bundle 'leshill/vim-json'
 Bundle 'taku-o/vim-ro-when-swapfound'
 Bundle 'taku-o/vim-toggle'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'mattn/calendar-vim'
-Bundle 'kchmck/vim-coffee-script'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
 Bundle 'ujihisa/rdoc.vim'
 Bundle 'ujihisa/neco-ruby'
-"Bundle 'hallettj/jslint.vim'
+Bundle "Lokaltog/vim-easymotion"
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'cucumber/cucumber'
+Bundle 'tomasr/molokai'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'mattn/calendar-vim'
+Bundle 'mattn/gist-vim'
+Bundle 'kchmck/vim-coffee-script'
 Bundle 'briancollins/vim-jst'
 Bundle 'bbommarito/vim-slim'
-"Bundle 'pekepeke/titanium-vim'
 Bundle 'groenewege/vim-less'
-Bundle 'thinca/vim-qfreplace'
+Bundle 'Sixeight/unite-grep'
+Bundle "adie/BlockDiff"
 
 Bundle 'smartchr'
-"Bundle 'ref.vim'
 
 " vim-scripts repos
 " Bundle 'molokai'
@@ -253,7 +251,7 @@ nmap g# g#zz
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplcache.
-let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_at_startup = 0
 " Use smartcase.
 let g:neocomplcache_enable_smart_case = 1
 " Use camel case completion.
@@ -269,7 +267,7 @@ let g:neocomplcache_dictionary_filetype_lists = {
     \ 'default' : '',
     \ 'vimshell' : $HOME.'/.vimshell_hist',
     \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
+    \ }
 
 " Define keyword.
 if !exists('g:neocomplcache_keyword_patterns')
@@ -278,20 +276,20 @@ endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
 " Plugin key-mappings.
+imap <C-k>     <Plug>(neocomplcache_snippets_expand)
+smap <C-k>     <Plug>(neocomplcache_snippets_expand)
 inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
 " SuperTab like snippets behavior.
-"imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ?
-"\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ?
-"\<C-n>" : "\<TAB>"
+"imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
-"inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>,  <BS>: close popup and delete backword char.
+" <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
@@ -305,7 +303,7 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 "let g:neocomplcache_enable_auto_select = 1
 "let g:neocomplcache_disable_auto_complete = 1
 "inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<TAB>"
-"inoremap <expr><CR>  neocomplcache#smart_close_popup() . \<CR>"
+"inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -318,7 +316,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
-let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
 let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
@@ -336,5 +334,10 @@ let mapleader=","
 
 " " }}}
 " Other " {{{
+
+" github
+let g:github_user = 'takuyan'
+"let g:github_token = ''
+
 
 " " }}}
