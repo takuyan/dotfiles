@@ -248,10 +248,14 @@ nmap g# g#zz
 " }}}
 " Neocomplcache" {{{
 
+"
+" Select Snip is <C-k>
+"
+"
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplcache.
-let g:neocomplcache_enable_at_startup = 0
+let g:neocomplcache_enable_at_startup = 1
 " Use smartcase.
 let g:neocomplcache_enable_smart_case = 1
 " Use camel case completion.
@@ -286,7 +290,8 @@ inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
-inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+inoremap <expr><CR>  neocomplcache#close_popup() . "\<CR>"
+"inoremap <silent><CR>  <C-R>=neocomplcache#smart_close_popup()<CR><CR>
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
@@ -331,6 +336,7 @@ if has('conceal')
 endif
 let mapleader=","
 "autocmd BufRead, BufNewFile *.rd, *.rdoc set filetype=rdoc
+
 
 " " }}}
 " Other " {{{
