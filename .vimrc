@@ -25,7 +25,6 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-rake'
 Bundle 'tpope/vim-bundler'
 Bundle 'Shougo/neocomplcache'
@@ -188,6 +187,8 @@ nmap <C-j> <C-[>
 autocmd BufWritePre * :%s/\s\+$//ge
 " " 保存時にtabを2スペースに変換する
 autocmd BufWritePre * :%s/\t/  /ge
+" 保存時にRuby1.8 Hashを除去する
+autocmd BufWritePre * :%s/:\([^ ]*\)\(\s*\)=>/\1:/ge
 
 set antialias                " アンチエイリアシング
 
