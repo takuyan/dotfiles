@@ -130,7 +130,8 @@ autocmd BufWritePre * :%s/\s\+$//ge
 " " 保存時にtabを2スペースに変換する
 autocmd BufWritePre * :%s/\t/  /ge
 " 保存時にRuby1.8 Hashを除去する
-autocmd BufWritePre * :%s/:\([^ ]*\)\(\s*\)=>/\1:/ge
+"autocmd BufWritePre * :%s/\s\.:\([^ ]*\)\(\s*\)=>/\1:/ge
+autocmd BufWritePre * :%s/\s\+:\([^ ]*\)\(\s*\)=>/ \1:/ge
 
 set antialias                " アンチエイリアシング
 
@@ -239,24 +240,25 @@ nmap g# g#zz
 " }}}
 " Neocomplcache" {{{
 
-"
-" Select Snip is <C-k>
-imap <C-k>     <Plug>(neocomplcache_snippets_expand)
-smap <C-k>     <Plug>(neocomplcache_snippets_expand)
+  " Plugin key-mappings.
+  imap <C-k>     <Plug>(neocomplcache_snippets_expand)
+  smap <C-k>     <Plug>(neocomplcache_snippets_expand)
 
-""
-" For snippet_complete marker.
-"if has('conceal')
-  "set conceallevel=2 concealcursor=i
-"endif
-"imap <C-s> <Plug>(neocomplcache_start_unite_snippet)
+  g:neocomplcache_snippets_dir='~/.vim/snippets'
 
-"autocmd BufRead, BufNewFile *.rd, *.rdoc set filetype=rdoc
+  " SuperTab like snippets behavior.
+  "imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ?
+  " \ "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+
+  " For snippet_complete marker.
+  if has('conceal')
+    set conceallevel=2 concealcursor=i
+  endif
 
   " Disable AutoComplPop.
   let g:acp_enableAtStartup = 0
   " Use neocomplcache.
-  let g:neocomplcache_enable_at_startup = 0
+  let g:neocomplcache_enable_at_startup = 1
   " Use smartcase.
   let g:neocomplcache_enable_smart_case = 1
   " Use camel case completion.
