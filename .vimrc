@@ -214,7 +214,7 @@ nmap g# g#zz
     inoremap <buffer> <C-l>  <C-x><C-u><C-p><Down>
 
     " Start insert.
-    "let g:unite_enable_start_insert = 1
+    let g:unite_enable_start_insert = 1
   endfunction"}}}
 
   let g:unite_source_file_mru_limit = 200
@@ -236,6 +236,30 @@ nmap g# g#zz
     let g:unite_source_grep_default_opts = '--no-heading --no-color -a'
     let g:unite_source_grep_recursive_opt = ''
   endif
+
+  """ unite.vim
+  " バッファ一覧
+  nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
+  " ファイル一覧
+  nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+  " レジスタ一覧
+  nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
+  " 最近使用したファイル一覧
+  nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
+  " 常用セット
+  nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
+  " 全部乗せ
+  nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+
+  " ウィンドウを分割して開く
+  au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
+  au FileType unite inoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
+  " ウィンドウを縦に分割して開く
+  au FileType unite nnoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
+  au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
+  " ESCキーを2回押すと終了する
+  au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
+  au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 
 " }}}
 " Neocomplcache" {{{
@@ -347,5 +371,10 @@ let g:github_user = 'takuyan'
 
 " <leader>
 let mapleader=","
+
+" vim-toggle
+imap <C-C> <Plug>ToggleI
+nmap <C-C> <Plug>ToggleN
+vmap <C-C> <Plug>ToggleV
 
 " " }}}
