@@ -70,7 +70,7 @@ let mapleader=","
 " set gfn=ゆたぽん（コーディング）\ 10
 set gfn=ゆたぽん（COD）K:h13
 " 行番号
-set number
+"set number
 set foldmethod=marker
 " インクリメンタルサーチ
 set incsearch
@@ -99,11 +99,11 @@ set helplang=ja,en
 " please push Alt+F10
 
 " COLOR
-colorscheme molokai
-let g:molokai_original=1
+"colorscheme molokai
+"let g:molokai_original=1
 "syntax enable
-"set background=dark
-"colorscheme solarized
+set background=dark
+colorscheme solarized
 
 " % def ~ end
 runtime macros/matchit.vim
@@ -264,21 +264,6 @@ nmap g# g#zz
 " }}}
 " Neocomplcache" {{{
 
-  " Plugin key-mappings.
-  imap <C-k>     <Plug>(neocomplcache_snippets_expand)
-  smap <C-k>     <Plug>(neocomplcache_snippets_expand)
-
-  g:neocomplcache_snippets_dir='~/.vim/snippets'
-
-  " SuperTab like snippets behavior.
-  "imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ?
-  " \ "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-
-  " For snippet_complete marker.
-  if has('conceal')
-    set conceallevel=2 concealcursor=i
-  endif
-
   " Disable AutoComplPop.
   let g:acp_enableAtStartup = 0
   " Use neocomplcache.
@@ -360,7 +345,22 @@ nmap g# g#zz
 
   " For perlomni.vim setting.
   " https://github.com/c9s/perlomni.vim
-  let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+  "let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
+  " Plugin key-mappings.
+  imap <C-k>     <Plug>(neocomplcache_snippets_expand)
+  smap <C-k>     <Plug>(neocomplcache_snippets_expand)
+
+  let g:neocomplcache_snippets_dir='~/.vim/snippets'
+
+  " SuperTab like snippets behavior.
+  "imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ?
+  " \ "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+
+  " For snippet_complete marker.
+  if has('conceal')
+    set conceallevel=2 concealcursor=i
+  endif
 
 " " }}}
 " Other " {{{
