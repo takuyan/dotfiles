@@ -35,11 +35,13 @@ Bundle 'Shougo/vimproc'
 Bundle 'thinca/vim-qfreplace'
 Bundle 'thinca/vim-ref'
 Bundle 'thinca/vim-quickrun'
+Bundle 'thinca/vim-guicolorscheme'
 Bundle 'taku-o/vim-ro-when-swapfound'
 Bundle 'taku-o/vim-toggle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'ujihisa/rdoc.vim'
+Bundle 'ujihisa/neco-look'
 Bundle 'ujihisa/neco-ruby'
 Bundle "Lokaltog/vim-easymotion"
 Bundle 'altercation/vim-colors-solarized'
@@ -99,11 +101,11 @@ set helplang=ja,en
 " please push Alt+F10
 
 " COLOR
-"colorscheme molokai
-"let g:molokai_original=1
+colorscheme molokai
+let g:molokai_original=1
 "syntax enable
-set background=dark
-colorscheme solarized
+"set background=dark
+"colorscheme solarized
 
 " % def ~ end
 runtime macros/matchit.vim
@@ -271,7 +273,7 @@ nmap g# g#zz
   " Use smartcase.
   let g:neocomplcache_enable_smart_case = 1
   " Use camel case completion.
-  let g:neocomplcache_enable_camel_case_completion = 1
+  "let g:neocomplcache_enable_camel_case_completion = 1
   " Use underbar completion.
   let g:neocomplcache_enable_underbar_completion = 1
   " Set minimum syntax keyword length.
@@ -306,26 +308,6 @@ nmap g# g#zz
   inoremap <expr><C-y>  neocomplcache#close_popup()
   inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
-  " For cursor moving in insert mode(Not recommended)
-  "inoremap <expr><Left>  neocomplcache#close_popup() . "\<Left>"
-  "inoremap <expr><Right> neocomplcache#close_popup() . "\<Right>"
-  "inoremap <expr><Up>    neocomplcache#close_popup() . "\<Up>"
-  "inoremap <expr><Down>  neocomplcache#close_popup() . "\<Down>"
-  " Or set this.
-  "let g:neocomplcache_enable_cursor_hold_i = 1
-  " Or set this.
-  "let g:neocomplcache_enable_insert_char_pre = 1
-
-  " AutoComplPop like behavior.
-  "let g:neocomplcache_enable_auto_select = 1
-
-  " Shell like behavior(not recommended).
-  "set completeopt+=longest
-  "let g:neocomplcache_enable_auto_select = 1
-  "let g:neocomplcache_disable_auto_complete = 1
-  "inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
-  "inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
-
   " Enable omni completion.
   autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
   autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
@@ -337,7 +319,8 @@ nmap g# g#zz
   if !exists('g:neocomplcache_omni_patterns')
     let g:neocomplcache_omni_patterns = {}
   endif
-  let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
+  "let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
+  let g:neocomplcache_omni_patterns.ruby = '\h\w*'
   "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
   let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
   let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
@@ -353,14 +336,12 @@ nmap g# g#zz
 
   let g:neocomplcache_snippets_dir='~/.vim/snippets'
 
-  " SuperTab like snippets behavior.
-  "imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ?
-  " \ "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-
   " For snippet_complete marker.
   if has('conceal')
     set conceallevel=2 concealcursor=i
   endif
+
+  inoremap <expr><C-x><C-o> &filetype == 'vim' ? "\<C-x><C-v><C-p>" : neocomplcache#manual_omni_complete()
 
 " " }}}
 " Other " {{{
