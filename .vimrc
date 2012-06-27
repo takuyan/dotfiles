@@ -42,7 +42,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'ujihisa/rdoc.vim'
 Bundle 'ujihisa/neco-look'
-Bundle 'ujihisa/neco-ruby'
+"Bundle 'ujihisa/neco-ruby'
 Bundle "Lokaltog/vim-easymotion"
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'cucumber/cucumber'
@@ -91,6 +91,7 @@ set nobackup
 set splitright
 set splitbelow
 set visualbell
+set magic
 
 syntax enable
 
@@ -132,8 +133,8 @@ autocmd BufWritePre * :%s/\s\+$//ge
 " " 保存時にtabを2スペースに変換する
 autocmd BufWritePre * :%s/\t/  /ge
 " 保存時にRuby1.8 Hashを除去する
-"autocmd BufWritePre * :%s/\s\.:\([^ ]*\)\(\s*\)=>/\1:/ge
-autocmd BufWritePre * :%s/\s\+:\([^ ]*\)\(\s*\)=>/ \1:/ge
+" origin by http://robots.thoughtbot.com/post/17450269990/convert-ruby-1-8-to-1-9-hash-syntax
+autocmd BufWritePre * :%s/\([^:]\+\):\{1}\([^\s:"']\+\)\s=>/\1\2:/ge
 
 set antialias                " アンチエイリアシング
 
@@ -144,7 +145,7 @@ set antialias                " アンチエイリアシング
 "タブ文字、行末など不可視文字を表示する
 "set list
 "listで表示される文字のフォーマットを指定する
-"set listchars=eol:$,tab:>\ ,extends:<
+"set listchars=eol$,tab:>\ ,extends:<
 
 " 挿入モード時、ステータスラインのカラーを変更
 augroup InsertHook
@@ -280,6 +281,8 @@ nmap g# g#zz
   let g:neocomplcache_min_syntax_length = 3
   let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
+  let g:neocomplcache_auto_completion_start_length = 3
+
   " Define dictionary.
   let g:neocomplcache_dictionary_filetype_lists = {
       \ 'default' : '',
@@ -319,16 +322,15 @@ nmap g# g#zz
   if !exists('g:neocomplcache_omni_patterns')
     let g:neocomplcache_omni_patterns = {}
   endif
-  "let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
-  let g:neocomplcache_omni_patterns.ruby = '\h\w*'
+  "let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*:'
   "autocmd FileType ruby setlocal omnifunc=rubycomplete#Complete
-  let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+  let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*:'
   let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
-  let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
+  let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*:'
 
   " For perlomni.vim setting.
   " https://github.com/c9s/perlomni.vim
-  "let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+  "let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*:'
 
   " Plugin key-mappings.
   imap <C-k>     <Plug>(neocomplcache_snippets_expand)
