@@ -128,10 +128,17 @@ inoremap <expr> , smartchr#one_of(', ', ',')
 imap <C-j> <C-[>
 nmap <C-j> <C-[>
 
-" 保存時に行末の空白を除去する
-autocmd BufWritePre * :%s/\s\+$//ge
-" " 保存時にtabを2スペースに変換する
-autocmd BufWritePre * :%s/\t/  /ge
+function! s:remove_dust()
+    let cursor = getpos(".")
+    " 保存時に行末の空白を除去する
+    %s/\s\+$//ge
+    " " 保存時にtabを2スペースに変換する
+    %s/\t/  /ge
+    call setpos(".", cursor)
+    unlet cursor
+endfunction
+autocmd BufWritePre * call <SID>remove_dust()
+
 " 保存時にRuby1.8 Hashを除去する
 " origin by http://robots.thoughtbot.com/post/17450269990/convert-ruby-1-8-to-1-9-hash-syntax
 autocmd BufWritePre * :%s/\([^:]\+\):\{1}\([^\s:"']\+\)\s=>/\1\2:/ge
