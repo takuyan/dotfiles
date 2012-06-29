@@ -56,6 +56,9 @@ Bundle 'bbommarito/vim-slim'
 Bundle 'groenewege/vim-less'
 Bundle 'Sixeight/unite-grep'
 Bundle "adie/BlockDiff"
+Bundle 'myusuf3/numbers.vim'
+Bundle 'chriskempson/tomorrow-theme'
+Bundle 'Lokaltog/vim-powerline'
 
 Bundle 'smartchr'
 
@@ -68,6 +71,8 @@ Bundle 'smartchr'
 filetype plugin indent on     " required!
 " }}}
 "BASIC " {{{
+"
+set showcmd
 let mapleader=","
 " set gfn=ゆたぽん（コーディング）\ 10
 set gfn=ゆたぽん（COD）K:h13
@@ -107,6 +112,8 @@ let g:molokai_original=1
 "syntax enable
 "set background=dark
 "colorscheme solarized
+
+"colorscheme tomorrow_night
 
 " % def ~ end
 runtime macros/matchit.vim
@@ -155,41 +162,41 @@ set antialias                " アンチエイリアシング
 "set listchars=eol$,tab:>\ ,extends:<
 
 " 挿入モード時、ステータスラインのカラーを変更
-augroup InsertHook
-autocmd!
-autocmd InsertEnter * highlight StatusLine guifg=#080808 guibg=#859900
-autocmd InsertLeave * highlight StatusLine guifg=#808080 guibg=#080808
-augroup END
+"augroup InsertHook
+"autocmd!
+"autocmd InsertEnter * highlight StatusLine guifg=#080808 guibg=#859900
+"autocmd InsertLeave * highlight StatusLine guifg=#808080 guibg=#080808
+"augroup END
 
-function! GetB()
-  let c = matchstr(getline('.'),  '.',  col('.') - 1)
-  let c = iconv(c,  &enc,  &fenc)
-  return String2Hex(c)
-endfunction
+"function! GetB()
+  "let c = matchstr(getline('.'),  '.',  col('.') - 1)
+  "let c = iconv(c,  &enc,  &fenc)
+  "return String2Hex(c)
+"endfunction
 
-"help eval-examples
-" The function Nr2Hex() returns the Hex string of a number.
-func! Nr2Hex(nr)
-  let n = a:nr
-  let r = ""
-  while n
-    let r = '0123456789ABCDEF'[n % 16] . r
-    let n = n / 16
-  endwhile
-  return r
-endfunc
+""help eval-examples
+"" The function Nr2Hex() returns the Hex string of a number.
+"func! Nr2Hex(nr)
+  "let n = a:nr
+  "let r = ""
+  "while n
+    "let r = '0123456789ABCDEF'[n % 16] . r
+    "let n = n / 16
+  "endwhile
+  "return r
+"endfunc
 
-" The function String2Hex() converts each character in a string to a two
-" character Hex string.
-func! String2Hex(str)
-  let out = ''
-  let ix = 0
-  while ix < strlen(a:str)
-    let out = out . Nr2Hex(char2nr(a:str[ix]))
-    let ix = ix + 1
-  endwhile
-  return out
-endfunc
+"" The function String2Hex() converts each character in a string to a two
+"" character Hex string.
+"func! String2Hex(str)
+  "let out = ''
+  "let ix = 0
+  "while ix < strlen(a:str)
+    "let out = out . Nr2Hex(char2nr(a:str[ix]))
+    "let ix = ix + 1
+  "endwhile
+  "return out
+"endfunc
 
 " 検索語を中央に表示する
 nmap n nzz
@@ -366,5 +373,9 @@ let mapleader=","
 imap <C-C> <Plug>ToggleI
 nmap <C-C> <Plug>ToggleN
 vmap <C-C> <Plug>ToggleV
+
+nnoremap <Leader>sn :NumbersToggle<CR>
+
+"let g:Powerline_symbols = 'fancy'
 
 " " }}}
