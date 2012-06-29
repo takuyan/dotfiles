@@ -8,11 +8,11 @@ rm ~/.gvimrc
 #rm ~/.gitignore
 
 echo "Symlinking files"
-ln -s ~/config/vimrc ~/.vimrc
-ln -s ~/config/zshrc ~/.zshrc
-ln -s ~/config/gvimrc ~/.gvimrc
-#ln -s ~/config/gitconfig ~/.gitconfig
-#ln -s ~/config/gitignore ~/.gitignore
+ln -s ~/dotfiles/vimrc ~/.vimrc
+ln -s ~/dotfiles/zshrc ~/.zshrc
+ln -s ~/dotfiles/gvimrc ~/.gvimrc
+#ln -s ~/dotfiles/gitconfig ~/.gitconfig
+#ln -s ~/dotfiles/gitignore ~/.gitignore
 
 #echo "Updating submodules"
 #git submodule foreach git pull origin master --recurse-submodules

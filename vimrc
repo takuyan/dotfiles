@@ -42,7 +42,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'ujihisa/rdoc.vim'
 Bundle 'ujihisa/neco-look'
-"Bundle 'ujihisa/neco-ruby'
 Bundle "Lokaltog/vim-easymotion"
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'cucumber/cucumber'
@@ -56,8 +55,8 @@ Bundle 'bbommarito/vim-slim'
 Bundle 'groenewege/vim-less'
 Bundle 'Sixeight/unite-grep'
 Bundle "adie/BlockDiff"
-Bundle 'myusuf3/numbers.vim'
-Bundle 'chriskempson/tomorrow-theme'
+"Bundle 'myusuf3/numbers.vim'
+Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'Lokaltog/vim-powerline'
 
 Bundle 'smartchr'
@@ -107,13 +106,13 @@ set helplang=ja,en
 " please push Alt+F10
 
 " COLOR
-colorscheme molokai
-let g:molokai_original=1
+"colorscheme molokai
+"let g:molokai_original=1
 "syntax enable
 "set background=dark
 "colorscheme solarized
 
-"colorscheme tomorrow_night
+colorscheme Tomorrow-Night
 
 " % def ~ end
 runtime macros/matchit.vim
@@ -374,7 +373,7 @@ imap <C-C> <Plug>ToggleI
 nmap <C-C> <Plug>ToggleN
 vmap <C-C> <Plug>ToggleV
 
-nnoremap <Leader>sn :NumbersToggle<CR>
+"nnoremap <Leader>sn :NumbersToggle<CR>
 
 "let g:Powerline_symbols = 'fancy'
 
