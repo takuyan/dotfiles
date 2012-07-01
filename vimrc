@@ -58,6 +58,7 @@ Bundle "adie/BlockDiff"
 "Bundle 'myusuf3/numbers.vim'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'vim-ruby/vim-ruby'
 
 Bundle 'smartchr'
 
@@ -106,13 +107,14 @@ set helplang=ja,en
 " please push Alt+F10
 
 " COLOR
-"colorscheme molokai
-"let g:molokai_original=1
+colorscheme molokai
+let g:molokai_original=1
 "syntax enable
 "set background=dark
 "colorscheme solarized
 
-colorscheme Tomorrow-Night
+"colorscheme Tomorrow-Night
+"colorscheme Tomorrow-Night-Eighties
 
 " % def ~ end
 runtime macros/matchit.vim
@@ -375,6 +377,6 @@ vmap <C-C> <Plug>ToggleV
 
 "nnoremap <Leader>sn :NumbersToggle<CR>
 
-"let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'unicode'
 
 " " }}}
