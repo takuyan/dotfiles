@@ -59,6 +59,8 @@ Bundle "adie/BlockDiff"
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'teramako/jscomplete-vim'
+
 
 Bundle 'smartchr'
 
@@ -329,7 +331,8 @@ nmap g# g#zz
   " Enable omni completion.
   autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
   autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  "autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType javascript setlocal omnifunc=jscomplete#CompleteJS
   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
