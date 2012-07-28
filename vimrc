@@ -75,7 +75,7 @@ filetype plugin indent on     " required!
 set showcmd
 let mapleader=","
 " set gfn=ゆたぽん（コーディング）\ 10
-set gfn=ゆたぽん（COD）K:h13
+set gfn=ゆたぽん（COD）K:h14
 " 行番号
 "set number
 set foldmethod=marker
