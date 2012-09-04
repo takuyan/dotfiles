@@ -5,64 +5,67 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
-Bundle 'gmarik/vundle'
+call neobundle#rc(expand('~/.vim/bundle/'))
 
-"set cursorline
-set wrap
-set wildmenu
-set smartindent
-set ignorecase smartcase
+" Let NeoBundle manage NeoBundle
+"NeoBundle 'Shougo/neobundle.vim'
 
-" My Bundles here:
 "
-" original repos on github
+" Original Bundle
+"
+"set rtp+=~/.vim/bundle/vundle/
+"call vundle#rc()
+"Bundle 'gmarik/vundle'
 
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-rake'
-Bundle 'tpope/vim-bundler'
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/neocomplcache-snippets-complete'
-Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/vimshell'
-Bundle 'Shougo/vimproc'
-Bundle 'thinca/vim-qfreplace'
-Bundle 'thinca/vim-ref'
-Bundle 'thinca/vim-quickrun'
-Bundle 'thinca/vim-guicolorscheme'
-Bundle 'taku-o/vim-ro-when-swapfound'
-Bundle 'taku-o/vim-toggle'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'ujihisa/rdoc.vim'
-Bundle 'ujihisa/neco-look'
-Bundle "Lokaltog/vim-easymotion"
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'cucumber/cucumber'
-Bundle 'tomasr/molokai'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'mattn/calendar-vim'
-Bundle 'mattn/gist-vim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'briancollins/vim-jst'
-Bundle 'bbommarito/vim-slim'
-Bundle 'groenewege/vim-less'
-Bundle 'Sixeight/unite-grep'
-Bundle "adie/BlockDiff"
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-haml'
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-rake'
+NeoBundle 'tpope/vim-bundler'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neocomplcache-snippets-complete'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'thinca/vim-qfreplace'
+NeoBundle 'thinca/vim-ref'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'thinca/vim-guicolorscheme'
+NeoBundle 'taku-o/vim-ro-when-swapfound'
+NeoBundle 'taku-o/vim-toggle'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'ujihisa/rdoc.vim'
+NeoBundle 'ujihisa/neco-look'
+NeoBundle "Lokaltog/vim-easymotion"
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'cucumber/cucumber'
+NeoBundle 'tomasr/molokai'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'mattn/calendar-vim'
+NeoBundle 'mattn/gist-vim'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'briancollins/vim-jst'
+NeoBundle 'bbommarito/vim-slim'
+NeoBundle 'groenewege/vim-less'
+NeoBundle 'Sixeight/unite-grep'
+NeoBundle "adie/BlockDiff"
 "Bundle 'myusuf3/numbers.vim'
-Bundle 'chriskempson/vim-tomorrow-theme'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'teramako/jscomplete-vim'
+NeoBundle 'chriskempson/vim-tomorrow-theme'
+NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'teramako/jscomplete-vim'
+NeoBundle 'vim-scripts/dbext.vim'
+NeoBundle 'tangledhelix/vim-octopress'
+NeoBundle 'xhr/vim-io'
 
-
-Bundle 'smartchr'
+NeoBundle 'smartchr'
 
 " vim-scripts repos
 " Bundle 'molokai'
@@ -71,13 +74,23 @@ Bundle 'smartchr'
 "Bundle 'git://git.wincent.com/command-t.git'
 
 filetype plugin indent on     " required!
+
+if neobundle#exists_not_installed_bundles()
+  echomsg 'Not installed bundles : ' .
+        \ string(neobundle#get_not_installed_bundle_names())
+  echomsg 'Please execute ":NeoBundleInstall" command.'
+  "finish
+endif
+
 " }}}
 "BASIC " {{{
 "
 set showcmd
 let mapleader=","
-" set gfn=ゆたぽん（コーディング）\ 10
+"set gfn=ゆたぽん（コーディング）Bold:h13
 set gfn=ゆたぽん（COD）K:h13
+"set gfn=Ricty-Bold:h13
+"set gfn=RictyDiscord-Bold:h13
 " 行番号
 "set number
 set foldmethod=marker
@@ -99,6 +112,12 @@ set splitright
 set splitbelow
 set visualbell
 set magic
+"set cursorline
+set wrap
+set wildmenu
+set smartindent
+set ignorecase smartcase
+
 
 syntax enable
 

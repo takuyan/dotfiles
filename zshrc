@@ -12,6 +12,7 @@ alias gco='git commit'
 alias gl='git log'
 alias gd='git diff'
 alias ti='~/Library/Application\ Support/Titanium/mobilesdk/osx/1.7.6.v20111220130134/titanium.py'
+alias crontab -r='crontab -l'
 
 export JAVA_HOME=/Library/Java/Home
 export AWS_RDS_HOME=$HOME/Dropbox/aws/RDSCli-1.4.007
@@ -244,3 +245,6 @@ function _update_vcs_info_msg() {
 add-zsh-hook precmd _update_vcs_info_msg
 RPROMPT="%1(v|%F{green}%1v%f|)"
 export PATH=$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools:$PATH
+
+
+export PATH=$HOME/.nodebrew/current/bin:$PATH
