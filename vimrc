@@ -157,6 +157,8 @@ inoremap <expr> , smartchr#one_of(', ', ',')
 imap <C-j> <C-[>
 nmap <C-j> <C-[>
 
+imap jj <C-[>
+
 function! s:remove_dust()
     let cursor = getpos(".")
     " 保存時に行末の空白を除去する
