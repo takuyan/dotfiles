@@ -88,7 +88,7 @@ endif
 set showcmd
 let mapleader=","
 " set gfn=ゆたぽん（コーディング）\ 10
-set gfn=ゆたぽん（COD）K:h14
+set gfn=ゆたぽん（コーディング）:h12
 "set gfn=ゆたぽん（コーディング）Bold:h13
 "set gfn=ゆたぽん（COD）K:h13
 "set gfn=Ricty-Bold:h13
