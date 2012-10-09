@@ -1,3 +1,4 @@
+fpath=($HOME/dev/github//zsh-completions/src $fpath)
 alias ll='ls -la'
 alias r='rails'
 alias rs='bundle exec rspec --drb --color'
