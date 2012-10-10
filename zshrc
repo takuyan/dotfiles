@@ -1,3 +1,5 @@
+fpath=($HOME/dev/github/zsh-completions/src $fpath)
+
 alias ll='ls -la'
 alias r='rails'
 alias rs='bundle exec rspec --drb --color'
@@ -251,4 +253,7 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+
+
 
