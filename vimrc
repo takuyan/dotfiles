@@ -29,7 +29,8 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-rake'
 NeoBundle 'tpope/vim-bundler'
 NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neocomplcache-snippets-complete'
+"NeoBundle 'Shougo/neocomplcache-snippets-complete'
+NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/vimproc'
@@ -66,7 +67,15 @@ NeoBundle 'vim-scripts/dbext.vim'
 NeoBundle 'tangledhelix/vim-octopress'
 NeoBundle 'xhr/vim-io'
 
+NeoBundle 'mattn/zencoding-vim'
+NeoBundle 'mattn/webapi-vim'
+NeoBundle 'tell-k/vim-browsereload-mac'
+NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'taichouchou2/html5.vim'
+NeoBundle 'taichouchou2/vim-javascript' " jQuery syntax追加
+
 NeoBundle 'smartchr'
+NeoBundle 'open-browser.vim'
 
 " vim-scripts repos
 " Bundle 'molokai'
@@ -121,6 +130,19 @@ set wildmenu
 set smartindent
 set ignorecase smartcase
 
+" 検索を循環させない
+set nowrapscan
+
+" 文字コード関連
+" 文字コードの自動解釈の優先順位
+set fileencodings=utf-8,cp932,euc-jp
+" 改行コードの解釈優先順位
+set fileformats=unix,dos
+
+" 内部の解釈の文字コード　設定ファイルもこのコードで書け
+set encoding=utf-8
+" 内部の改行コード
+set fileformat=unix
 
 syntax enable
 
