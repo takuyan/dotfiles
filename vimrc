@@ -43,6 +43,7 @@ NeoBundle 'taku-o/vim-ro-when-swapfound'
 NeoBundle 'taku-o/vim-toggle'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'scrooloose/syntastic'
 NeoBundle 'ujihisa/rdoc.vim'
 NeoBundle 'ujihisa/neco-look'
 NeoBundle "Lokaltog/vim-easymotion"
@@ -73,8 +74,11 @@ NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'taichouchou2/vim-javascript' " jQuery syntax追加
 
+
+
 NeoBundle 'smartchr'
 NeoBundle 'open-browser.vim'
+NeoBundle 'Wombat'
 
 " vim-scripts repos
 " Bundle 'molokai'
@@ -160,6 +164,8 @@ let g:molokai_original=1
 
 "colorscheme Tomorrow-Night
 "colorscheme Tomorrow-Night-Eighties
+
+"colorscheme wombat
 
 " % def ~ end
 runtime macros/matchit.vim

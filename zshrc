@@ -248,12 +248,3 @@ add-zsh-hook precmd _update_vcs_info_msg
 RPROMPT="%1(v|%F{green}%1v%f|)"
 export PATH=$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools:$PATH
 export PATH=$HOME/.nodebrew/current/bin:$PATH
-
-
-
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
-
-
-
