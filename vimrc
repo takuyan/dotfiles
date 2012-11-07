@@ -28,8 +28,8 @@ NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-rake'
 NeoBundle 'tpope/vim-bundler'
+NeoBundle 'tpope/vim-markdown'
 NeoBundle 'Shougo/neocomplcache'
-"NeoBundle 'Shougo/neocomplcache-snippets-complete'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimshell'
@@ -43,6 +43,7 @@ NeoBundle 'taku-o/vim-ro-when-swapfound'
 NeoBundle 'taku-o/vim-toggle'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'scrooloose/syntastic'
 NeoBundle 'ujihisa/rdoc.vim'
 NeoBundle 'ujihisa/neco-look'
 NeoBundle "Lokaltog/vim-easymotion"
@@ -58,7 +59,6 @@ NeoBundle 'bbommarito/vim-slim'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'Sixeight/unite-grep'
 NeoBundle "adie/BlockDiff"
-"Bundle 'myusuf3/numbers.vim'
 NeoBundle 'chriskempson/vim-tomorrow-theme'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'vim-ruby/vim-ruby'
@@ -74,8 +74,11 @@ NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'taichouchou2/vim-javascript' " jQuery syntax追加
 
+
+
 NeoBundle 'smartchr'
 NeoBundle 'open-browser.vim'
+NeoBundle 'Wombat'
 
 " vim-scripts repos
 " Bundle 'molokai'
@@ -161,6 +164,8 @@ set helplang=ja,en
 
 "colorscheme Tomorrow-Night
 colorscheme Tomorrow-Night-Eighties
+
+"colorscheme wombat
 
 " % def ~ end
 runtime macros/matchit.vim
