@@ -66,6 +66,7 @@ NeoBundle 'teramako/jscomplete-vim'
 NeoBundle 'vim-scripts/dbext.vim'
 NeoBundle 'tangledhelix/vim-octopress'
 NeoBundle 'xhr/vim-io'
+NeoBundle 'astashov/vim-ruby-debugger'
 
 NeoBundle 'mattn/zencoding-vim'
 NeoBundle 'mattn/webapi-vim'
