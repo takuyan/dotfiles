@@ -66,6 +66,7 @@ NeoBundle 'teramako/jscomplete-vim'
 NeoBundle 'vim-scripts/dbext.vim'
 NeoBundle 'tangledhelix/vim-octopress'
 NeoBundle 'xhr/vim-io'
+NeoBundle 'astashov/vim-ruby-debugger'
 
 NeoBundle 'mattn/zencoding-vim'
 NeoBundle 'mattn/webapi-vim'
@@ -173,7 +174,10 @@ runtime macros/matchit.vim
 " indent guide enable
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_guide_size=1
-let g:indent_guides_auto_colors=1
+let g:indent_guides_auto_colors = 1
+let g:indent_guides_color_change_percent = 5
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=black ctermbg=3
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=black ctermbg=4
 
 " ESC + ESC = no hi
 nnoremap <Esc><Esc> :nohlsearch<CR>
@@ -260,6 +264,8 @@ nmap # #zz
 nmap g* g*zz
 nmap g# g#zz
 
+noremap <Leader>t :noautocmd vimgrep /TODO/j **/*.rb **/*.js **/*.coffee **/*.css **/*.sass **/*.spec **/*.erb **/*.haml<CR>:cw<CR>
+
 " }}}
 " Unite" {{{
 
@@ -335,6 +341,10 @@ nmap g# g#zz
 " }}}
 " Neocomplcache" {{{
 
+
+  "===== new
+  "TODO
+  "===== old
   " Disable AutoComplPop.
   let g:acp_enableAtStartup = 0
   " Use neocomplcache.
@@ -400,19 +410,35 @@ nmap g# g#zz
   " For perlomni.vim setting.
   " https://github.com/c9s/perlomni.vim
   "let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*:'
+  "
+  inoremap <expr><C-x><C-o> &filetype == 'vim' ? "\<C-x><C-v><C-p>" : neocomplcache#manual_omni_complete()
+" " }}}
+" NeoSnippet" {{{
+
+  let g:neosnippet#snippets_directory='~/.vim/snippets'
 
   " Plugin key-mappings.
-  imap <C-k>     <Plug>(neocomplcache_snippets_expand)
-  smap <C-k>     <Plug>(neocomplcache_snippets_expand)
+  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  xmap <C-k>     <Plug>(neosnippet_expand_target)
+  xmap <C-l>     <Plug>(neosnippet_start_unite_snippet_target)
 
-  let g:neocomplcache_snippets_dir='~/.vim/snippets'
+  " SuperTab like snippets behavior.
+  "imap <expr><TAB> neosnippet#expandable() ?
+  " \ "\<Plug>(neosnippet_expand_or_jump)"
+  " \: pumvisible() ? "\<C-n>" : "\<TAB>"
+  "smap <expr><TAB> neosnippet#expandable() ?
+  " \ "\<Plug>(neosnippet_expand_or_jump)"
+  " \: "\<TAB>"
 
   " For snippet_complete marker.
   if has('conceal')
     set conceallevel=2 concealcursor=i
   endif
 
-  inoremap <expr><C-x><C-o> &filetype == 'vim' ? "\<C-x><C-v><C-p>" : neocomplcache#manual_omni_complete()
+  " Enable snipMate compatibility feature.
+  " let g:neosnippet#enable_snipmate_compatibility = 1
+
 
 " " }}}
 " Other " {{{
