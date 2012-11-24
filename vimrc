@@ -74,8 +74,7 @@ NeoBundle 'tell-k/vim-browsereload-mac'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'taichouchou2/vim-javascript' " jQuery syntax追加
-
-
+NeoBundle "honza/snipmate-snippets"
 
 NeoBundle 'smartchr'
 NeoBundle 'open-browser.vim'
@@ -209,52 +208,6 @@ autocmd BufWritePre * call <SID>remove_dust()
 autocmd BufWritePre * %s/\([^:]\+\):\{1}\([^ :"']\+\)\s=>/\1\2:/ge
 
 set antialias                " アンチエイリアシング
-
-" 挿入モード時、ステータスラインの色を変える
-"autocmd InsertEnter * highlight StatusLine ctermfg=red
-"autocmd InsertLeave * highlight StatusLine ctermfg=white
-
-"タブ文字、行末など不可視文字を表示する
-"set list
-"listで表示される文字のフォーマットを指定する
-"set listchars=eol$,tab:>\ ,extends:<
-
-" 挿入モード時、ステータスラインのカラーを変更
-"augroup InsertHook
-"autocmd!
-"autocmd InsertEnter * highlight StatusLine guifg=#080808 guibg=#859900
-"autocmd InsertLeave * highlight StatusLine guifg=#808080 guibg=#080808
-"augroup END
-
-"function! GetB()
-  "let c = matchstr(getline('.'),  '.',  col('.') - 1)
-  "let c = iconv(c,  &enc,  &fenc)
-  "return String2Hex(c)
-"endfunction
-
-""help eval-examples
-"" The function Nr2Hex() returns the Hex string of a number.
-"func! Nr2Hex(nr)
-  "let n = a:nr
-  "let r = ""
-  "while n
-    "let r = '0123456789ABCDEF'[n % 16] . r
-    "let n = n / 16
-  "endwhile
-  "return r
-"endfunc
-
-"" The function String2Hex() converts each character in a string to a two
-"" character Hex string.
-"func! String2Hex(str)
-  "let out = ''
-  "let ix = 0
-  "while ix < strlen(a:str)
-    "let out = out . Nr2Hex(char2nr(a:str[ix]))
-    "let ix = ix + 1
-  "endwhile
-  "return out
-"endfunc
 
 " 検索語を中央に表示する
 nmap n nzz
@@ -415,30 +368,19 @@ noremap <Leader>t :noautocmd vimgrep /TODO/j **/*.rb **/*.js **/*.coffee **/*.cs
 " " }}}
 " NeoSnippet" {{{
 
-  let g:neosnippet#snippets_directory='~/.vim/snippets'
+" Tell Neosnippet about the other snippets
+let g:neosnippet#snippets_directory='~/.vim/bundle/snipmate-snippets/snippets'
 
-  " Plugin key-mappings.
-  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-  smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-  xmap <C-k>     <Plug>(neosnippet_expand_target)
-  xmap <C-l>     <Plug>(neosnippet_start_unite_snippet_target)
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+xmap <C-l>     <Plug>(neosnippet_start_unite_snippet_target)
 
-  " SuperTab like snippets behavior.
-  "imap <expr><TAB> neosnippet#expandable() ?
-  " \ "\<Plug>(neosnippet_expand_or_jump)"
-  " \: pumvisible() ? "\<C-n>" : "\<TAB>"
-  "smap <expr><TAB> neosnippet#expandable() ?
-  " \ "\<Plug>(neosnippet_expand_or_jump)"
-  " \: "\<TAB>"
-
-  " For snippet_complete marker.
-  if has('conceal')
-    set conceallevel=2 concealcursor=i
-  endif
-
-  " Enable snipMate compatibility feature.
-  " let g:neosnippet#enable_snipmate_compatibility = 1
-
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
 
 " " }}}
 " Other " {{{
