@@ -75,6 +75,8 @@ NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'taichouchou2/vim-javascript' " jQuery syntax追加
 NeoBundle "honza/snipmate-snippets"
+NeoBundle "fuenor/im_control.vim"
+NeoBundle "vim-scripts/zoom.vim"
 
 NeoBundle 'smartchr'
 NeoBundle 'open-browser.vim'
