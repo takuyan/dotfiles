@@ -34,6 +34,22 @@ zsh_completions_install_or_update()
   fi
 }
 
+neobundle_install_or_update()
+{
+  echo "[CHECK]   neobundle"
+  mkdir -p $HOME/.vim/bundle
+  if [ -d $HOME/.vim/bundle/neobundle.vim ]
+  then
+    echo "[UPDATE]  git pull neobundle"
+    cd $HOME/.vim/bundle/neobundle.vim
+    git pull origin master
+    cd $HOME
+  else
+    echo "[INSTALL] git clone neobundle"
+    git clone git://github.com/Shougo/neobundle.vim.git $HOME/.vim/bundle/neobundle.vim
+  fi
+}
+
 delete_old_files()
 {
   echo "[DELETE] Delete the old files"
@@ -44,8 +60,8 @@ delete_old_files()
   rm -f ~/.gemrc
   rm -f ~/.powconfig
   rm -f ~/.bashrc
+  rm -f ~/.gitignore
   #rm ~/.gitconfig
-  #rm ~/.gitignore
 }
 
 symlink_files()
@@ -58,8 +74,8 @@ symlink_files()
   ln -s ~/dotfiles/gemrc ~/.gemrc
   ln -s ~/dotfiles/powconfig ~/.powconfig
   ln -s ~/dotfiles/bashrc ~/.bashrc
+  ln -s ~/dotfiles/gitignore ~/.gitignore
   #ln -s ~/dotfiles/gitconfig ~/.gitconfig
-  #ln -s ~/dotfiles/gitignore ~/.gitignore
 }
 
 #
@@ -67,6 +83,7 @@ symlink_files()
 #
 oh_my_zsh_install_or_update 1
 zsh_completions_install_or_update 1
+neobundle_install_or_update 1
 delete_old_files 1
 symlink_files 1
 
