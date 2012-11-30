@@ -1,4 +1,4 @@
-# Ruby on Rails Engineer Configuration on Mac
+# Takuyan of Ruby on Rails Engineer's Configuration on Mac
 
 ## Packages
 
