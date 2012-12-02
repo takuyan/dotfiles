@@ -38,3 +38,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=$HOME/.nodebrew/current/bin:$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools:$HOME/Dropbox/aws/RDSCli-1.4.007/bin:/usr/local/sbin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
