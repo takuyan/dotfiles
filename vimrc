@@ -67,7 +67,6 @@ NeoBundle 'vim-scripts/dbext.vim'
 NeoBundle 'tangledhelix/vim-octopress'
 NeoBundle 'xhr/vim-io'
 NeoBundle 'astashov/vim-ruby-debugger'
-
 NeoBundle 'mattn/zencoding-vim'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'tell-k/vim-browsereload-mac'
@@ -77,6 +76,12 @@ NeoBundle 'taichouchou2/vim-javascript' " jQuery syntax追加
 NeoBundle "honza/snipmate-snippets"
 NeoBundle "fuenor/im_control.vim"
 NeoBundle "vim-scripts/zoom.vim"
+
+" http://qiita.com/items/839f4b9e07cf7f341835
+NeoBundle "rhysd/unite-ruby-require.vim"
+NeoBundle "rhysd/neco-ruby-keyword-args"
+NeoBundle "kana/vim-textobj-user"
+NeoBundle "rhysd/vim-textobj-ruby"
 
 NeoBundle 'smartchr'
 NeoBundle 'open-browser.vim'
@@ -402,5 +407,11 @@ vmap <C-C> <Plug>ToggleV
 "nnoremap <Leader>sn :NumbersToggle<CR>
 
 let g:Powerline_symbols = 'unicode'
+
+" rhysd/unite-ruby-require.vim
+" Usage
+" :Unite ruby/require
+" This is for rbenv user
+let g:unite_source_ruby_require_ruby_command = '$HOME/.rbenv/shims/ruby'
 
 " " }}}
