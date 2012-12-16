@@ -20,19 +20,20 @@ rbenv_install_or_update()
 
 ruby_build_install_or_update()
 {
-    mkdir -p $HOME/.rbenv/plugins
-    cd $HOME/.rbenv/plugins
+  mkdir -p $HOME/.rbenv/plugins
+  cd $HOME/.rbenv/plugins
 
-    echo "[CHECK]   ruby-build"
-    if [ -d $HOME/.rbenv/plugins/ruby-build ]
-      echo "[UPDATE]  git pull ruby-build"
-      cd $HOME/.rbenv/plugins/ruby-build
-      git pull origin master
-    then
-      echo "[INSTALL] git clone ruby-build"
-      cd $HOME/.rbenv/plugins
-      git clone git://github.com/sstephenson/ruby-build.git $HOME/.rbenv/plugins/ruby-build
-    fi
+  echo "[CHECK]   ruby-build"
+  if [ -d $HOME/.rbenv/plugins/ruby-build ]
+  then
+    echo "[UPDATE]  git pull ruby-build"
+    cd $HOME/.rbenv/plugins/ruby-build
+    git pull origin master
+  else
+    echo "[INSTALL] git clone ruby-build"
+    cd $HOME/.rbenv/plugins
+    git clone git://github.com/sstephenson/ruby-build.git $HOME/.rbenv/plugins/ruby-build
+  fi
 }
 
 oh_my_zsh_install_or_update()

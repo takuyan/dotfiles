@@ -14,6 +14,24 @@ ZSH_THEME="macovsky-ruby"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# git
+alias gb='git branch'
+alias gch='git checkout'
+alias gs='git status'
+alias ga='git add'
+alias gco='git commit'
+alias gl='git log'
+alias gd='git diff'
+
+# basic
+alias ll='ls -la'
+alias rm='rm -i'
+
+# rails
+alias r='rails'
+alias rs='bundle exec rspec --drb --color'
+alias be='bundle exec'
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
