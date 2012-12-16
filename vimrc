@@ -46,6 +46,7 @@ NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'ujihisa/rdoc.vim'
 NeoBundle 'ujihisa/neco-look'
+NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle "Lokaltog/vim-easymotion"
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'cucumber/cucumber'
@@ -82,6 +83,7 @@ NeoBundle "rhysd/unite-ruby-require.vim"
 NeoBundle "rhysd/neco-ruby-keyword-args"
 NeoBundle "kana/vim-textobj-user"
 NeoBundle "rhysd/vim-textobj-ruby"
+NeoBundle "nanotech/jellybeans.vim"
 
 NeoBundle 'smartchr'
 NeoBundle 'open-browser.vim'
@@ -163,16 +165,19 @@ set helplang=ja,en
 " please push Alt+F10
 
 " COLOR
-colorscheme molokai
-let g:molokai_original=1
+"colorscheme molokai
+"let g:molokai_original=1
 "syntax enable
 "set background=dark
 "colorscheme solarized
 
 "colorscheme Tomorrow-Night
-"colorscheme Tomorrow-Night-Eighties
+colorscheme Tomorrow-Night-Eighties
 
 "colorscheme wombat
+"
+"
+"colorscheme jellybeans
 
 " % def ~ end
 runtime macros/matchit.vim
@@ -297,6 +302,8 @@ noremap <Leader>t :noautocmd vimgrep /TODO/j **/*.rb **/*.js **/*.coffee **/*.cs
   " ESCキーを2回押すと終了する
   au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
   au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
+
+  nnoremap <silent> ,uc :<C-u>Unite colorscheme -auto-preview<CR>
 
 " }}}
 " Neocomplcache" {{{
