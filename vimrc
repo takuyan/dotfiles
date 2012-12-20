@@ -79,7 +79,7 @@ NeoBundle "fuenor/im_control.vim"
 NeoBundle "vim-scripts/zoom.vim"
 
 " http://qiita.com/items/839f4b9e07cf7f341835
-NeoBundle "rhysd/unite-ruby-require.vim"
+"NeoBundle "rhysd/unite-ruby-require.vim"
 NeoBundle "rhysd/neco-ruby-keyword-args"
 NeoBundle "kana/vim-textobj-user"
 NeoBundle "rhysd/vim-textobj-ruby"
