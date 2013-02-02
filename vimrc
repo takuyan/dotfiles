@@ -56,7 +56,7 @@ NeoBundle 'mattn/calendar-vim'
 NeoBundle 'mattn/gist-vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'briancollins/vim-jst'
-NeoBundle 'bbommarito/vim-slim'
+NeoBundle "slim-template/vim-slim"
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'Sixeight/unite-grep'
 NeoBundle "adie/BlockDiff"
