@@ -59,3 +59,6 @@ export PATH=$HOME/.nodebrew/current/bin:$HOME/android-sdk/tools:$HOME/android-sd
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+### Added by Nodebrew
+export PATH=$HOME/.nodebrew/current/bin:$PATH

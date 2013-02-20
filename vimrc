@@ -310,7 +310,7 @@ noremap <Leader>t :noautocmd vimgrep /TODO/j **/*.rb **/*.js **/*.coffee **/*.cs
 
   if executable('jvgrep')
     " For jvgrep.
-    let g:unite_source_grep_command = 'jvgrep'
+    "let g:unite_source_grep_command = 'jvgrep'
     let g:unite_source_grep_default_opts = '--exclude ''\.(git|svn|hg|bzr)'''
     let g:unite_source_grep_recursive_opt = '-R'
   endif
