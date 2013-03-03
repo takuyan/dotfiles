@@ -18,7 +18,6 @@ ZSH_THEME="macovsky-ruby"
 alias gb='git branch'
 alias gch='git checkout'
 alias gs='git status'
-alias ga='git add'
 alias gco='git commit'
 alias gl='git log'
 alias gd='git diff'

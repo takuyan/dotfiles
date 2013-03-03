@@ -76,6 +76,7 @@ NeoBundle 'taichouchou2/vim-javascript' " jQuery syntax追加
 NeoBundle "honza/snipmate-snippets"
 NeoBundle "fuenor/im_control.vim"
 NeoBundle "vim-scripts/zoom.vim"
+NeoBundle "basyura/unite-rails"
 
 " http://qiita.com/items/839f4b9e07cf7f341835
 "NeoBundle "rhysd/unite-ruby-require.vim"
@@ -216,7 +217,7 @@ autocmd BufWritePre * call <SID>remove_dust()
 
 " 保存時にRuby1.8 Hashを除去する
 " origin by http://robots.thoughtbot.com/post/17450269990/convert-ruby-1-8-to-1-9-hash-syntax
-autocmd BufWritePre * %s/\([^:]\+\):\{1}\([^ :"']\+\)\s=>/\1\2:/ge
+"autocmd BufWritePre * %s/\([^:]\+\):\{1}\([^ :"']\+\)\s=>/\1\2:/ge
 
 set antialias                " アンチエイリアシング
 
@@ -229,6 +230,9 @@ nmap g* g*zz
 nmap g# g#zz
 
 noremap <Leader>t :noautocmd vimgrep /TODO/j **/*.rb **/*.js **/*.coffee **/*.css **/*.sass **/*.spec **/*.erb **/*.haml<CR>:cw<CR>
+
+" http://qiita.com/items/bd97a9b963dae40b63f5
+vnoremap <silent> <C-p> "0p<CR>
 
 " }}}
 " Unite" {{{
@@ -308,19 +312,19 @@ noremap <Leader>t :noautocmd vimgrep /TODO/j **/*.rb **/*.js **/*.coffee **/*.cs
   " For optimize.
   let g:unite_source_file_mru_filename_format = ''
 
-  if executable('jvgrep')
-    " For jvgrep.
-    "let g:unite_source_grep_command = 'jvgrep'
-    let g:unite_source_grep_default_opts = '--exclude ''\.(git|svn|hg|bzr)'''
-    let g:unite_source_grep_recursive_opt = '-R'
-  endif
+  "if executable('jvgrep')
+    "" For jvgrep.
+    ""let g:unite_source_grep_command = 'jvgrep'
+    "let g:unite_source_grep_default_opts = '--exclude ''\.(git|svn|hg|bzr)'''
+    "let g:unite_source_grep_recursive_opt = '-R'
+  "endif
 
-  " For ack.
-  if executable('ack-grep')
-    " let g:unite_source_grep_command = 'ack-grep'
-    " let g:unite_source_grep_default_opts = '--no-heading --no-color -a'
-    " let g:unite_source_grep_recursive_opt = ''
-  endif
+  "" For ack.
+  "if executable('ack-grep')
+    "" let g:unite_source_grep_command = 'ack-grep'
+    "" let g:unite_source_grep_default_opts = '--no-heading --no-color -a'
+    "" let g:unite_source_grep_recursive_opt = ''
+  "endif
 
   """ unite.vim
   " バッファ一覧
