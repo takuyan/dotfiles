@@ -77,6 +77,7 @@ NeoBundle "honza/snipmate-snippets"
 NeoBundle "fuenor/im_control.vim"
 NeoBundle "vim-scripts/zoom.vim"
 NeoBundle "basyura/unite-rails"
+NeoBundle 'rking/ag.vim'
 
 " http://qiita.com/items/839f4b9e07cf7f341835
 "NeoBundle "rhysd/unite-ruby-require.vim"
