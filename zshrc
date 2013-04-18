@@ -31,6 +31,10 @@ alias r='rails'
 alias rs='bundle exec rspec --drb --color'
 alias be='bundle exec'
 
+# brew install colordiff
+alias diff='colordiff'
+alias less='less -R'
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
