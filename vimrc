@@ -166,11 +166,11 @@ set helplang=ja,en
 " please push Alt+F10
 
 " COLOR
-"colorscheme molokai
-"let g:molokai_original=1
+colorscheme molokai
+let g:molokai_original=1
 "syntax enable
-set background=dark
-colorscheme solarized
+"set background=dark
+"colorscheme solarized
 
 "colorscheme Tomorrow-Night
 "colorscheme Tomorrow-Night-Eighties
