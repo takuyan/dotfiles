@@ -56,7 +56,7 @@ NeoBundle 'mattn/calendar-vim'
 NeoBundle 'mattn/gist-vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'briancollins/vim-jst'
-NeoBundle 'jpalardy/vim-slime'
+"NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'Sixeight/unite-grep'
 NeoBundle "adie/BlockDiff"
@@ -73,7 +73,7 @@ NeoBundle 'tell-k/vim-browsereload-mac'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'taichouchou2/vim-javascript' " jQuery syntax追加
-NeoBundle "honza/snipmate-snippets"
+NeoBundle "honza/vim-snippets"
 NeoBundle "fuenor/im_control.vim"
 NeoBundle "vim-scripts/zoom.vim"
 NeoBundle "basyura/unite-rails"
