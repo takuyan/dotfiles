@@ -78,6 +78,7 @@ NeoBundle "fuenor/im_control.vim"
 NeoBundle "vim-scripts/zoom.vim"
 NeoBundle "basyura/unite-rails"
 NeoBundle 'rking/ag.vim'
+NeoBundle 'w0ng/vim-hybrid'
 
 " http://qiita.com/items/839f4b9e07cf7f341835
 NeoBundle "rhysd/unite-ruby-require.vim"
@@ -117,7 +118,8 @@ set gfn=ゆたぽん（コーディング）:h12
 "set gfn=Ricty-Bold:h13
 "set gfn=RictyDiscord-Bold:h13
 " 行番号
-"set number
+set number
+set cursorline
 set foldmethod=marker
 " インクリメンタルサーチ
 set incsearch
@@ -166,19 +168,19 @@ set helplang=ja,en
 " please push Alt+F10
 
 " COLOR
-colorscheme molokai
-let g:molokai_original=1
+"colorscheme molokai
+"let g:molokai_original=1
+
 "syntax enable
 "set background=dark
 "colorscheme solarized
 
 "colorscheme Tomorrow-Night
 "colorscheme Tomorrow-Night-Eighties
-
 "colorscheme wombat
-"
-"
 "colorscheme jellybeans
+let g:hybrid_use_Xresources = 1
+colorscheme hybrid
 
 " % def ~ end
 runtime macros/matchit.vim
