@@ -220,7 +220,7 @@ autocmd BufWritePre * call <SID>remove_dust()
 
 " 保存時にRuby1.8 Hashを除去する
 " origin by http://robots.thoughtbot.com/post/17450269990/convert-ruby-1-8-to-1-9-hash-syntax
-"autocmd BufWritePre * %s/\([^:]\+\):\{1}\([^ :"']\+\)\s=>/\1\2:/ge
+autocmd BufWritePre * %s/\([^:]\+\):\{1}\([^ :"']\+\)\s=>/\1\2:/ge
 
 set antialias                " アンチエイリアシング
 
