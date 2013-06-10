@@ -26,6 +26,7 @@ alias gd='git diff'
 # basic
 alias ll='ls -la'
 alias rm='rm -i'
+alias mkdir='mkdir -p'
 
 # rails
 alias r='rails'
