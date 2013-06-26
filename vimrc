@@ -111,16 +111,16 @@ endif
 " }}}
 "BASIC " {{{
 "
-set showcmd
-let mapleader=","
-" set gfn=ゆたぽん（コーディング）\ 10
+" font
 set gfn=ゆたぽん（コーディング）:h12
-"set gfn=ゆたぽん（コーディング）Bold:h13
-"set gfn=ゆたぽん（COD）K:h13
 "set gfn=Ricty-Bold:h13
 "set gfn=RictyDiscord-Bold:h13
+
+set showcmd
+let mapleader=","
 " 行番号
 set number
+" 現在の行をハイライト
 set cursorline
 set foldmethod=marker
 " インクリメンタルサーチ
@@ -141,7 +141,6 @@ set splitright
 set splitbelow
 set visualbell
 set magic
-"set cursorline
 set wrap
 set wildmenu
 set smartindent
@@ -220,11 +219,12 @@ function! s:remove_dust()
 endfunction
 autocmd BufWritePre * call <SID>remove_dust()
 
-" 保存時にRuby1.8 Hashを除去する
+" Ruby1.8 Hashを除去する
 " origin by http://robots.thoughtbot.com/post/17450269990/convert-ruby-1-8-to-1-9-hash-syntax
 autocmd BufWritePre * %s/\([^:]\+\):\{1}\([^ :"']\+\)\s=>/\1\2:/ge
 
-set antialias                " アンチエイリアシング
+" アンチエイリアシング
+set antialias
 
 " 検索語を中央に表示する
 nmap n nzz
