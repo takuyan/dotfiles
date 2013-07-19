@@ -58,7 +58,7 @@ NeoBundle 'mattn/zencoding-vim'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle "gmarik/sudo-gui.vim"
 NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'cucumber/cucumber'
+"NeoBundle 'cucumber/cucumber'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'kchmck/vim-coffee-script'
