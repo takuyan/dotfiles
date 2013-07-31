@@ -35,6 +35,13 @@ NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/vimproc'
+      \ 'build' : {
+      \     'windows' : 'make -f make_mingw32.mak',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
 NeoBundle 'thinca/vim-qfreplace'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-quickrun'
@@ -239,6 +246,8 @@ noremap <Leader>t :noautocmd vimgrep /TODO/j **/*.rb **/*.js **/*.coffee **/*.cs
 
 " http://qiita.com/items/bd97a9b963dae40b63f5
 vnoremap <silent> <C-p> "0p<CR>
+
+au BufRead,BufNewFile *.hamlc set ft=haml
 
 " }}}
 " Unite" {{{
