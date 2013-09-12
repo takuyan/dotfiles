@@ -89,6 +89,7 @@ NeoBundle 'rking/ag.vim'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'nono/vim-handlebars'
+NeoBundle 'heartsentwined/vim-emblem'
 
 " http://qiita.com/items/839f4b9e07cf7f341835
 "NeoBundle "rhysd/unite-ruby-require.vim"
