@@ -97,6 +97,7 @@ NeoBundle "rhysd/neco-ruby-keyword-args"
 NeoBundle "kana/vim-textobj-user"
 NeoBundle "rhysd/vim-textobj-ruby"
 NeoBundle "nanotech/jellybeans.vim"
+NeoBundle "slim-template/vim-slim"
 
 NeoBundle 'smartchr'
 NeoBundle 'open-browser.vim'
@@ -178,20 +179,6 @@ set helplang=ja,en
 " window size
 " please push Alt+F10
 
-" COLOR
-"colorscheme molokai
-"let g:molokai_original=1
-
-"syntax enable
-"set background=dark
-"colorscheme solarized
-
-"colorscheme Tomorrow-Night
-"colorscheme Tomorrow-Night-Eighties
-"colorscheme wombat
-"colorscheme jellybeans
-let g:hybrid_use_Xresources = 1
-colorscheme hybrid
 
 " % def ~ end
 runtime macros/matchit.vim
@@ -251,6 +238,21 @@ vnoremap <silent> <C-p> "0p<CR>
 
 au BufRead,BufNewFile *.hamlc set ft=haml
 
+" }}}
+"COLOR" {{{
+"colorscheme molokai
+"let g:molokai_original=1
+
+syntax enable
+"set background=dark
+"colorscheme solarized
+
+"colorscheme Tomorrow-Night
+"colorscheme Tomorrow-Night-Eighties
+"colorscheme wombat
+"colorscheme jellybeans
+let g:hybrid_use_Xresources = 1
+colorscheme hybrid
 " }}}
 " Unite" {{{
 

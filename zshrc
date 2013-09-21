@@ -91,3 +91,6 @@ bindkey '^m' do_enter
 
 export PATH="$HOME/.plenv/bin:$PATH"
 eval "$(plenv init -)"
+
+# added by travis gem
+source /Users/takuyan/.travis/travis.sh
