@@ -29,4 +29,5 @@ export EC2_REGION=ap-northeast-1
 
 
 # added by travis gem
-source /Users/takuyan/.travis/travis.sh
+source ~/.travis/travis.sh
+
