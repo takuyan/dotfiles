@@ -394,4 +394,7 @@ let g:Powerline_symbols = 'unicode'
 " This is for rbenv user
 let g:unite_source_ruby_require_ruby_command = '$HOME/.rbenv/shims/ruby'
 
+" 日付挿入
+imap <silent> <C-D><C-D> <C-R>=strftime("%Y-%m-%d")<CR>
+
 " " }}}
