@@ -372,6 +372,13 @@ endif
 " " }}}
 " Other " {{{
 
+let g:rails_projections = {
+	      \ "app/decorators/*_decorator.rb": {
+	      \   "command": "decorator",
+	      \   "test": [
+	      \     "spec/decorators/%s_decorator_spec.rb"
+	      \   ]
+	      \ }}
 " github
 let g:github_user = 'takuyan'
 "let g:github_token = ''
