@@ -123,7 +123,7 @@ endif
 "BASIC " {{{
 "
 " font
-set gfn=ゆたぽん（コーディング）:h12
+set gfn=ゆたぽん（コーディング）:h13
 "set gfn=Ricty-Bold:h13
 "set gfn=RictyDiscord-Bold:h13
 
@@ -218,7 +218,7 @@ endfunction
 
 " Ruby1.8 Hashを除去する
 " origin by http://robots.thoughtbot.com/post/17450269990/convert-ruby-1-8-to-1-9-hash-syntax
-"autocmd BufWritePre * %s/\([^:]\+\):\{1}\([^ :"']\+\)\s=>/\1\2:/ge
+autocmd BufWritePre * %s/\([^:]\+\):\{1}\([^ :"']\+\)\s=>/\1\2:/ge
 
 " アンチエイリアシング
 set antialias
