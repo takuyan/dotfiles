@@ -81,7 +81,7 @@ NeoBundle "vim-scripts/sudo.vim"
 NeoBundle 'tangledhelix/vim-octopress'
 NeoBundle 'xhr/vim-io'
 NeoBundle 'tell-k/vim-browsereload-mac'
-NeoBundle 'hail2u/vim-css3-syntax'
+"NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle "honza/vim-snippets"
 NeoBundle "fuenor/im_control.vim"
 NeoBundle "basyura/unite-rails"
