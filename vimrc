@@ -90,6 +90,7 @@ NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'nono/vim-handlebars'
 NeoBundle 'heartsentwined/vim-emblem'
+NeoBundle 'osyo-manga/vim-over'
 
 " http://qiita.com/items/839f4b9e07cf7f341835
 "NeoBundle "rhysd/unite-ruby-require.vim"
@@ -214,11 +215,11 @@ function! s:remove_dust()
     call setpos(".", cursor)
     unlet cursor
 endfunction
-"autocmd BufWritePre * call <SID>remove_dust()
+autocmd BufWritePre * call <SID>remove_dust()
 
 " Ruby1.8 Hashを除去する
 " origin by http://robots.thoughtbot.com/post/17450269990/convert-ruby-1-8-to-1-9-hash-syntax
-autocmd BufWritePre * %s/\([^:]\+\):\{1}\([^ :"']\+\)\s=>/\1\2:/ge
+"autocmd BufWritePre * %s/\([^:]\+\):\{1}\([^ :"']\+\)\s=>/\1\2:/ge
 
 " アンチエイリアシング
 set antialias
@@ -370,15 +371,41 @@ if has('conceal')
 endif
 
 " " }}}
+" over.vim {{{
+" http://qiita.com/PSP_T/items/3a1af1301ee197b32a8a
+
+" over.vimの起動
+nnoremap <silent> <Leader>m :OverCommandLine<CR>
+
+" カーソル下の単語をハイライト付きで置換
+nnoremap sub :OverCommandLine<CR>%s/<C-r><C-w>//g<Left><Left>
+
+" コピーした文字列をハイライト付きで置換
+nnoremap subp y:OverCommandLine<CR>%s!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!!gI<Left><Left><Left>
+
+" }}}
 " Other " {{{
 
 let g:rails_projections = {
-	      \ "app/decorators/*_decorator.rb": {
-	      \   "command": "decorator",
-	      \   "test": [
-	      \     "spec/decorators/%s_decorator_spec.rb"
-	      \   ]
-	      \ }}
+        \ "app/decorators/*_decorator.rb": {
+        \   "command": "decorator",
+        \   "test": [
+        \     "spec/decorators/%s_decorator_spec.rb"
+        \   ]
+        \ },
+        \ "app/observers/*_observer.rb": {
+        \   "command": "observer",
+        \   "test": [
+        \     "spec/observers/%s_observer_spec.rb"
+        \   ]
+        \ },
+        \ "app/forms/*_form.rb": {
+        \   "command": "form",
+        \   "test": [
+        \     "spec/forms/%s_form_spec.rb"
+        \   ]
+        \ }
+        \}
 " github
 let g:github_user = 'takuyan'
 "let g:github_token = ''
