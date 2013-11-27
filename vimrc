@@ -260,6 +260,9 @@ colorscheme hybrid
   let g:unite_source_history_yank_enable =1
   let g:unite_source_file_mru_limit = 200
 
+  " for vim-airline
+  let g:unite_force_overwrite_statusline = 0
+
   """" unite.vim
   "" ヤンク一覧
   nnoremap <silent> ,uy :<C-u>Unite history/yank<CR>
@@ -277,6 +280,7 @@ colorscheme hybrid
   "nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 
   nnoremap <silent> ,uc :<C-u>Unite colorscheme -auto-preview<CR>
+
 
 " }}}
 " Neocomplcache" {{{
@@ -392,8 +396,6 @@ nmap <C-C> <Plug>ToggleN
 vmap <C-C> <Plug>ToggleV
 
 "nnoremap <Leader>sn :NumbersToggle<CR>
-
-let g:Powerline_symbols = 'unicode'
 
 " rhysd/unite-ruby-require.vim
 " Usage
