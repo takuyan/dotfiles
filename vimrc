@@ -92,6 +92,7 @@ NeoBundle 'sjl/gundo.vim'
 NeoBundle 'nono/vim-handlebars'
 NeoBundle 'heartsentwined/vim-emblem'
 NeoBundle 'osyo-manga/vim-over'
+NeoBundle 'AtsushiM/sass-compile.vim'
 
 " http://qiita.com/items/839f4b9e07cf7f341835
 "NeoBundle "rhysd/unite-ruby-require.vim"
@@ -233,19 +234,20 @@ nmap # #zz
 nmap g* g*zz
 nmap g# g#zz
 
-noremap <Leader>t :noautocmd vimgrep /TODO/j **/*.rb **/*.js **/*.coffee **/*.css **/*.sass **/*.spec **/*.erb **/*.haml<CR>:cw<CR>
+noremap <Leader>t :noautocmd vimgrep /TODO/j **/*.rb **/*.js **/*.coffee **/*.css **/*.sass **/*.spec **/*.erb **/*.haml **/*.slim<CR>:cw<CR>
 
 " http://qiita.com/items/bd97a9b963dae40b63f5
 vnoremap <silent> <C-p> "0p<CR>
 
 au BufRead,BufNewFile *.hamlc set ft=haml
+au BufRead,BufNewFile *.sass set ft=sass
+au BufRead,BufNewFile *.slim set ft=slim
 
 " }}}
 "COLOR" {{{
-"colorscheme molokai
-"let g:molokai_original=1
+colorscheme molokai
+let g:molokai_original=1
 
-syntax enable
 "set background=dark
 "colorscheme solarized
 
@@ -253,14 +255,10 @@ syntax enable
 "colorscheme Tomorrow-Night-Eighties
 "colorscheme wombat
 "colorscheme jellybeans
-let g:hybrid_use_Xresources = 1
-colorscheme hybrid
+"let g:hybrid_use_Xresources = 1
+"colorscheme hybrid
 " }}}
 " Unite" {{{
-
-  let g:unite_enable_start_insert=1
-  let g:unite_source_history_yank_enable =1
-  let g:unite_source_file_mru_limit = 200
 
   " for vim-airline
   let g:unite_force_overwrite_statusline = 0
