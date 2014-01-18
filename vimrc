@@ -32,6 +32,7 @@ NeoBundle 'tpope/vim-markdown'
 NeoBundle 'tpope/vim-liquid'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/vimproc', {
@@ -394,6 +395,12 @@ let g:rails_projections = {
         \   "command": "decorator",
         \   "test": [
         \     "spec/decorators/%s_decorator_spec.rb"
+        \   ]
+        \ },
+        \ "app/workers/*_worker.rb": {
+        \   "command": "worker",
+        \   "test": [
+        \     "spec/workers/%_worker_spec.rb"
         \   ]
         \ },
         \ "app/observers/*_observer.rb": {
