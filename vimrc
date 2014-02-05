@@ -56,8 +56,8 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'ujihisa/rdoc.vim'
 NeoBundle 'ujihisa/neco-look'
 NeoBundle 'ujihisa/unite-colorscheme'
+NeoBundle 'marijnh/tern_for_vim'
 NeoBundle 'taichouchou2/html5.vim'
-NeoBundle 'taichouchou2/vim-javascript' " jQuery syntax追加
 NeoBundle "Lokaltog/vim-easymotion"
 NeoBundle 'bling/vim-airline'
 NeoBundle 'mattn/calendar-vim'
@@ -76,7 +76,6 @@ NeoBundle 'Sixeight/unite-grep'
 NeoBundle "adie/BlockDiff"
 NeoBundle 'chriskempson/vim-tomorrow-theme'
 NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'teramako/jscomplete-vim'
 NeoBundle 'vim-scripts/dbext.vim'
 NeoBundle "vim-scripts/zoom.vim"
 NeoBundle "vim-scripts/sudo.vim"
@@ -96,7 +95,7 @@ NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'AtsushiM/sass-compile.vim'
 
 " http://qiita.com/items/839f4b9e07cf7f341835
-"NeoBundle "rhysd/unite-ruby-require.vim"
+"NeoBundle 'rhysd/unite-ruby-require.vim'
 NeoBundle "rhysd/neco-ruby-keyword-args"
 NeoBundle "kana/vim-textobj-user"
 NeoBundle "rhysd/vim-textobj-ruby"
@@ -243,6 +242,8 @@ vnoremap <silent> <C-p> "0p<CR>
 au BufRead,BufNewFile *.hamlc set ft=haml
 au BufRead,BufNewFile *.sass set ft=sass
 au BufRead,BufNewFile *.slim set ft=slim
+
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " }}}
 "COLOR" {{{
