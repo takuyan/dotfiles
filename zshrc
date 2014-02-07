@@ -30,8 +30,10 @@ alias mkdir='mkdir -p'
 
 # rails
 alias r='rails'
-alias rs='bundle exec rspec --drb --color'
 alias be='bundle exec'
+
+# middleman
+alias bem='bundle exec middleman'
 
 # brew install colordiff
 alias diff='colordiff'
@@ -55,7 +57,7 @@ alias less='less -R'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(rails git ruby pow bundler rbenv bunder gem pow redis-cli)
+#plugins=(git pow bundler rbenv bunder gem pow redis-cli)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -67,6 +69,9 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 ### Added by Nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# Added by Rails binstubs
+export PATH="./bin:$PATH"
 
 # http://qiita.com/yuyuchu3333/items/e9af05670c95e2cc5b4d
 function do_enter() {

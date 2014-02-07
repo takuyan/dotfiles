@@ -96,7 +96,7 @@ NeoBundle 'AtsushiM/sass-compile.vim'
 
 " http://qiita.com/items/839f4b9e07cf7f341835
 "NeoBundle 'rhysd/unite-ruby-require.vim'
-NeoBundle "rhysd/neco-ruby-keyword-args"
+"NeoBundle 'rhysd/neco-ruby-keyword-args'
 NeoBundle "kana/vim-textobj-user"
 NeoBundle "rhysd/vim-textobj-ruby"
 NeoBundle "nanotech/jellybeans.vim"
@@ -264,6 +264,11 @@ let g:molokai_original=1
 
   " for vim-airline
   let g:unite_force_overwrite_statusline = 0
+
+  " unite use Ag
+  if executable('ag')
+    let g:unite_source_grep_command = 'ag'
+  endif
 
   """" unite.vim
   "" ヤンク一覧
