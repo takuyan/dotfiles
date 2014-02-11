@@ -2,17 +2,17 @@
 "How to set up .
 "git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 "
-set nocompatible               " be iMproved
-filetype off                   " required!
-
 if has('vim_starting')
+  set nocompatible               " be iMproved
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
-NeoBundle 'Shougo/neobundle.vim'
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
 
 "
 " Original Bundle
@@ -106,6 +106,7 @@ NeoBundle 'smartchr'
 NeoBundle 'open-browser.vim'
 NeoBundle 'Wombat'
 
+NeoBundleCheck
 
 " vim-scripts repos
 " Bundle 'molokai'
@@ -403,10 +404,10 @@ let g:rails_projections = {
         \     "spec/decorators/%s_decorator_spec.rb"
         \   ]
         \ },
-        \ "app/workers/*_worker.rb": {
-        \   "command": "worker",
+        \ "app/forms/*_form.rb": {
+        \   "command": "form",
         \   "test": [
-        \     "spec/workers/%_worker_spec.rb"
+        \     "spec/forms/%s_form_spec.rb"
         \   ]
         \ },
         \ "app/observers/*_observer.rb": {
@@ -415,10 +416,23 @@ let g:rails_projections = {
         \     "spec/observers/%s_observer_spec.rb"
         \   ]
         \ },
-        \ "app/forms/*_form.rb": {
-        \   "command": "form",
+        \ "app/serializers/*_serializer.rb": {
+        \   "command": "serializer",
+        \   "related": "app/models/%s.rb",
+        \   "spec": [
+        \     "spec/serializers/%s_serializer_spec.rb"
+        \   ]
+        \ },
+        \ "app/uploaders/*_uploader.rb": {
+        \   "command": "uploader",
         \   "test": [
-        \     "spec/forms/%s_form_spec.rb"
+        \     "spec/uploaders/%s_uploader_spec.rb"
+        \   ]
+        \ },
+        \ "app/workers/*_worker.rb": {
+        \   "command": "worker",
+        \   "test": [
+        \     "spec/workers/%_worker_spec.rb"
         \   ]
         \ }
         \}
