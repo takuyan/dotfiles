@@ -103,7 +103,6 @@ NeoBundle "nanotech/jellybeans.vim"
 NeoBundle "slim-template/vim-slim"
 
 NeoBundle 'smartchr'
-NeoBundle 'open-browser.vim'
 NeoBundle 'Wombat'
 
 NeoBundleCheck
