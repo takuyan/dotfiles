@@ -58,14 +58,14 @@ NeoBundle 'ujihisa/neco-look'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'marijnh/tern_for_vim'
 NeoBundle 'taichouchou2/html5.vim'
-NeoBundle "Lokaltog/vim-easymotion"
+NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'mattn/calendar-vim'
 NeoBundle 'mattn/gist-vim'
 NeoBundle 'mattn/zencoding-vim'
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'tyru/open-browser.vim'
-NeoBundle "gmarik/sudo-gui.vim"
+NeoBundle 'gmarik/sudo-gui.vim'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'nathanaelkane/vim-indent-guides'
@@ -73,7 +73,7 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'briancollins/vim-jst'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'Sixeight/unite-grep'
-NeoBundle "adie/BlockDiff"
+NeoBundle 'adie/BlockDiff'
 NeoBundle 'chriskempson/vim-tomorrow-theme'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'vim-scripts/dbext.vim'
@@ -83,9 +83,9 @@ NeoBundle 'tangledhelix/vim-octopress'
 NeoBundle 'xhr/vim-io'
 NeoBundle 'tell-k/vim-browsereload-mac'
 "NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle "honza/vim-snippets"
-NeoBundle "fuenor/im_control.vim"
-NeoBundle "basyura/unite-rails"
+NeoBundle 'honza/vim-snippets'
+NeoBundle 'fuenor/im_control.vim'
+NeoBundle 'basyura/unite-rails'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'sjl/gundo.vim'
@@ -97,10 +97,10 @@ NeoBundle 'AtsushiM/sass-compile.vim'
 " http://qiita.com/items/839f4b9e07cf7f341835
 "NeoBundle 'rhysd/unite-ruby-require.vim'
 "NeoBundle 'rhysd/neco-ruby-keyword-args'
-NeoBundle "kana/vim-textobj-user"
-NeoBundle "rhysd/vim-textobj-ruby"
-NeoBundle "nanotech/jellybeans.vim"
-NeoBundle "slim-template/vim-slim"
+NeoBundle 'kana/vim-textobj-user'
+NeoBundle 'rhysd/vim-textobj-ruby'
+NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'slim-template/vim-slim'
 
 NeoBundle 'smartchr'
 NeoBundle 'open-browser.vim'
