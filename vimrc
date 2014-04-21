@@ -104,6 +104,7 @@ NeoBundle 'slim-template/vim-slim'
 
 NeoBundle 'smartchr'
 NeoBundle 'Wombat'
+NeoBundle 'NERV-ous'
 
 NeoBundleCheck
 
@@ -247,6 +248,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " }}}
 "COLOR" {{{
+"colorscheme nerv-ous
 colorscheme molokai
 let g:molokai_original=1
 
@@ -397,6 +399,46 @@ nnoremap subp y:OverCommandLine<CR>%s!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!
 " Other " {{{
 
 let g:rails_projections = {
+        \ "app/assets/javascripts/models/*.js.coffee": {
+        \   "command": "jmodel",
+        \   "alternate": "spec/javascripts/models/%s_spec.js.coffee",
+        \   "template": "class @AppName.Models.%S extends Backbone.Model"
+        \ },
+        \ "app/assets/javascripts/collections/*.js.coffee": {
+        \   "command": "jcollection",
+        \   "alternate": "spec/javascripts/collections/%s_spec.js.coffee",
+        \   "template": "class @AppName.Collections.%S extends Backbone.Collection"
+        \ },
+        \ "app/assets/javascripts/layouts/*.js.coffee": {
+        \   "command": "jlayout",
+        \   "alternate": "spec/javascripts/layouts/%s_spec.js.coffee",
+        \   "related": "app/assets/templates/%s.jst.hamlc",
+        \   "template": "class @AppName.Layouts.%S extends Backbone.Marionette.Layout"
+        \ },
+        \ "app/assets/javascripts/views/*.js.coffee": {
+        \   "command": "jview",
+        \   "alternate": "spec/javascripts/views/%s_spec.js.coffee",
+        \   "related": "app/assets/templates/%s.jst.hamlc",
+        \   "template": "class @AppName.Views.%S extends Backbone.Marionette.ItemView"
+        \ },
+        \ "app/assets/javascripts/controllers/*.js.coffee": {
+        \   "command": "jcontroller",
+        \   "alternate": "spec/javascripts/controllers/%s_spec.js.coffee",
+        \   "template": "class @AppName.Controllers.%S"
+        \ },
+        \ "app/assets/javascripts/routers/*.js.coffee": {
+        \   "command": "jrouter",
+        \   "alternate": "spec/javascripts/routers/%s_spec.js.coffee",
+        \   "template": "class @AppName.Routers.%S"
+        \  },
+        \ "spec/javascripts/*_spec.js.coffee": {
+        \   "command": "jspec",
+        \   "alternate": "app/assets/javascripts/%s.js.coffee"
+        \ },
+        \ "app/assets/templates/*.jst.hamlc": {
+        \   "command": "template",
+        \   "alternate": "app/assets/javascripts/views/%s.js.coffee"
+        \ },
         \ "app/decorators/*_decorator.rb": {
         \   "command": "decorator",
         \   "test": [
