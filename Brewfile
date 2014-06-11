@@ -18,3 +18,4 @@ cask install dropbox
 cask install virtualbox
 cask install vagrant
 cask install keyremap4macbook
+cask install licecap
