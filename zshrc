@@ -22,6 +22,7 @@ alias gs='git status'
 alias gco='git commit'
 alias gl='git log'
 alias gd='git diff'
+alias gaa='git add --all'
 
 # basic
 alias ll='ls -la'
