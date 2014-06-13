@@ -249,8 +249,8 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " }}}
 "COLOR" {{{
 "colorscheme nerv-ous
-colorscheme molokai
-let g:molokai_original=1
+"colorscheme molokai
+"let g:molokai_original=1
 
 "set background=dark
 "colorscheme solarized
@@ -259,8 +259,8 @@ let g:molokai_original=1
 "colorscheme Tomorrow-Night-Eighties
 "colorscheme wombat
 "colorscheme jellybeans
-"let g:hybrid_use_Xresources = 1
-"colorscheme hybrid
+let g:hybrid_use_Xresources = 1
+colorscheme hybrid
 " }}}
 " Unite" {{{
 
