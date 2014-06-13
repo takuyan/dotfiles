@@ -11,9 +11,12 @@ install curl || true
 install wget || true
 install dnsmasq || true
 install phantomjs || true
+install the_silver_searcher || true
 
 cask install java
 cask install google-chrome
 cask install dropbox
 cask install virtualbox
 cask install vagrant
+cask install keyremap4macbook
+cask install licecap
