@@ -13,6 +13,7 @@ install dnsmasq || true
 install phantomjs || true
 install the_silver_searcher || true
 
+cask install alfred
 cask install java
 cask install google-chrome
 cask install dropbox
