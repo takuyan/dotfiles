@@ -23,6 +23,7 @@ alias gco='git commit'
 alias gl='git log'
 alias gd='git diff'
 alias gaa='git add --all'
+alias gap='git add -p'
 
 # basic
 alias ll='ls -la'
