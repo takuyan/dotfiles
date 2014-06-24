@@ -93,6 +93,7 @@ NeoBundle 'nono/vim-handlebars'
 NeoBundle 'heartsentwined/vim-emblem'
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'AtsushiM/sass-compile.vim'
+NeoBundle 'lilydjwg/colorizer'
 
 " http://qiita.com/items/839f4b9e07cf7f341835
 "NeoBundle 'rhysd/unite-ruby-require.vim'
