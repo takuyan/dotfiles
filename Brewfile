@@ -21,3 +21,5 @@ cask install virtualbox
 cask install vagrant
 cask install keyremap4macbook
 cask install licecap
+cask install mysql
+cask install postgresql
