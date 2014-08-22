@@ -7,12 +7,11 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
-
 
 "
 " Original Bundle
@@ -46,13 +45,13 @@ NeoBundle 'Shougo/vimproc', {
 NeoBundle 'thinca/vim-qfreplace'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'thinca/vim-guicolorscheme'
+"NeoBundle 'thinca/vim-guicolorscheme'
 NeoBundle 'thinca/vim-fontzoom'
 NeoBundle 'taku-o/vim-ro-when-swapfound'
 NeoBundle 'taku-o/vim-toggle'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'scrooloose/syntastic'
+"NeoBundle 'scrooloose/syntastic'
 NeoBundle 'ujihisa/rdoc.vim'
 NeoBundle 'ujihisa/neco-look'
 NeoBundle 'ujihisa/unite-colorscheme'
@@ -67,14 +66,14 @@ NeoBundle 'bling/vim-airline'
 "NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'gmarik/sudo-gui.vim'
 NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'tomasr/molokai'
+"NeoBundle 'tomasr/molokai'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'briancollins/vim-jst'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'Sixeight/unite-grep'
 NeoBundle 'adie/BlockDiff'
-NeoBundle 'chriskempson/vim-tomorrow-theme'
+"NeoBundle 'chriskempson/vim-tomorrow-theme'
 NeoBundle 'vim-ruby/vim-ruby'
 "NeoBundle 'vim-scripts/dbext.vim'
 NeoBundle "vim-scripts/zoom.vim"
@@ -99,13 +98,15 @@ NeoBundle 'lilydjwg/colorizer'
 "NeoBundle 'rhysd/neco-ruby-keyword-args'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'rhysd/vim-textobj-ruby'
-NeoBundle 'nanotech/jellybeans.vim'
+"NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'slim-template/vim-slim'
 
 NeoBundle 'smartchr'
-NeoBundle 'Wombat'
+"NeoBundle 'Wombat'
 NeoBundle 'NERV-ous'
 
+call neobundle#end()
+filetype plugin indent on     " required!
 NeoBundleCheck
 
 " vim-scripts repos
@@ -114,7 +115,6 @@ NeoBundleCheck
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
 
-filetype plugin indent on     " required!
 
 if neobundle#exists_not_installed_bundles()
   echomsg 'Not installed bundles : ' .
