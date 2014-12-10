@@ -1,4 +1,8 @@
 "Vim Bundles "  {{{
+
+" Note: Skip initialization for vim-tiny or vim-small.
+if !1 | finish | endif
+
 "How to set up .
 "git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 "
@@ -100,6 +104,7 @@ NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'rhysd/vim-textobj-ruby'
 "NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'slim-template/vim-slim'
+NeoBundle 'heartsentwined/vim-emblem'
 
 NeoBundle 'smartchr'
 "NeoBundle 'Wombat'
