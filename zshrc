@@ -34,6 +34,13 @@ alias mkdir='mkdir -p'
 alias r='rails'
 alias be='bundle exec'
 
+# my project
+alias life='cd ~/dev/github/proofoflife'
+alias scrum='cd ~/dev/github/scrum'
+alias bmg='cd ~/dev/github/bmg'
+alias kulku='cd ~/dev/github/kulku'
+alias blog='cd ~/dev/github/blog'
+
 # middleman
 alias bem='bundle exec middleman'
 
@@ -96,9 +103,12 @@ function do_enter() {
 zle -N do_enter
 bindkey '^m' do_enter
 
-export PATH="$HOME/.plenv/bin:$PATH"
-eval "$(plenv init -)"
+if [ -d ${HOME}/.plenv ] ; then
+  export PATH="$HOME/.plenv/bin:$PATH"
+  eval "$(plenv init -)"
+fi
 
 # added by travis gem
-source ~/.travis/travis.sh
-
+if [ -d ${HOME}/.travis ] ; then
+  source ~/.travis/travis.sh
+fi
