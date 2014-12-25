@@ -34,12 +34,14 @@ alias mkdir='mkdir -p'
 alias r='rails'
 alias be='bundle exec'
 
-# my project
+# project
 alias life='cd ~/dev/github/proofoflife'
 alias scrum='cd ~/dev/github/scrum'
 alias bmg='cd ~/dev/github/bmg'
 alias kulku='cd ~/dev/github/kulku'
 alias blog='cd ~/dev/github/blog'
+alias pplog='cd ~/dev/github/pplog'
+alias esa='cd ~/dev/github/esa'
 
 # middleman
 alias bem='bundle exec middleman'
