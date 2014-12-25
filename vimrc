@@ -441,7 +441,7 @@ let g:rails_projections = {
         \   "command": "jspec",
         \   "alternate": "app/assets/javascripts/%s.js.coffee"
         \ },
-        \ "app/assets/templates/*.jst.hamlc": {
+        \ "app/assets/javascripts/templates/*.jst.hamlc": {
         \   "command": "template",
         \   "alternate": "app/assets/javascripts/views/%s.js.coffee"
         \ },
