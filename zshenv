@@ -11,5 +11,5 @@ fi
 #=============================
 if [[ -f ~/.nodebrew/nodebrew ]]; then
   export PATH=$HOME/.nodebrew/current/bin:$PATH
-  nodebrew use v0.10.26
+  nodebrew use v0.11.14
 fi
