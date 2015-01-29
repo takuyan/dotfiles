@@ -103,6 +103,7 @@ NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'rhysd/vim-textobj-ruby'
 "NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'slim-template/vim-slim'
+NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'heartsentwined/vim-emblem'
 
 NeoBundle 'smartchr'
