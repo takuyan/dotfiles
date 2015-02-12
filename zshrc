@@ -42,6 +42,7 @@ alias kulku='cd ~/dev/github/kulku'
 alias blog='cd ~/dev/github/blog'
 alias pplog='cd ~/dev/github/pplog'
 alias esa='cd ~/dev/github/esa'
+alias doit='cd ~/dev/github/doit'
 
 # middleman
 alias bem='bundle exec middleman'
