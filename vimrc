@@ -451,6 +451,12 @@ let g:rails_projections = {
         \     "spec/decorators/%s_decorator_spec.rb"
         \   ]
         \ },
+        \ "app/policies/*_policy.rb": {
+        \   "command": "policy",
+        \   "test": [
+        \     "spec/policies/%s_policy_spec.rb"
+        \   ]
+        \ },
         \ "app/forms/*_form.rb": {
         \   "command": "form",
         \   "test": [
