@@ -115,3 +115,7 @@ fi
 if [ -d ${HOME}/.travis ] ; then
   source ~/.travis/travis.sh
 fi
+
+if [ -e ${HOME}/.zshrc_ext ] ; then
+  source ~/.zshrc_ext
+fi
