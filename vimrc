@@ -133,7 +133,7 @@ endif
 "
 " font
 "set gfn=SCPM:h13
-set gfn=ゆたぽん（コーディング）:h13
+set gfn=ゆたぽん（コーディング）:h12
 "set gfn=Ricty-Bold:h13
 "set gfn=RictyDiscord-Bold:h13
 

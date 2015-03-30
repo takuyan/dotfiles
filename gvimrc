@@ -1,10 +1,10 @@
 source ~/.vimrc
 if has('mac')
-  set columns=200" width
-  set lines=200    " line
+  set columns=300" width
+  set lines=280    " line
 else
-  set columns=160
-  set lines=100
+  set columns=260
+  set lines=180
 endif
 
 set mouse=a
