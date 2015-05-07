@@ -451,22 +451,28 @@ let g:rails_projections = {
         \     "spec/decorators/%s_decorator_spec.rb"
         \   ]
         \ },
-        \ "app/policies/*_policy.rb": {
-        \   "command": "policy",
-        \   "test": [
-        \     "spec/policies/%s_policy_spec.rb"
-        \   ]
-        \ },
         \ "app/forms/*_form.rb": {
         \   "command": "form",
         \   "test": [
         \     "spec/forms/%s_form_spec.rb"
         \   ]
         \ },
+        \ "app/jobs/*_job.rb": {
+        \   "command": "job",
+        \   "test": [
+        \     "spec/jobs/%s_job_spec.rb"
+        \   ]
+        \ },
         \ "app/observers/*_observer.rb": {
         \   "command": "observer",
         \   "test": [
         \     "spec/observers/%s_observer_spec.rb"
+        \   ]
+        \ },
+        \ "app/policies/*_policy.rb": {
+        \   "command": "policy",
+        \   "test": [
+        \     "spec/policies/%s_policy_spec.rb"
         \   ]
         \ },
         \ "app/serializers/*_serializer.rb": {
