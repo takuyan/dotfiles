@@ -119,3 +119,5 @@ fi
 if [ -e ${HOME}/.zshrc_ext ] ; then
   source ~/.zshrc_ext
 fi
+
+eval "$(direnv hook zsh)"
