@@ -26,6 +26,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-bundler'
 NeoBundle 'tpope/vim-haml'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-surround'
@@ -37,6 +38,7 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/vimproc', {
       \ 'build' : {
@@ -292,7 +294,7 @@ colorscheme hybrid
   "" 常用セット
   nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
   "" 全部乗せ
-  "nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+  nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 
   nnoremap <silent> ,uc :<C-u>Unite colorscheme -auto-preview<CR>
 
@@ -402,7 +404,7 @@ nnoremap sub :OverCommandLine<CR>%s/<C-r><C-w>//g<Left><Left>
 nnoremap subp y:OverCommandLine<CR>%s!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!!gI<Left><Left><Left>
 
 " }}}
-" Other " {{{
+" Rails.vim " {{{
 
 let g:rails_projections = {
         \ "app/assets/javascripts/models/*.js.coffee": {
@@ -451,6 +453,12 @@ let g:rails_projections = {
         \     "spec/decorators/%s_decorator_spec.rb"
         \   ]
         \ },
+        \ "app/filters/*_filter.rb": {
+        \   "command": "filter",
+        \   "test": [
+        \     "spec/filters/%s_filter_spec.rb"
+        \   ]
+        \ },
         \ "app/policies/*_policy.rb": {
         \   "command": "policy",
         \   "test": [
@@ -469,11 +477,23 @@ let g:rails_projections = {
         \     "spec/observers/%s_observer_spec.rb"
         \   ]
         \ },
+        \ "app/services/*_service.rb": {
+        \   "command": "service",
+        \   "spec": [
+        \     "spec/services/%s_service_spec.rb"
+        \   ]
+        \ },
         \ "app/serializers/*_serializer.rb": {
         \   "command": "serializer",
         \   "related": "app/models/%s.rb",
         \   "spec": [
         \     "spec/serializers/%s_serializer_spec.rb"
+        \   ]
+        \ },
+        \ "app/validators/*_validator.rb": {
+        \   "command": "validator",
+        \   "spec": [
+        \     "spec/validators/%s_validator_spec.rb"
         \   ]
         \ },
         \ "app/uploaders/*_uploader.rb": {
@@ -489,6 +509,8 @@ let g:rails_projections = {
         \   ]
         \ }
         \}
+" }}}
+" Other " {{{
 " github
 let g:github_user = 'takuyan'
 "let g:github_token = ''
