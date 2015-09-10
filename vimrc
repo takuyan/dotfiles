@@ -107,6 +107,8 @@ NeoBundle 'rhysd/vim-textobj-ruby'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'heartsentwined/vim-emblem'
+NeoBundle 'Shutnik/jshint2.vim'
+NeoBundle 'othree/yajs.vim'
 
 NeoBundle 'smartchr'
 "NeoBundle 'Wombat'
