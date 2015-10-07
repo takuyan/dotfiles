@@ -1,16 +1,18 @@
 "Vim Bundles "  {{{
 
 " Note: Skip initialization for vim-tiny or vim-small.
-if !1 | finish | endif
+if 0 | endif
 
-"How to set up .
-"git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-"
 if has('vim_starting')
-  set nocompatible               " be iMproved
+  if &compatible
+    set nocompatible " Be iMproved
+  endif
+
+  " Required:
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
+" Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
@@ -69,14 +71,14 @@ NeoBundle 'bling/vim-airline'
 "NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'gmarik/sudo-gui.vim'
 NeoBundle 'altercation/vim-colors-solarized'
-"NeoBundle 'tomasr/molokai'
+NeoBundle 'tomasr/molokai'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'briancollins/vim-jst'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'Sixeight/unite-grep'
 NeoBundle 'adie/BlockDiff'
-"NeoBundle 'chriskempson/vim-tomorrow-theme'
+NeoBundle 'chriskempson/vim-tomorrow-theme'
 NeoBundle 'vim-ruby/vim-ruby'
 "NeoBundle 'vim-scripts/dbext.vim'
 NeoBundle "vim-scripts/zoom.vim"
@@ -115,7 +117,7 @@ filetype plugin indent on     " required!
 NeoBundleCheck
 
 " vim-scripts repos
-" Bundle 'molokai'
+"Bundle 'molokai'
 
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
@@ -255,8 +257,8 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " }}}
 "COLOR" {{{
 "colorscheme nerv-ous
-"colorscheme molokai
-"let g:molokai_original=1
+colorscheme molokai
+let g:molokai_original=1
 
 "set background=dark
 "colorscheme solarized
@@ -265,8 +267,8 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 "colorscheme Tomorrow-Night-Eighties
 "colorscheme wombat
 "colorscheme jellybeans
-let g:hybrid_use_Xresources = 1
-colorscheme hybrid
+"let g:hybrid_use_Xresources = 1
+"colorscheme hybrid
 " }}}
 " Unite" {{{
 
