@@ -100,4 +100,5 @@ if [ -e ${HOME}/.zshrc_ext ] ; then
   source ~/.zshrc_ext
 fi
 
+export EDITOR=vim
 eval "$(direnv hook zsh)"
