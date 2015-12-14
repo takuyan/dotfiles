@@ -1,16 +1,18 @@
 "Vim Bundles "  {{{
 
 " Note: Skip initialization for vim-tiny or vim-small.
-if !1 | finish | endif
+if 0 | endif
 
-"How to set up .
-"git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-"
 if has('vim_starting')
-  set nocompatible               " be iMproved
+  if &compatible
+    set nocompatible " Be iMproved
+  endif
+
+  " Required:
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
+" Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
@@ -40,6 +42,7 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/vimproc', {
       \ 'build' : {
       \     'windows' : 'make -f make_mingw32.mak',
@@ -71,14 +74,14 @@ NeoBundle 'bling/vim-airline'
 "NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'gmarik/sudo-gui.vim'
 NeoBundle 'altercation/vim-colors-solarized'
-"NeoBundle 'tomasr/molokai'
+NeoBundle 'tomasr/molokai'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'briancollins/vim-jst'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'Sixeight/unite-grep'
 NeoBundle 'adie/BlockDiff'
-"NeoBundle 'chriskempson/vim-tomorrow-theme'
+NeoBundle 'chriskempson/vim-tomorrow-theme'
 NeoBundle 'vim-ruby/vim-ruby'
 "NeoBundle 'vim-scripts/dbext.vim'
 NeoBundle "vim-scripts/zoom.vim"
@@ -119,7 +122,7 @@ filetype plugin indent on     " required!
 NeoBundleCheck
 
 " vim-scripts repos
-" Bundle 'molokai'
+"Bundle 'molokai'
 
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
@@ -462,16 +465,16 @@ let g:rails_projections = {
         \     "spec/filters/%s_filter_spec.rb"
         \   ]
         \ },
-        \ "app/policies/*_policy.rb": {
-        \   "command": "policy",
-        \   "test": [
-        \     "spec/policies/%s_policy_spec.rb"
-        \   ]
-        \ },
         \ "app/forms/*_form.rb": {
         \   "command": "form",
         \   "test": [
         \     "spec/forms/%s_form_spec.rb"
+        \   ]
+        \ },
+        \ "app/jobs/*_job.rb": {
+        \   "command": "job",
+        \   "test": [
+        \     "spec/jobs/%s_job_spec.rb"
         \   ]
         \ },
         \ "app/observers/*_observer.rb": {
@@ -484,6 +487,12 @@ let g:rails_projections = {
         \   "command": "service",
         \   "spec": [
         \     "spec/services/%s_service_spec.rb"
+        \   ]
+        \ },
+        \ "app/policies/*_policy.rb": {
+        \   "command": "policy",
+        \   "test": [
+        \     "spec/policies/%s_policy_spec.rb"
         \   ]
         \ },
         \ "app/serializers/*_serializer.rb": {
