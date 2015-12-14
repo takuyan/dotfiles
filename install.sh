@@ -95,6 +95,7 @@ delete_old_files()
   rm -f $HOME/.powconfig
   rm -f $HOME/.bashrc
   rm -f $HOME/.gitignore
+  rm -f $HOME/.bundle/config
   #rm ~/.gitconfig
 }
 
@@ -110,6 +111,7 @@ symlink_files()
   ln -s $HOME/dotfiles/powconfig $HOME/.powconfig
   ln -s $HOME/dotfiles/bashrc    $HOME/.bashrc
   ln -s $HOME/dotfiles/gitignore $HOME/.gitignore
+  ln -s $HOME/dotfiles/gitignore $HOME/.bundle/config
   #ln -s $HOME/dotfiles/gitconfig ~/.gitconfig
 }
 
