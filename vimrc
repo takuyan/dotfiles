@@ -270,6 +270,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 "colorscheme wombat
 "colorscheme jellybeans
 let g:hybrid_use_Xresources = 1
+set background=dark
 colorscheme hybrid
 " }}}
 " Unite" {{{
