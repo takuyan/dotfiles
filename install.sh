@@ -102,16 +102,16 @@ delete_old_files()
 symlink_files()
 {
   echo "[Symlink] Symlinking files"
-  ln -s $HOME/dotfiles/railsrc   $HOME/.railsrc
-  ln -s $HOME/dotfiles/vimrc     $HOME/.vimrc
-  ln -s $HOME/dotfiles/zshrc     $HOME/.zshrc
-  ln -s $HOME/dotfiles/zshenv    $HOME/.zshenv
-  ln -s $HOME/dotfiles/gvimrc    $HOME/.gvimrc
-  ln -s $HOME/dotfiles/gemrc     $HOME/.gemrc
-  ln -s $HOME/dotfiles/powconfig $HOME/.powconfig
-  ln -s $HOME/dotfiles/bashrc    $HOME/.bashrc
-  ln -s $HOME/dotfiles/gitignore $HOME/.gitignore
-  ln -s $HOME/dotfiles/gitignore $HOME/.bundle/config
+  ln -s $HOME/dotfiles/railsrc       $HOME/.railsrc
+  ln -s $HOME/dotfiles/vimrc         $HOME/.vimrc
+  ln -s $HOME/dotfiles/zshrc         $HOME/.zshrc
+  ln -s $HOME/dotfiles/zshenv        $HOME/.zshenv
+  ln -s $HOME/dotfiles/gvimrc        $HOME/.gvimrc
+  ln -s $HOME/dotfiles/gemrc         $HOME/.gemrc
+  ln -s $HOME/dotfiles/powconfig     $HOME/.powconfig
+  ln -s $HOME/dotfiles/bashrc        $HOME/.bashrc
+  ln -s $HOME/dotfiles/gitignore     $HOME/.gitignore
+  ln -s $HOME/dotfiles/bundle_config $HOME/.bundle/config
   #ln -s $HOME/dotfiles/gitconfig ~/.gitconfig
 }
 
