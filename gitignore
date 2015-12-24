@@ -13,3 +13,6 @@
 # vim artifacts
 **.swp
 *~
+
+vendor/bundle
+vendor/bundle_bin
