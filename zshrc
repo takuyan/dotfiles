@@ -26,6 +26,7 @@ alias gl='git log'
 alias gd='git diff'
 alias gaa='git add --all'
 alias gap='git add -p'
+alias gp='git push'
 
 # basic
 alias ll='ls -la'
