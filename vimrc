@@ -1,125 +1,205 @@
-"Vim Bundles "  {{{
+"dein"  {{{
 
 " Note: Skip initialization for vim-tiny or vim-small.
 if 0 | endif
 
-if has('vim_starting')
-  if &compatible
-    set nocompatible " Be iMproved
-  endif
-
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible " Be iMproved
 endif
 
 " Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
+set runtimepath^=/Users/kato/.vim/dein_root/repos/github.com/Shougo/dein.vim
 
-" Let NeoBundle manage NeoBundle
 " Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
+call dein#begin(expand('/Users/kato/.vim/dein_root'))
 
-"
-" Original Bundle
-"
-"set rtp+=~/.vim/bundle/vundle/
-"call vundle#rc()
-"Bundle 'gmarik/vundle'
+" Let dein manage dein
+" Required:
+call dein#add('Shougo/dein.vim')
 
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'tpope/vim-bundler'
-NeoBundle 'tpope/vim-haml'
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-rake'
-NeoBundle 'tpope/vim-bundler'
-NeoBundle 'tpope/vim-markdown'
-NeoBundle 'tpope/vim-liquid'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'Shougo/vimproc', {
-      \ 'build' : {
-      \     'windows' : 'make -f make_mingw32.mak',
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
-      \    },
-      \ }
-NeoBundle 'thinca/vim-qfreplace'
-NeoBundle 'thinca/vim-ref'
-NeoBundle 'thinca/vim-quickrun'
-"NeoBundle 'thinca/vim-guicolorscheme'
-NeoBundle 'thinca/vim-fontzoom'
-NeoBundle 'taku-o/vim-ro-when-swapfound'
-NeoBundle 'taku-o/vim-toggle'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'scrooloose/nerdcommenter'
-"NeoBundle 'scrooloose/syntastic'
-NeoBundle 'ujihisa/rdoc.vim'
-NeoBundle 'ujihisa/neco-look'
-NeoBundle 'ujihisa/unite-colorscheme'
-NeoBundle 'othree/html5.vim'
-NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'bling/vim-airline'
-"NeoBundle 'mattn/calendar-vim'
-"NeoBundle 'mattn/gist-vim'
-"NeoBundle 'mattn/zencoding-vim'
-"NeoBundle 'mattn/webapi-vim'
-"NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'gmarik/sudo-gui.vim'
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'tomasr/molokai'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'briancollins/vim-jst'
-NeoBundle 'groenewege/vim-less'
-NeoBundle 'Sixeight/unite-grep'
-NeoBundle 'adie/BlockDiff'
-NeoBundle 'chriskempson/vim-tomorrow-theme'
-NeoBundle 'vim-ruby/vim-ruby'
-"NeoBundle 'vim-scripts/dbext.vim'
-NeoBundle "vim-scripts/zoom.vim"
-NeoBundle "vim-scripts/sudo.vim"
-NeoBundle 'xhr/vim-io'
-NeoBundle 'tell-k/vim-browsereload-mac'
-"NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'honza/vim-snippets'
-NeoBundle 'fuenor/im_control.vim'
-NeoBundle 'basyura/unite-rails'
-NeoBundle 'rking/ag.vim'
-NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'sjl/gundo.vim'
-NeoBundle 'nono/vim-handlebars'
-NeoBundle 'heartsentwined/vim-emblem'
-NeoBundle 'osyo-manga/vim-over'
-NeoBundle 'AtsushiM/sass-compile.vim'
-NeoBundle 'lilydjwg/colorizer'
+" Add or remove your plugins here:
+call dein#add('Shougo/neosnippet.vim')
+call dein#add('Shougo/neosnippet-snippets')
+call dein#add('Shougo/unite.vim')
+call dein#add('Shougo/vimshell')
+call dein#add('tpope/vim-fugitive')
+call dein#add('tpope/vim-rails')
+call dein#add('tpope/vim-bundler')
+call dein#add('tpope/vim-haml')
+call dein#add('tpope/vim-repeat')
+call dein#add('tpope/vim-surround')
+call dein#add('tpope/vim-rake')
+call dein#add('tpope/vim-bundler')
+call dein#add('tpope/vim-markdown')
+call dein#add('tpope/vim-liquid')
+call dein#add('thinca/vim-qfreplace')
+call dein#add('thinca/vim-ref')
+call dein#add('thinca/vim-quickrun')
+call dein#add('thinca/vim-fontzoom')
+call dein#add('taku-o/vim-ro-when-swapfound')
+call dein#add('taku-o/vim-toggle')
+call dein#add('scrooloose/nerdtree')
+call dein#add('scrooloose/nerdcommenter')
+call dein#add('ujihisa/rdoc.vim')
+call dein#add('ujihisa/neco-look')
+call dein#add('ujihisa/unite-colorscheme')
+call dein#add('othree/html5.vim')
+call dein#add('Lokaltog/vim-easymotion')
+call dein#add('bling/vim-airline')
+call dein#add('gmarik/sudo-gui.vim')
+call dein#add('altercation/vim-colors-solarized')
+call dein#add('tomasr/molokai')
+call dein#add('nathanaelkane/vim-indent-guides')
+call dein#add('kchmck/vim-coffee-script')
+call dein#add('briancollins/vim-jst')
+call dein#add('groenewege/vim-less')
+call dein#add('Sixeight/unite-grep')
+call dein#add('adie/BlockDiff')
+call dein#add('chriskempson/vim-tomorrow-theme')
+call dein#add('vim-ruby/vim-ruby')
+call dein#add("vim-scripts/zoom.vim")
+call dein#add("vim-scripts/sudo.vim")
+call dein#add('xhr/vim-io')
+call dein#add('tell-k/vim-browsereload-mac')
+call dein#add('honza/vim-snippets')
+call dein#add('fuenor/im_control.vim')
+call dein#add('basyura/unite-rails')
+call dein#add('rking/ag.vim')
+call dein#add('w0ng/vim-hybrid')
+call dein#add('sjl/gundo.vim')
+call dein#add('nono/vim-handlebars')
+call dein#add('heartsentwined/vim-emblem')
+call dein#add('osyo-manga/vim-over')
+call dein#add('AtsushiM/sass-compile.vim')
+call dein#add('lilydjwg/colorizer')
+call dein#add('kana/vim-textobj-user')
+call dein#add('rhysd/vim-textobj-ruby')
+call dein#add('slim-template/vim-slim')
+call dein#add('digitaltoad/vim-jade')
+call dein#add('heartsentwined/vim-emblem')
+call dein#add('Shutnik/jshint2.vim')
+call dein#add('othree/yajs.vim')
+call dein#add('smartchr')
+call dein#add('NERV-ous')
 
-" http://qiita.com/items/839f4b9e07cf7f341835
-"NeoBundle 'rhysd/unite-ruby-require.vim'
-"NeoBundle 'rhysd/neco-ruby-keyword-args'
-NeoBundle 'kana/vim-textobj-user'
-NeoBundle 'rhysd/vim-textobj-ruby'
-"NeoBundle 'nanotech/jellybeans.vim'
-NeoBundle 'slim-template/vim-slim'
-NeoBundle 'digitaltoad/vim-jade'
-NeoBundle 'heartsentwined/vim-emblem'
-NeoBundle 'Shutnik/jshint2.vim'
-NeoBundle 'othree/yajs.vim'
+" You can specify revision/branch/tag.
+" call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
-NeoBundle 'smartchr'
-"NeoBundle 'Wombat'
-NeoBundle 'NERV-ous'
+" Required:
+call dein#end()
 
-call neobundle#end()
-filetype plugin indent on     " required!
-NeoBundleCheck
+" Required:
+filetype plugin indent on
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
+"End dein Scripts-------------------------
+
+
+" " Original Bundle
+" "
+" "set rtp+=~/.vim/bundle/vundle/
+" "call vundle#rc()
+" "Bundle 'gmarik/vundle'
+" 
+" NeoBundle 'tpope/vim-fugitive'
+" NeoBundle 'tpope/vim-rails'
+" NeoBundle 'tpope/vim-bundler'
+" NeoBundle 'tpope/vim-haml'
+" NeoBundle 'tpope/vim-repeat'
+" NeoBundle 'tpope/vim-surround'
+" NeoBundle 'tpope/vim-rake'
+" NeoBundle 'tpope/vim-bundler'
+" NeoBundle 'tpope/vim-markdown'
+" NeoBundle 'tpope/vim-liquid'
+" NeoBundle 'Shougo/neocomplcache'
+" NeoBundle 'Shougo/neosnippet'
+" NeoBundle 'Shougo/neosnippet-snippets'
+" NeoBundle 'Shougo/unite.vim'
+" NeoBundle 'Shougo/neomru.vim'
+" NeoBundle 'Shougo/vimshell'
+" NeoBundle 'Shougo/neomru.vim'
+" NeoBundle 'Shougo/vimproc', {
+"       \ 'build' : {
+"       \     'windows' : 'make -f make_mingw32.mak',
+"       \     'cygwin' : 'make -f make_cygwin.mak',
+"       \     'mac' : 'make -f make_mac.mak',
+"       \     'unix' : 'make -f make_unix.mak',
+"       \    },
+"       \ }
+" NeoBundle 'thinca/vim-qfreplace'
+" NeoBundle 'thinca/vim-ref'
+" NeoBundle 'thinca/vim-quickrun'
+" "NeoBundle 'thinca/vim-guicolorscheme'
+" NeoBundle 'thinca/vim-fontzoom'
+" NeoBundle 'taku-o/vim-ro-when-swapfound'
+" NeoBundle 'taku-o/vim-toggle'
+" NeoBundle 'scrooloose/nerdtree'
+" NeoBundle 'scrooloose/nerdcommenter'
+" "NeoBundle 'scrooloose/syntastic'
+" NeoBundle 'ujihisa/rdoc.vim'
+" NeoBundle 'ujihisa/neco-look'
+" NeoBundle 'ujihisa/unite-colorscheme'
+" NeoBundle 'othree/html5.vim'
+" NeoBundle 'Lokaltog/vim-easymotion'
+" NeoBundle 'bling/vim-airline'
+" "NeoBundle 'mattn/calendar-vim'
+" "NeoBundle 'mattn/gist-vim'
+" "NeoBundle 'mattn/zencoding-vim'
+" "NeoBundle 'mattn/webapi-vim'
+" "NeoBundle 'tyru/open-browser.vim'
+" NeoBundle 'gmarik/sudo-gui.vim'
+" NeoBundle 'altercation/vim-colors-solarized'
+" NeoBundle 'tomasr/molokai'
+" NeoBundle 'nathanaelkane/vim-indent-guides'
+" NeoBundle 'kchmck/vim-coffee-script'
+" NeoBundle 'briancollins/vim-jst'
+" NeoBundle 'groenewege/vim-less'
+" NeoBundle 'Sixeight/unite-grep'
+" NeoBundle 'adie/BlockDiff'
+" NeoBundle 'chriskempson/vim-tomorrow-theme'
+" NeoBundle 'vim-ruby/vim-ruby'
+" "NeoBundle 'vim-scripts/dbext.vim'
+" NeoBundle "vim-scripts/zoom.vim"
+" NeoBundle "vim-scripts/sudo.vim"
+" NeoBundle 'xhr/vim-io'
+" NeoBundle 'tell-k/vim-browsereload-mac'
+" "NeoBundle 'hail2u/vim-css3-syntax'
+" NeoBundle 'honza/vim-snippets'
+" NeoBundle 'fuenor/im_control.vim'
+" NeoBundle 'basyura/unite-rails'
+" NeoBundle 'rking/ag.vim'
+" NeoBundle 'w0ng/vim-hybrid'
+" NeoBundle 'sjl/gundo.vim'
+" NeoBundle 'nono/vim-handlebars'
+" NeoBundle 'heartsentwined/vim-emblem'
+" NeoBundle 'osyo-manga/vim-over'
+" NeoBundle 'AtsushiM/sass-compile.vim'
+" NeoBundle 'lilydjwg/colorizer'
+" 
+" " http://qiita.com/items/839f4b9e07cf7f341835
+" "NeoBundle 'rhysd/unite-ruby-require.vim'
+" "NeoBundle 'rhysd/neco-ruby-keyword-args'
+" NeoBundle 'kana/vim-textobj-user'
+" NeoBundle 'rhysd/vim-textobj-ruby'
+" "NeoBundle 'nanotech/jellybeans.vim'
+" NeoBundle 'slim-template/vim-slim'
+" NeoBundle 'digitaltoad/vim-jade'
+" NeoBundle 'heartsentwined/vim-emblem'
+" NeoBundle 'Shutnik/jshint2.vim'
+" NeoBundle 'othree/yajs.vim'
+" 
+" NeoBundle 'smartchr'
+" "NeoBundle 'Wombat'
+" NeoBundle 'NERV-ous'
+" 
+" call neobundle#end()
+" filetype plugin indent on     " required!
+" NeoBundleCheck
 
 " vim-scripts repos
 "Bundle 'molokai'
@@ -127,13 +207,12 @@ NeoBundleCheck
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
 
-
-if neobundle#exists_not_installed_bundles()
-  echomsg 'Not installed bundles : ' .
-        \ string(neobundle#get_not_installed_bundle_names())
-  echomsg 'Please execute ":NeoBundleInstall" command.'
-  "finish
-endif
+" if neobundle#exists_not_installed_bundles()
+"   echomsg 'Not installed bundles : ' .
+"         \ string(neobundle#get_not_installed_bundle_names())
+"   echomsg 'Please execute ":NeoBundleInstall" command.'
+"   "finish
+" endif
 
 " }}}
 "BASIC " {{{
