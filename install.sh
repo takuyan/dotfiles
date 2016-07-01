@@ -68,21 +68,6 @@ zsh_completions_install_or_update()
   fi
 }
 
-neobundle_install_or_update()
-{
-  echo "[CHECK]   neobundle"
-  mkdir -p $HOME/.vim/bundle
-  if [ -d $HOME/.vim/bundle/neobundle.vim ]
-  then
-    echo "[UPDATE]  git pull neobundle"
-    cd $HOME/.vim/bundle/neobundle.vim
-    git pull origin master
-  else
-    echo "[INSTALL] git clone neobundle"
-    git clone git://github.com/Shougo/neobundle.vim.git $HOME/.vim/bundle/neobundle.vim
-  fi
-}
-
 delete_old_files()
 {
   echo "[DELETE] Delete the old files"
@@ -121,7 +106,6 @@ symlink_files()
 rbenv_install_or_update 1
 oh_my_zsh_install_or_update 1
 zsh_completions_install_or_update 1
-neobundle_install_or_update 1
 delete_old_files 1
 symlink_files 1
 
