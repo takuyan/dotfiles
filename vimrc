@@ -9,10 +9,10 @@ if &compatible
 endif
 
 " Required:
-set runtimepath^=/Users/kato/.vim/dein_root/repos/github.com/Shougo/dein.vim
+set runtimepath^=$HOME/.vim/dein_root/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin(expand('/Users/kato/.vim/dein_root'))
+call dein#begin(expand('~/.vim/dein_root'))
 
 " Let dein manage dein
 " Required:
