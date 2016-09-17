@@ -247,9 +247,9 @@ colorscheme hybrid
   let g:unite_force_overwrite_statusline = 0
 
   " unite use Ag
-  if executable('ag')
-    let g:unite_source_grep_command = 'ag'
-  endif
+  " if executable('ag')
+  "   let g:unite_source_grep_command = 'ag'
+  " endif
 
   """" unite.vim
   "" ヤンク一覧
