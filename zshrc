@@ -103,3 +103,4 @@ fi
 
 export EDITOR=vim
 eval "$(direnv hook zsh)"
+eval "$(docker-machine env dev)"
