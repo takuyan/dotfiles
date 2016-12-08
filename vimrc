@@ -1,18 +1,15 @@
 "dein"  {{{
 
-" Note: Skip initialization for vim-tiny or vim-small.
-if 0 | endif
-
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible " Be iMproved
 endif
 
 " Required:
-set runtimepath^=$HOME/.vim/dein_root/repos/github.com/Shougo/dein.vim
+set runtimepath+=$HOME/.vim/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin(expand('~/.vim/dein_root'))
+call dein#begin('$HOME/.vim/dein')
 
 " Let dein manage dein
 " Required:
