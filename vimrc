@@ -221,6 +221,9 @@ au BufRead,BufNewFile *.slim set ft=slim
 
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
+" enable clipboard on mac
+set clipboard+=unnamed
+
 " }}}
 "COLOR" {{{
 "colorscheme nerv-ous
