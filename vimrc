@@ -193,7 +193,7 @@ function! s:remove_dust()
     call setpos(".", cursor)
     unlet cursor
 endfunction
-autocmd BufWritePre * call <SID>remove_dust()
+"autocmd BufWritePre * call <SID>remove_dust()
 
 " Ruby1.8 Hashを除去する
 " origin by http://robots.thoughtbot.com/post/17450269990/convert-ruby-1-8-to-1-9-hash-syntax
