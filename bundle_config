@@ -1,5 +1,4 @@
 ---
-BUNDLE_BUILD__NOKOGIRI: "--use-system-libraries=true"
 BUNDLE_BUILD__EVENTMACHINE: "--with-cppflags=-I/usr/local/opt/openssl/include"
 BUNDLE_GEM__COC: "true"
 BUNDLE_GEM__MIT: "true"
