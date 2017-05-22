@@ -18,11 +18,10 @@ call dein#add('Shougo/dein.vim')
 " Add or remove your plugins here:
 call dein#add('AtsushiM/sass-compile.vim')
 call dein#add('Lokaltog/vim-easymotion')
-call dein#add('NERV-ous')
 call dein#add('Shougo/neocomplete.vim')
 call dein#add('Shougo/neomru.vim')
-call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/neosnippet-snippets')
+call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/unite.vim')
 call dein#add('Shougo/vimshell')
@@ -42,7 +41,6 @@ call dein#add('groenewege/vim-less')
 call dein#add('heartsentwined/vim-emblem')
 call dein#add('heartsentwined/vim-emblem')
 call dein#add('honza/vim-snippets')
-"call dein#add('janx/vim-rubytest')
 call dein#add('kana/vim-textobj-user')
 call dein#add('kchmck/vim-coffee-script')
 call dein#add('lilydjwg/colorizer')
@@ -51,13 +49,13 @@ call dein#add('nono/vim-handlebars')
 call dein#add('osyo-manga/vim-over')
 call dein#add('othree/html5.vim')
 call dein#add('othree/yajs.vim')
+call dein#add('rhysd/github-complete.vim')
 call dein#add('rhysd/vim-textobj-ruby')
 call dein#add('rking/ag.vim')
 call dein#add('scrooloose/nerdcommenter')
 call dein#add('scrooloose/nerdtree')
 call dein#add('sjl/gundo.vim')
 call dein#add('slim-template/vim-slim')
-call dein#add('smartchr')
 call dein#add('taku-o/vim-ro-when-swapfound')
 call dein#add('taku-o/vim-toggle')
 call dein#add('tell-k/vim-browsereload-mac')
@@ -80,6 +78,8 @@ call dein#add('ujihisa/neco-look')
 call dein#add('ujihisa/rdoc.vim')
 call dein#add('ujihisa/unite-colorscheme')
 call dein#add('vim-ruby/vim-ruby')
+call dein#add('vim-scripts/NERV-ous')
+call dein#add('vim-scripts/smartchr')
 call dein#add('vim-scripts/sudo.vim')
 call dein#add('vim-scripts/zoom.vim')
 call dein#add('w0ng/vim-hybrid')
@@ -93,11 +93,14 @@ call dein#end()
 
 " Required:
 filetype plugin indent on
+syntax enable
 
 " If you want to install not installed plugins on startup.
 if dein#check_install()
   call dein#install()
 endif
+
+"End dein Scripts-------------------------
 
 " }}}
 "BASIC " {{{
@@ -240,6 +243,7 @@ set clipboard+=unnamed
 "colorscheme wombat
 "colorscheme jellybeans
 let g:hybrid_use_Xresources = 1
+let g:hybrid_reduced_contrast = 1
 set background=dark
 colorscheme hybrid
 " }}}
