@@ -84,7 +84,9 @@ export PATH=$HOME/.nodebrew/current/bin:$HOME/android-sdk/tools:$HOME/android-sd
 export PATH="/usr/local/heroku/bin:$PATH"
 
 ### Added by Nodebrew
-export PATH=$HOME/.nodebrew/current/bin:$PATH
+if [ -d ${HOME}/.nodebrew ] ; then
+  export PATH=$HOME/.nodebrew/current/bin:$PATH
+fi
 
 # Added by Rails binstubs
 export PATH="./bin:$PATH"
