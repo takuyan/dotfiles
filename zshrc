@@ -27,6 +27,7 @@ alias gd='git diff'
 alias gaa='git add --all'
 alias gap='git add -p'
 alias gp='git push'
+alias gdb="git branch --merged | grep -vE '^\*|master$|release$|develop$' | xargs -I % git branch -d %"
 
 # basic
 alias ll='ls -la'
