@@ -37,6 +37,7 @@ alias mkdir='mkdir -p'
 # rails
 alias r='rails'
 alias be='bundle exec'
+alias rrp='bundle exec rake routes | peco'
 
 # project
 alias life='cd ~/dev/github/proofoflife'
@@ -103,5 +104,6 @@ if [ -e ${HOME}/.zshrc_ext ] ; then
 fi
 
 export EDITOR=vim
+
 eval "$(direnv hook zsh)"
 eval "$(docker-machine env dev)"
