@@ -9,7 +9,7 @@ fi
 #=============================
 # nodebrew
 #=============================
-if [[ -f ~/.nodebrew/nodebrew ]]; then
+if [ -f ~/.nodebrew/nodebrew ]; then
   export PATH=$HOME/.nodebrew/current/bin:$PATH
-  nodebrew use v0.11.14
+  nodebrew use v7.10.0
 fi
