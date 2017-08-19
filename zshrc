@@ -16,6 +16,9 @@ ZSH_THEME="eastwood"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# vim
+alias v='vim'
+
 # git
 alias gb='git branch'
 alias gch='git checkout'
