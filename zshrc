@@ -17,7 +17,8 @@ ZSH_THEME="eastwood"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # vim
-alias v='vim'
+# https://twitter.com/a_matsuda/status/899415149341065216
+function v() {vim ${${=*/:/ +}/:*}}
 
 # git
 alias gb='git branch'
