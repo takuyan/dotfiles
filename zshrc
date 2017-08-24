@@ -39,9 +39,13 @@ alias ll='ls -la'
 alias rm='rm -i'
 alias mkdir='mkdir -p'
 
+# bundler
+alias b='bundle'
+alias be='bundle exec'
+alias bu='bundle update'
+
 # rails
 alias r='rails'
-alias be='bundle exec'
 alias rrp='bundle exec rake routes | peco'
 
 # project
