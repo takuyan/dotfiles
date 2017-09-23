@@ -51,6 +51,7 @@ call dein#add('nono/vim-handlebars')
 call dein#add('osyo-manga/vim-over')
 call dein#add('othree/html5.vim')
 call dein#add('othree/yajs.vim')
+call dein#add('plasticboy/vim-markdown')
 call dein#add('rhysd/github-complete.vim')
 call dein#add('rhysd/vim-textobj-ruby')
 call dein#add('rking/ag.vim')
@@ -71,7 +72,6 @@ call dein#add('tpope/vim-bundler')
 call dein#add('tpope/vim-fugitive')
 call dein#add('tpope/vim-haml')
 call dein#add('tpope/vim-liquid')
-call dein#add('tpope/vim-markdown')
 call dein#add('tpope/vim-rails')
 call dein#add('tpope/vim-rake')
 call dein#add('tpope/vim-repeat')
@@ -521,5 +521,9 @@ let g:unite_source_ruby_require_ruby_command = '$HOME/.rbenv/shims/ruby'
 "imap <silent> <C-D><C-D> <C-R>=strftime("%Y-%m-%d")<CR>
 
 imap <s-tab> <c-d>
+
+" https://github.com/plasticboy/vim-markdown
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_new_list_item_indent = 2
 
 " " }}}
