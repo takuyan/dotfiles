@@ -71,32 +71,32 @@ zsh_completions_install_or_update()
 delete_old_files()
 {
   echo "[DELETE] Delete the old files"
+  rm -f $HOME/.bashrc
+  rm -f $HOME/.bundle/config
+  rm -f $HOME/.gemrc
+  rm -f $HOME/.gitignore
+  rm -f $HOME/.gvimrc
+  rm -f $HOME/.powconfig
   rm -f $HOME/.railsrc
   rm -f $HOME/.vimrc
-  rm -f $HOME/.zshrc
   rm -f $HOME/.zshenv
-  rm -f $HOME/.gvimrc
-  rm -f $HOME/.gemrc
-  rm -f $HOME/.powconfig
-  rm -f $HOME/.bashrc
-  rm -f $HOME/.gitignore
-  rm -f $HOME/.bundle/config
+  rm -f $HOME/.zshrc
   #rm ~/.gitconfig
 }
 
 symlink_files()
 {
   echo "[Symlink] Symlinking files"
+  ln -s $HOME/dotfiles/bashrc        $HOME/.bashrc
+  ln -s $HOME/dotfiles/bundle_config $HOME/.bundle/config
+  ln -s $HOME/dotfiles/gemrc         $HOME/.gemrc
+  ln -s $HOME/dotfiles/gitignore     $HOME/.gitignore
+  ln -s $HOME/dotfiles/gvimrc        $HOME/.gvimrc
+  ln -s $HOME/dotfiles/powconfig     $HOME/.powconfig
   ln -s $HOME/dotfiles/railsrc       $HOME/.railsrc
   ln -s $HOME/dotfiles/vimrc         $HOME/.vimrc
-  ln -s $HOME/dotfiles/zshrc         $HOME/.zshrc
   ln -s $HOME/dotfiles/zshenv        $HOME/.zshenv
-  ln -s $HOME/dotfiles/gvimrc        $HOME/.gvimrc
-  ln -s $HOME/dotfiles/gemrc         $HOME/.gemrc
-  ln -s $HOME/dotfiles/powconfig     $HOME/.powconfig
-  ln -s $HOME/dotfiles/bashrc        $HOME/.bashrc
-  ln -s $HOME/dotfiles/gitignore     $HOME/.gitignore
-  ln -s $HOME/dotfiles/bundle_config $HOME/.bundle/config
+  ln -s $HOME/dotfiles/zshrc         $HOME/.zshrc
   #ln -s $HOME/dotfiles/gitconfig ~/.gitconfig
 }
 
