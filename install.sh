@@ -73,6 +73,7 @@ delete_old_files()
   echo "[DELETE] Delete the old files"
   rm -f $HOME/.bashrc
   rm -f $HOME/.bundle/config
+  rm -f $HOME/.fishrc
   rm -f $HOME/.gemrc
   rm -f $HOME/.gitignore
   rm -f $HOME/.gvimrc
@@ -89,6 +90,7 @@ symlink_files()
   echo "[Symlink] Symlinking files"
   ln -s $HOME/dotfiles/bashrc        $HOME/.bashrc
   ln -s $HOME/dotfiles/bundle_config $HOME/.bundle/config
+  ln -s $HOME/dotfiles/fishrc        $HOME/.fishrc
   ln -s $HOME/dotfiles/gemrc         $HOME/.gemrc
   ln -s $HOME/dotfiles/gitignore     $HOME/.gitignore
   ln -s $HOME/dotfiles/gvimrc        $HOME/.gvimrc
