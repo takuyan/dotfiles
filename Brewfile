@@ -1,25 +1,67 @@
-update
-upgrade
-tap phinze/homebrew-cask || true
-tap homebrew/binary || true
-install phinze/cask/brew-cask || true
-install git || true
-install hub || true
-install vim || true
-install jq || true
-install curl || true
-install wget || true
-install dnsmasq || true
-install phantomjs || true
-install the_silver_searcher || true
-
-cask install alfred
-cask install java
-cask install google-chrome
-cask install dropbox
-cask install virtualbox
-cask install vagrant
-cask install keyremap4macbook
-cask install licecap
-cask install mysql
-cask install postgresql
+tap "homebrew/dupes"
+tap "homebrew/core"
+tap "homebrew/versions"
+tap "homebrew/bundle"
+tap "caskroom/fonts"
+tap "caskroom/cask"
+tap "neovim/neovim"
+brew "libyaml"
+brew "python"
+brew "ansible"
+brew "apple-gcc42"
+brew "autoconf"
+brew "automake"
+brew "python3"
+brew "awscli"
+brew "cairo"
+brew "chromedriver", link: false
+brew "cmake"
+brew "colordiff"
+brew "cscope"
+brew "direnv"
+brew "fish"
+brew "fswatch"
+brew "git"
+brew "jpeg"
+brew "gdk-pixbuf"
+brew "libtool"
+brew "graphviz"
+brew "hub"
+brew "imagemagick"
+brew "jenkins"
+brew "libevent"
+brew "libxml2"
+brew "libxslt"
+brew "lua"
+brew "macvim", args: ["with-lua"]
+brew "mecab"
+brew "mecab-ipadic"
+brew "mongodb"
+brew "mysql"
+brew "neovim"
+brew "nkf"
+brew "nmap"
+brew "node"
+brew "nodebrew"
+brew "ocaml"
+brew "peco"
+brew "phantomjs"
+brew "poppler"
+brew "postgresql"
+brew "pstree"
+brew "qt", link: true
+brew "rbenv"
+brew "redis"
+brew "rsync"
+brew "the_silver_searcher"
+brew "tig"
+brew "tmux"
+brew "tree"
+brew "unison"
+brew "v8@3.15"
+brew "vim", args: ["with-lua"]
+brew "wget"
+brew "zsh"
+cask "vagrant"
+cask "virtualbox"
+cask "caskroom/fonts/font-fira-code"
