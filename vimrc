@@ -114,7 +114,7 @@ let mapleader=","
 " 行番号
 set number
 " 現在の行をハイライト
-set cursorline
+"set cursorline
 set foldmethod=marker
 " インクリメンタルサーチ
 set incsearch
