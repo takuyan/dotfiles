@@ -91,7 +91,7 @@ alias less='less -R'
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$HOME/.nodebrew/current/bin:$HOME/android-sdk/tools:$HOME/android-sdk/platform-tools:$HOME/Dropbox/aws/RDSCli-1.4.007/bin:/usr/local/sbin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=/usr/local/sbin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 ### Added by Nodebrew
 if [ -d ${HOME}/.nodebrew ] ; then
