@@ -93,6 +93,9 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=/usr/local/sbin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
+# Homebrew
+export PATH="/usr/local/bin:$PATH"
+
 ### Added by Nodebrew
 if [ -d ${HOME}/.nodebrew ] ; then
   export PATH=$HOME/.nodebrew/current/bin:$PATH
