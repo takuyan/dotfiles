@@ -128,3 +128,6 @@ eval "$(docker-machine env dev)"
 
 # java
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
+# rbenv
+export PATH=$HOME/.rbenv/shims:$PATH
