@@ -91,7 +91,7 @@ alias less='less -R'
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/sbin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=/usr/local/sbin:$HOME/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 # Homebrew
 export PATH="/usr/local/bin:$PATH"
@@ -103,6 +103,9 @@ fi
 
 # Added by Rails binstubs
 export PATH="./bin:$PATH"
+
+# v8
+export PATH="/usr/local/opt/v8@3.15/bin:$PATH"
 
 if [ -d ${HOME}/.plenv ] ; then
   export PATH="$HOME/.plenv/bin:$PATH"
