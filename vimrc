@@ -221,6 +221,7 @@ vnoremap <silent> <C-p> "0p<CR>
 au BufRead,BufNewFile *.hamlc set ft=haml
 au BufRead,BufNewFile *.sass set ft=sass
 au BufRead,BufNewFile *.slim set ft=slim
+au BufRead,BufNewFile *.schema set ft=ruby
 
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
