@@ -133,3 +133,7 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
 # rbenv
 export PATH=$HOME/.rbenv/shims:$PATH
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
