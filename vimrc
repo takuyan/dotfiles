@@ -133,7 +133,7 @@ set showmatch
 set nobackup
 set splitright
 set splitbelow
-set visualbell
+set novisualbell
 set magic
 set wrap
 set wildmenu
