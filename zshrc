@@ -40,6 +40,36 @@ alias gap='git add -p'
 alias gp='git push'
 alias gdb="git branch --merged | grep -vE '^\*|master$|release$|develop$' | xargs -I % git branch -d %"
 
+clone() {
+  local yes_cd=true
+  while getopts "d:" OPTION
+  do
+    case $OPTION in
+      d)
+        local yes_cd=false
+        shift
+        ;;
+    esac
+  done
+  if [[ -z $2 ]]; then
+    local repo_name=$1
+    while [ "${repo_name%%/*}" != "$repo_name" ]; do
+       repo_name=${repo_name#*/}
+    done
+    repo_name=${repo_name%.*}
+    git clone $1
+    if $yes_cd; then; cd $repo_name; fi
+  else
+    if [[ $# -eq 3 ]]; then
+      git clone git@github.com:$1/$2.git $3
+      if $yes_cd; then; cd $3; fi
+    else
+      git clone git@github.com:$1/$2.git
+      if $yes_cd; then; cd $2; fi
+    fi
+  fi
+}
+
 # basic
 alias ll='ls -la'
 alias rm='rm -i'
