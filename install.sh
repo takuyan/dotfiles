@@ -11,7 +11,7 @@ rbenv_install_or_update()
     ruby_build_install_or_update 1
   else
     echo "[INSTALL] git clone rbenv"
-    git clone git://github.com/sstephenson/rbenv.git $HOME/.rbenv
+    git clone git@github.com:rbenv/rbenv.git $HOME/.rbenv
     exec $SHELL
     ruby_build_install_or_update 1
   fi
@@ -32,7 +32,7 @@ ruby_build_install_or_update()
   else
     echo "[INSTALL] git clone ruby-build"
     cd $HOME/.rbenv/plugins
-    git clone git://github.com/sstephenson/ruby-build.git $HOME/.rbenv/plugins/ruby-build
+    git clone git@github.com:rbenv/ruby-build.git $HOME/.rbenv/plugins/ruby-build
   fi
 }
 
