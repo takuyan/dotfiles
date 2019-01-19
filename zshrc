@@ -156,7 +156,6 @@ fi
 export EDITOR=vim
 
 eval "$(direnv hook zsh)"
-eval "$(docker-machine env dev)"
 
 # java
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
