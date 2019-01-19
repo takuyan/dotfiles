@@ -83,7 +83,6 @@ call dein#add('vim-scripts/smartchr')
 call dein#add('vim-scripts/sudo.vim')
 call dein#add('vim-scripts/zoom.vim')
 call dein#add('w0ng/vim-hybrid')
-call dein#add('xhr/vim-io')
 
 " You can specify revision/branch/tag.
 " call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
