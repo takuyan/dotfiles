@@ -229,6 +229,16 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " enable clipboard on mac
 set clipboard+=unnamed
 
+
+" for performance
+set re=1
+set nocursorline
+set norelativenumber
+set nocursorcolumn
+set guicursor=
+" set synmaxcol=180
+" syntax sync minlines=100 maxlines=1000
+
 " }}}
 "COLOR" {{{
 "colorscheme nerv-ous
