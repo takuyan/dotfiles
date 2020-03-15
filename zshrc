@@ -127,6 +127,7 @@ export PATH=/usr/local/sbin:$HOME/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/s
 
 # Homebrew
 export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 ### Added by Nodebrew
 if [ -d ${HOME}/.nodebrew ] ; then
