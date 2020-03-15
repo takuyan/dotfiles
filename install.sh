@@ -95,6 +95,10 @@ symlink_files()
   ln -s $HOME/dotfiles/powconfig     $HOME/.powconfig
   ln -s $HOME/dotfiles/railsrc       $HOME/.railsrc
   ln -s $HOME/dotfiles/vimrc         $HOME/.vimrc
+
+  mkdir -p $HOME/.config/nvim
+  ln -s $HOME/dotfiles/nvim_init.vim $HOME/.config/nvim/init.vim
+
   ln -s $HOME/dotfiles/zshenv        $HOME/.zshenv
   ln -s $HOME/dotfiles/zshrc         $HOME/.zshrc
   #ln -s $HOME/dotfiles/gitconfig ~/.gitconfig
