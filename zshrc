@@ -18,7 +18,7 @@ ZSH_THEME="eastwood"
 
 # vim
 # https://twitter.com/a_matsuda/status/899415149341065216
-function v() {vim ${${=*/:/ +}/:*}}
+function v() {nvim ${${=*/:/ +}/:*}}
 
 # git
 alias gb='git branch'
