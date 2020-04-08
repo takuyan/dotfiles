@@ -33,6 +33,11 @@ if dein#load_state('~/.vim/bundles')
   call dein#add('tpope/vim-rake')
   call dein#add('tpope/vim-repeat')
   call dein#add('tpope/vim-surround')
+  call dein#add('MaxMEllon/vim-jsx-pretty')
+
+  " REQUIRED: Add a syntax file. YATS is the best
+  call dein#add('HerringtonDarkholme/yats.vim')
+  call dein#add('mhartington/nvim-typescript', {'build': './install.sh'})
 
   call dein#end()
   call dein#save_state()
@@ -58,6 +63,9 @@ call denite#custom#var('grep', 'command', ['pt'])
 call denite#custom#var('grep', 'recursive_opts', [])
 call denite#custom#var('grep', 'pattern_opt', [])
 call denite#custom#var('grep', 'default_opts', ['--follow', '--no-group', '--no-color'])
+
+" vim-jsx-pretty
+let g:vim_jsx_pretty_colorful_config = 1 " default 0
 
 " }}}
 
