@@ -34,6 +34,7 @@ if dein#load_state('~/.vim/bundles')
   call dein#add('tpope/vim-repeat')
   call dein#add('tpope/vim-surround')
   call dein#add('MaxMEllon/vim-jsx-pretty')
+  call dein#add('slim-template/vim-slim')
 
   " REQUIRED: Add a syntax file. YATS is the best
   call dein#add('HerringtonDarkholme/yats.vim')
@@ -47,8 +48,8 @@ if dein#check_install() " もし新しいプラグインがあれば起動時に
  call dein#install()
 endif
 
+syntax on
 filetype plugin indent on
-syntax enable
 
 " }}}
 
@@ -66,6 +67,9 @@ call denite#custom#var('grep', 'default_opts', ['--follow', '--no-group', '--no-
 
 " vim-jsx-pretty
 let g:vim_jsx_pretty_colorful_config = 1 " default 0
+
+" slim
+autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
 
 " }}}
 
