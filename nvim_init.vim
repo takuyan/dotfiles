@@ -59,13 +59,6 @@ filetype plugin indent on
 " deoplete.
 let g:deoplete#enable_at_startup = 1
 
-" denite
-call denite#custom#var('file_rec', 'command', ['pt', '--follow', '--nocolor', '--nogroup', '-g', ''])
-call denite#custom#var('grep', 'command', ['pt'])
-call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', [])
-call denite#custom#var('grep', 'default_opts', ['--follow', '--no-group', '--no-color'])
-
 " vim-jsx-pretty
 let g:vim_jsx_pretty_colorful_config = 1 " default 0
 
@@ -96,9 +89,11 @@ set encoding=utf-8 " 内部の解釈の文字コード　設定ファイルも�
 set fileformat=unix " 内部の改行コード
 set helplang=ja,en " helpの言語の優先順位
 
+" https://zenn.dev/sa2knight/articles/e0a1b2ee30e9ec22dea9
+nnoremap <silent> <C-j> :bprev<CR>
+nnoremap <silent> <C-k> :bnext<CR>
+
 " }}}
-
-
 
 "Denite"  {{{
 
