@@ -35,6 +35,7 @@ if dein#load_state('~/.vim/bundles')
   call dein#add('tpope/vim-surround')
   call dein#add('MaxMEllon/vim-jsx-pretty')
   call dein#add('slim-template/vim-slim')
+  call dein#add('kchmck/vim-coffee-script')
 
   " REQUIRED: Add a syntax file. YATS is the best
   call dein#add('HerringtonDarkholme/yats.vim')
