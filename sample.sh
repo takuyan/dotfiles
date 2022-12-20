@@ -12,6 +12,4 @@ zsh_func()
     git clone git://github.com/zsh-users/zsh-completions.git $HOME/.zsh-completions
   fi
 }
-
 zsh_func 1
-
