@@ -93,6 +93,8 @@ set helplang=ja,en " helpの言語の優先順位
 nnoremap <silent> <C-j> :bprev<CR>
 nnoremap <silent> <C-k> :bnext<CR>
 
+let g:python3_host_prog = '$HOME/anaconda3/bin/python3'
+
 " }}}
 
 "Denite"  {{{
