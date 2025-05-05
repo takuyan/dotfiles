@@ -122,17 +122,19 @@ alias less='less -R'
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export PATH=/usr/local/sbin:$HOME/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+# rbenvの初期化（プロンプトの表示等にも関与）
+if type rbenv > /dev/null 2>&1; then
+  eval "$(rbenv init -)"
+fi
+
+# nodebrew
+if [ -f ~/.nodebrew/nodebrew ]; then
+  nodebrew use v7.10.0
+fi
 
 # Homebrew
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
-
-### Added by Nodebrew
-if [ -d ${HOME}/.nodebrew ] ; then
-  export PATH=$HOME/.nodebrew/current/bin:$PATH
-fi
 
 # Added by Rails binstubs
 export PATH="./bin:$PATH"
