@@ -116,11 +116,6 @@ if type rbenv > /dev/null 2>&1; then
   eval "$(rbenv init -)"
 fi
 
-# nodebrew
-if [ -f ~/.nodebrew/nodebrew ]; then
-  nodebrew use v7.10.0
-fi
-
 # Homebrew
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
