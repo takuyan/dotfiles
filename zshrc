@@ -32,8 +32,6 @@ alias gf='git fetch'
 alias gm='git merge'
 alias gr='git rebase'
 alias gd='git diff'
-alias gf='git fetch'
-alias gm='git merge'
 alias gdc='git diff --cached'
 alias gaa='git add --all'
 alias gap='git add -p'
@@ -84,15 +82,6 @@ alias bu='bundle update'
 alias r='rails'
 alias rrp='bundle exec rake routes | peco'
 
-# project
-alias life='cd ~/dev/github/proofoflife'
-alias bmg='cd ~/dev/github/bmg'
-alias kulku='cd ~/dev/github/kulku'
-alias blog='cd ~/dev/github/blog'
-alias pplog='cd ~/dev/github/pplog'
-alias esa='cd ~/dev/github/esa'
-alias doit='cd ~/dev/github/doit'
-
 # middleman
 alias bem='bundle exec middleman'
 
@@ -122,7 +111,7 @@ alias less='less -R'
 
 source $ZSH/oh-my-zsh.sh
 
-# rbenvの初期化（プロンプトの表示等にも関与）
+# rbenvの初期化
 if type rbenv > /dev/null 2>&1; then
   eval "$(rbenv init -)"
 fi
