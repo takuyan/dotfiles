@@ -102,6 +102,9 @@ symlink_files()
   ln -s $HOME/dotfiles/zshenv        $HOME/.zshenv
   ln -s $HOME/dotfiles/zshrc         $HOME/.zshrc
   #ln -s $HOME/dotfiles/gitconfig ~/.gitconfig
+
+  mkdir -p $HOME/.config/wezterm
+  ln -s $HOME/dotfiles/wezterm.lua $HOME/.config/wezterm/wezterm.lua
 }
 
 #
