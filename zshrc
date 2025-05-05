@@ -111,7 +111,7 @@ alias less='less -R'
 
 source $ZSH/oh-my-zsh.sh
 
-# rbenvの初期化（プロンプトの表示等にも関与）
+# rbenvの初期化
 if type rbenv > /dev/null 2>&1; then
   eval "$(rbenv init -)"
 fi
