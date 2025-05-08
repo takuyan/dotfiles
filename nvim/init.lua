@@ -182,6 +182,33 @@ require("lazy").setup({
       })
     end,
   },
+
+  {
+    "jackMort/ChatGPT.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+    config = function()
+      require("chatgpt").setup({
+        api_key_cmd = "echo $OPENAI_API_KEY",
+        -- 必要に応じてモデルやプロンプトのデフォルトをカスタム可能
+        chat = {
+          welcome_message = "How can I help you today?",
+        },
+        popup_window = {
+          border = { "", "", "", "", "", "", "", "" },
+          -- width/height のパーセンテージ調整なども
+        },
+      })
+
+      vim.keymap.set("n", "<leader>cg", "<cmd>ChatGPT<CR>", { desc = "ChatGPT: Open Chat" })
+      vim.keymap.set("v", "<leader>ca", "<cmd>ChatGPTActAs<CR>", { desc = "ChatGPT: Act As…" })
+      vim.keymap.set("v", "<leader>ce", "<cmd>ChatGPTEditWithInstructions<CR>", { desc = "ChatGPT: Edit Selection" })
+    end,
+  },
 })
 
 -- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
