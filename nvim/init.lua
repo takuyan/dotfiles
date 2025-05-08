@@ -1,7 +1,13 @@
 -- init.lua
 
 -- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
--- 1) lazy.nvim をランタイムパスに追加（最優先で読み込むため）
+-- 0) リーダーキーを最優先で設定
+-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+vim.g.mapleader      = ","      -- ノーマルモードのリーダー
+vim.g.maplocalleader = ","      -- ローカルリーダー
+
+-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+-- 1) lazy.nvim をランタイムパスに追加
 -- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 vim.opt.rtp:prepend(vim.fn.stdpath("data") .. "/lazy/lazy.nvim")
 
@@ -121,6 +127,57 @@ require("lazy").setup({
         mappings = {
           basic = true,    -- gcc, gc{motion} を有効化
           extra = false,   -- gcO, gcA などの追加マッピングは無効化
+        },
+      })
+    end,
+  },
+
+  -- ファイラ: nvim-tree.lua
+  {
+    "nvim-tree/nvim-tree.lua",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons", -- すでに導入済みならOK
+    },
+    keys = {
+      -- <leader>e でトグル表示
+      { "<leader>e", "<cmd>NvimTreeToggle<CR>", desc = "Toggle file explorer" },
+    },
+    config = function()
+      require("nvim-tree").setup({
+        disable_netrw       = true,
+        hijack_netrw        = true,
+        view = {
+          width = 30,
+          side  = "left",
+        },
+        renderer = {
+          icons = {
+            -- #1: web-devicons のカラーを使う
+            webdev_colors = true,
+
+            -- #2: どの種類のアイコンを表示するか
+            show = {
+              file          = true,
+              folder        = true,
+              folder_arrow  = true,
+              git           = true,
+            },
+
+            -- #3: git アイコンの配置（デフォルトは before）
+            git_placement = "before",
+
+            -- #4: 各種パディングや矢印文字など細かい調整が可能
+            padding       = " ",
+            symlink_arrow = " ➛ ",
+          },
+        },
+        git = {
+          enable = true,
+          ignore = false,
+        },
+        update_focused_file = {
+          enable      = true,
+          update_cwd  = true,
         },
       })
     end,
