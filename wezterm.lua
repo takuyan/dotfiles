@@ -1,68 +1,52 @@
 -- ~/.config/wezterm/wezterm.lua
 
 local wezterm = require 'wezterm'
+local config = wezterm.config_builder()
 
-return {
-  -- 推奨フォント（自分のフォントに合わせて）
-  font = wezterm.font_with_fallback { "JetBrains Mono", "Noto Sans Mono CJK JP", "Symbols Nerd Font Mono" },
-  font_size = 13.0,
+-- ~/.wezterm.lua
+local wezterm = require 'wezterm'
+local config = wezterm.config_builder()
 
-  -- カラースキーム
-  color_scheme = "Tokyo Night Storm", -- https://wezfurlong.org/wezterm/colorschemes/index.html
+-- 見た目系
+config.color_scheme = 'Catppuccin Mocha'
 
-  -- 起動時のシェル
-  default_prog = { "/bin/zsh", "-l" },  -- ログインシェルで起動（macOS）
-
-  -- キーボード操作向け
-  hide_mouse_cursor_when_typing = true,  -- タイピング中はマウスカーソルを非表示
-
-  -- ウィンドウ装飾
-  window_decorations = "RESIZE", -- タイトルバーやリサイズ枠のみ表示（最小構成）
-
-  -- 背景透明度（0.0〜1.0）
-  window_background_opacity = 0.92, -- うっすら透ける（好みに合わせて調整）
-
-  -- パフォーマンス安定化
-  adjust_window_size_when_changing_font_size = false,  -- フォントサイズ変更時のちらつきを防止
-
-  -- タブU
-  enable_tab_bar = false,
-  use_fancy_tab_bar = false,
-
-  keys = {
-    -- 上下分割（縦分割）
-    {
-      key = "Enter",
-      mods = "CMD|SHIFT",
-      action = wezterm.action.SplitVertical { domain = "CurrentPaneDomain" },
-    },
-    -- 左右分割（横分割）
-    {
-      key = "d",
-      mods = "CMD|SHIFT",
-      action = wezterm.action.SplitHorizontal { domain = "CurrentPaneDomain" },
-    },
-
-    -- ペイン間移動
-    {
-      key = "h",
-      mods = "CMD|ALT",
-      action = wezterm.action.ActivatePaneDirection "Left",
-    },
-    {
-      key = "l",
-      mods = "CMD|ALT",
-      action = wezterm.action.ActivatePaneDirection "Right",
-    },
-    {
-      key = "k",
-      mods = "CMD|ALT",
-      action = wezterm.action.ActivatePaneDirection "Up",
-    },
-    {
-      key = "j",
-      mods = "CMD|ALT",
-      action = wezterm.action.ActivatePaneDirection "Down",
-    },
-  }
+config.font = wezterm.font_with_fallback {
+  'JetBrainsMono Nerd Font',
+  'Moralerspace Argon HWNF',
+  'Noto Color Emoji',
 }
+config.font_size = 15.0
+config.line_height = 1.15
+config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }  -- たまにligature邪魔な時用
+
+-- 透過 + モダン感
+config.window_background_opacity = 0.92
+config.macos_window_background_blur = 30
+
+-- タブバーとか邪魔なの消す系
+config.hide_tab_bar_if_only_one_tab = true
+config.window_decorations = "RESIZE" -- タイトルバー消してスッキリ
+config.hide_mouse_cursor_when_typing = true -- タイピング中はマウスカーソルを非表示
+
+-- 便利系
+config.use_ime = true
+config.default_prog = { "/bin/zsh", "--login" }
+config.automatically_reload_config = true
+
+-- キーバインド（Leaderキー = Ctrl+a にするとtmuxっぽくて楽）
+local act = wezterm.action
+config.leader = { key = 'a', mods = 'CTRL' }
+config.keys = {
+  -- Leader + | で縦分割、- で横分割（tmuxライク）
+  { key = '|', mods = 'LEADER|SHIFT', action = act.SplitHorizontal { domain = 'CurrentPaneDomain' } },
+  { key = '-', mods = 'LEADER',       action = act.SplitVertical   { domain = 'CurrentPaneDomain' } },
+
+  -- Leader + h/l でペイン移動
+  { key = 'h', mods = 'LEADER', action = act.ActivatePaneDirection 'Left' },
+  { key = 'l', mods = 'LEADER', action = act.ActivatePaneDirection 'Right' },
+
+  -- 新しいタブとか
+  { key = 't', mods = 'LEADER', action = act.SpawnTab 'CurrentPaneDomain' },
+}
+
+return config
