@@ -1,16 +1,8 @@
-fpath=($HOME/.zsh-completions/src $fpath)
-
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="ys"
-#ZSH_THEME="bira"
-#ZSH_THEME="eastwood"
-#ZSH_THEME="macovsky-ruby"
+if [ -d "$HOME/.zsh-completions/src" ] ; then
+  fpath=("$HOME/.zsh-completions/src" $fpath)
+fi
+autoload -Uz compinit
+compinit
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -104,13 +96,6 @@ alias less='less -R'
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-#plugins=(git pow bundler rbenv bunder gem pow redis-cli)
-
-source $ZSH/oh-my-zsh.sh
-
 # rbenvの初期化
 if type rbenv > /dev/null 2>&1; then
   eval "$(rbenv init -)"
@@ -120,8 +105,10 @@ fi
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
-# Added by Rails binstubs
-export PATH="./bin:$PATH"
+# Added by Rails binstubs (append only to avoid accidental command shadowing)
+if [ -d "./bin" ] ; then
+  export PATH="$PATH:./bin"
+fi
 
 # v8
 export PATH="/usr/local/opt/v8@3.15/bin:$PATH"
@@ -140,7 +127,7 @@ if [ -e ${HOME}/.zshrc_ext ] ; then
   source ~/.zshrc_ext
 fi
 
-export EDITOR=vim
+export EDITOR=nvim
 
 eval "$(direnv hook zsh)"
 

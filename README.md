@@ -1,26 +1,24 @@
-# Takuyan of Ruby on Rails Engineer's Configuration on OS X
+# Takuyan's Portable Dotfiles (macOS)
 
 ## Packages
 
 - [rbenv](https://github.com/sstephenson/rbenv)
 - [ruby-build](https://github.com/sstephenson/ruby-build)
-- [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)
-- [zsh-completions](https://github.com/robbyrussell/oh-my-zsh)
-- [neobundle.vim](https://github.com/Shougo/neobundle.vim)
+- [zsh](https://www.zsh.org/)
+- [Neovim + LazyVim](https://www.lazyvim.org/)
 
 ## Configs
 
-- rbenv ( and ruby-build )
-- zshrc
-- zshenv
-- bashrc
-- vimrc
-- gvimrc
-- powconfig
-- gitignore
+- rbenv (and ruby-build)
+- zshrc / zshenv / bashrc
+- Neovim config (LazyVim-based)
+- vimrc / gvimrc
+- wezterm
+- powconfig / gitignore
 
 ## Usage
 
-    $ ./install.sh
-
+```sh
+./install.sh
+```
 
