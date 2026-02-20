@@ -1,121 +1,110 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
+RBENV_ROOT="$HOME/.rbenv"
+RBENV_BIN="$RBENV_ROOT/bin/rbenv"
+
+link_file()
+{
+  local src="$1"
+  local dst="$2"
+  mkdir -p "$(dirname "$dst")"
+  ln -sfn "$src" "$dst"
+}
+
 rbenv_install_or_update()
 {
   echo "[CHECK]   rbenv"
-  if [ -d $HOME/.rbenv ]
+  if [ -d "$RBENV_ROOT" ]
   then
     echo "[UPDATE]  git pull rbenv"
-    cd $HOME/.rbenv
+    cd "$RBENV_ROOT"
     git pull origin master
     ruby_build_install_or_update 1
   else
     echo "[INSTALL] git clone rbenv"
-    git clone git@github.com:rbenv/rbenv.git $HOME/.rbenv
-    exec $SHELL
+    git clone https://github.com/rbenv/rbenv.git "$RBENV_ROOT"
     ruby_build_install_or_update 1
   fi
-  rbenv rehash
+
+  if [ -x "$RBENV_BIN" ] ; then
+    "$RBENV_BIN" rehash
+  fi
 }
 
 ruby_build_install_or_update()
 {
-  mkdir -p $HOME/.rbenv/plugins
-  cd $HOME/.rbenv/plugins
+  mkdir -p "$RBENV_ROOT/plugins"
+  cd "$RBENV_ROOT/plugins"
 
   echo "[CHECK]   ruby-build"
-  if [ -d $HOME/.rbenv/plugins/ruby-build ]
+  if [ -d "$RBENV_ROOT/plugins/ruby-build" ]
   then
     echo "[UPDATE]  git pull ruby-build"
-    cd $HOME/.rbenv/plugins/ruby-build
+    cd "$RBENV_ROOT/plugins/ruby-build"
     git pull origin master
   else
     echo "[INSTALL] git clone ruby-build"
-    cd $HOME/.rbenv/plugins
-    git clone git@github.com:rbenv/ruby-build.git $HOME/.rbenv/plugins/ruby-build
-  fi
-}
-
-oh_my_zsh_install_or_update()
-{
-  echo "[CHECK]   Oh-My-Zsh"
-  if [ -d $HOME/.oh-my-zsh ]
-  then
-    echo "[UPDATE]  git pull Oh-My-Zsh"
-    cd $HOME/.oh-my-zsh
-    git pull origin master
-  else
-    echo "[INSTALL] git clone Oh-My-Zsh"
-    git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh
-  fi
-}
-
-zsh_completions_install_or_update()
-{
-  echo "[CHECK]   zsh-completions"
-  if [ -d $HOME/.zsh-completions ]
-  then
-    echo "[UPDATE]  git pull zsh-completions"
-    cd $HOME/.zsh-completions
-    git pull origin master
-  else
-    echo "[INSTALL] git clone zsh-completions"
-    git clone git://github.com/zsh-users/zsh-completions.git $HOME/.zsh-completions
-
-    # You may have to force rebuild `zcompdump`:
-    rm -f $HOME/.zcompdump
-    compinit
+    cd "$RBENV_ROOT/plugins"
+    git clone https://github.com/rbenv/ruby-build.git "$RBENV_ROOT/plugins/ruby-build"
   fi
 }
 
 delete_old_files()
 {
   echo "[DELETE] Delete the old files"
-  rm -f $HOME/.bashrc
-  rm -f $HOME/.bundle/config
-  rm -f $HOME/.gemrc
-  rm -f $HOME/.gitignore
-  rm -f $HOME/.gvimrc
-  rm -f $HOME/.powconfig
-  rm -f $HOME/.railsrc
-  rm -f $HOME/.vimrc
-  rm -f $HOME/.zshenv
-  rm -f $HOME/.zshrc
-  #rm ~/.gitconfig
+  rm -f "$HOME/.bashrc"
+  rm -f "$HOME/.bundle/config"
+  rm -f "$HOME/.gemrc"
+  rm -f "$HOME/.gitignore"
+  rm -f "$HOME/.gvimrc"
+  rm -f "$HOME/.powconfig"
+  rm -f "$HOME/.railsrc"
+  rm -f "$HOME/.vimrc"
+  rm -f "$HOME/.zshenv"
+  rm -f "$HOME/.zshrc"
+  rm -f "$HOME/.config/nvim/init.lua"
+  rm -f "$HOME/.config/nvim/lua/settings.lua"
+  rm -f "$HOME/.config/nvim/lua/config/lazy.lua"
+  rm -f "$HOME/.config/nvim/lua/config/options.lua"
+  rm -f "$HOME/.config/nvim/lua/config/keymaps.lua"
+  rm -f "$HOME/.config/nvim/lua/config/autocmds.lua"
+  rm -f "$HOME/.config/nvim/lua/plugins/local.lua"
 }
 
 symlink_files()
 {
   echo "[Symlink] Symlinking files"
-  ln -s $HOME/dotfiles/bashrc        $HOME/.bashrc
-  ln -s $HOME/dotfiles/bundle_config $HOME/.bundle/config
-  ln -s $HOME/dotfiles/gemrc         $HOME/.gemrc
-  ln -s $HOME/dotfiles/gitignore     $HOME/.gitignore
-  ln -s $HOME/dotfiles/gvimrc        $HOME/.gvimrc
-  ln -s $HOME/dotfiles/powconfig     $HOME/.powconfig
-  ln -s $HOME/dotfiles/railsrc       $HOME/.railsrc
-  ln -s $HOME/dotfiles/vimrc         $HOME/.vimrc
+  link_file "$HOME/dotfiles/bashrc" "$HOME/.bashrc"
+  link_file "$HOME/dotfiles/bundle_config" "$HOME/.bundle/config"
+  link_file "$HOME/dotfiles/gemrc" "$HOME/.gemrc"
+  link_file "$HOME/dotfiles/gitignore" "$HOME/.gitignore"
+  link_file "$HOME/dotfiles/gvimrc" "$HOME/.gvimrc"
+  link_file "$HOME/dotfiles/powconfig" "$HOME/.powconfig"
+  link_file "$HOME/dotfiles/railsrc" "$HOME/.railsrc"
+  link_file "$HOME/dotfiles/vimrc" "$HOME/.vimrc"
 
-  mkdir -p $HOME/.config/nvim
-  ln -s $HOME/dotfiles/nvim/init.lua $HOME/.config/nvim/init.lua
-  ln -s $HOME/dotfiles/nvim/lua/settings.lua $HOME/.config/nvim/lua/settings.lua
+  link_file "$HOME/dotfiles/nvim/init.lua" "$HOME/.config/nvim/init.lua"
+  link_file "$HOME/dotfiles/nvim/lua/config/lazy.lua" "$HOME/.config/nvim/lua/config/lazy.lua"
+  link_file "$HOME/dotfiles/nvim/lua/config/options.lua" "$HOME/.config/nvim/lua/config/options.lua"
+  link_file "$HOME/dotfiles/nvim/lua/config/keymaps.lua" "$HOME/.config/nvim/lua/config/keymaps.lua"
+  link_file "$HOME/dotfiles/nvim/lua/config/autocmds.lua" "$HOME/.config/nvim/lua/config/autocmds.lua"
+  link_file "$HOME/dotfiles/nvim/lua/plugins/local.lua" "$HOME/.config/nvim/lua/plugins/local.lua"
 
-  ln -s $HOME/dotfiles/zshenv        $HOME/.zshenv
-  ln -s $HOME/dotfiles/zshrc         $HOME/.zshrc
+  link_file "$HOME/dotfiles/zshenv" "$HOME/.zshenv"
+  link_file "$HOME/dotfiles/zshrc" "$HOME/.zshrc"
 
-  mkdir -p $HOME/.config/wezterm
-  ln -s $HOME/dotfiles/wezterm.lua $HOME/.config/wezterm/wezterm.lua
+  link_file "$HOME/dotfiles/wezterm.lua" "$HOME/.config/wezterm/wezterm.lua"
 }
 
 #
 # Main Start
 #
 rbenv_install_or_update 1
-oh_my_zsh_install_or_update 1
-zsh_completions_install_or_update 1
 delete_old_files 1
 symlink_files 1
 
 echo "[DONE]  All done."
 
-cd $HOME
+cd "$HOME"

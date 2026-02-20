@@ -9,7 +9,7 @@ zsh_func()
     cd $HOME
   else
     echo "[INSTALL] git clone zsh-completions"
-    git clone git://github.com/zsh-users/zsh-completions.git $HOME/.zsh-completions
+    git clone https://github.com/zsh-users/zsh-completions.git $HOME/.zsh-completions
   fi
 }
 zsh_func 1
