@@ -64,13 +64,8 @@ delete_old_files()
   rm -f "$HOME/.vimrc"
   rm -f "$HOME/.zshenv"
   rm -f "$HOME/.zshrc"
-  rm -f "$HOME/.config/nvim/init.lua"
-  rm -f "$HOME/.config/nvim/lua/settings.lua"
-  rm -f "$HOME/.config/nvim/lua/config/lazy.lua"
-  rm -f "$HOME/.config/nvim/lua/config/options.lua"
-  rm -f "$HOME/.config/nvim/lua/config/keymaps.lua"
-  rm -f "$HOME/.config/nvim/lua/config/autocmds.lua"
-  rm -f "$HOME/.config/nvim/lua/plugins/local.lua"
+  rm -rf "$HOME/.config/nvim"
+  rm -f "$HOME/.config/wezterm/wezterm.lua"
 }
 
 symlink_files()
@@ -85,12 +80,7 @@ symlink_files()
   link_file "$HOME/dotfiles/railsrc" "$HOME/.railsrc"
   link_file "$HOME/dotfiles/vimrc" "$HOME/.vimrc"
 
-  link_file "$HOME/dotfiles/nvim/init.lua" "$HOME/.config/nvim/init.lua"
-  link_file "$HOME/dotfiles/nvim/lua/config/lazy.lua" "$HOME/.config/nvim/lua/config/lazy.lua"
-  link_file "$HOME/dotfiles/nvim/lua/config/options.lua" "$HOME/.config/nvim/lua/config/options.lua"
-  link_file "$HOME/dotfiles/nvim/lua/config/keymaps.lua" "$HOME/.config/nvim/lua/config/keymaps.lua"
-  link_file "$HOME/dotfiles/nvim/lua/config/autocmds.lua" "$HOME/.config/nvim/lua/config/autocmds.lua"
-  link_file "$HOME/dotfiles/nvim/lua/plugins/local.lua" "$HOME/.config/nvim/lua/plugins/local.lua"
+  link_file "$HOME/dotfiles/nvim" "$HOME/.config/nvim"
 
   link_file "$HOME/dotfiles/zshenv" "$HOME/.zshenv"
   link_file "$HOME/dotfiles/zshrc" "$HOME/.zshrc"
