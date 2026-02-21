@@ -77,7 +77,7 @@ symlink_files()
   link_file "$HOME/dotfiles/gitignore" "$HOME/.gitignore"
   link_file "$HOME/dotfiles/gvimrc" "$HOME/.gvimrc"
   link_file "$HOME/dotfiles/powconfig" "$HOME/.powconfig"
-  link_file "$HOME/dotfiles/railsrc" "$HOME/.railsrc"
+  link_file "$HOME/dotfiles/.railsrc" "$HOME/.railsrc"
   link_file "$HOME/dotfiles/vimrc" "$HOME/.vimrc"
 
   link_file "$HOME/dotfiles/nvim" "$HOME/.config/nvim"
