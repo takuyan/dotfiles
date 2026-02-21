@@ -3,10 +3,6 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
--- ~/.wezterm.lua
-local wezterm = require 'wezterm'
-local config = wezterm.config_builder()
-
 -- 見た目系
 config.color_scheme = 'Catppuccin Mocha'
 
