@@ -18,11 +18,20 @@
 - wezterm
 - powconfig / gitignore
 
-## Usage
+## Setup Flow
 
 ```sh
-./install.sh
+# 1) Install packages from Brewfile
+./scripts/bootstrap.sh
+
+# 2) Apply dotfiles symlinks
+./scripts/apply.sh
+
+# 3) Verify commands and links
+./scripts/verify.sh
 ```
+
+`./install.sh` runs all three steps in order.
 
 ## Local Overrides
 
