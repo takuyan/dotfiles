@@ -2,11 +2,8 @@
 
 ## Packages
 
-- [rbenv](https://github.com/rbenv/rbenv)
-- [ruby-build](https://github.com/rbenv/ruby-build)
-- [zsh](https://www.zsh.org/)
-- [Neovim + LazyVim](https://www.lazyvim.org/)
-- [starship](https://starship.rs/)
+- Baseline packages are managed in `Brewfile`.
+- Optional tools are managed in `Brewfile.optional`.
 
 ## Configs
 
@@ -29,6 +26,10 @@
 
 # 3) Verify commands and links
 ./scripts/verify.sh
+
+# include optional tools in bootstrap/install
+DOTFILES_INCLUDE_OPTIONAL=1 ./scripts/bootstrap.sh
+DOTFILES_INCLUDE_OPTIONAL=1 ./install.sh
 ```
 
 `./install.sh` runs all three steps in order.
