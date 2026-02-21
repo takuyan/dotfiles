@@ -6,12 +6,14 @@
 - [ruby-build](https://github.com/rbenv/ruby-build)
 - [zsh](https://www.zsh.org/)
 - [Neovim + LazyVim](https://www.lazyvim.org/)
+- [starship](https://starship.rs/)
 
 ## Configs
 
 - rbenv (and ruby-build)
 - zshrc / zshenv / bashrc
 - Neovim config (LazyVim-based)
+- starship prompt config
 - vimrc / gvimrc
 - wezterm
 - powconfig / gitignore

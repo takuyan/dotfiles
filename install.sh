@@ -65,6 +65,7 @@ delete_old_files()
   rm -f "$HOME/.zshenv"
   rm -f "$HOME/.zshrc"
   rm -rf "$HOME/.config/nvim"
+  rm -f "$HOME/.config/starship.toml"
   rm -f "$HOME/.config/wezterm/wezterm.lua"
 }
 
@@ -81,6 +82,7 @@ symlink_files()
   link_file "$HOME/dotfiles/vimrc" "$HOME/.vimrc"
 
   link_file "$HOME/dotfiles/nvim" "$HOME/.config/nvim"
+  link_file "$HOME/dotfiles/starship.toml" "$HOME/.config/starship.toml"
 
   link_file "$HOME/dotfiles/zshenv" "$HOME/.zshenv"
   link_file "$HOME/dotfiles/zshrc" "$HOME/.zshrc"

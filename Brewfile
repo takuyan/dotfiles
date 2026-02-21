@@ -41,6 +41,7 @@ brew "qt", link: true
 brew "rbenv"
 brew "redis"
 brew "rsync"
+brew "starship"
 brew "the_silver_searcher"
 brew "tig"
 brew "tmux"
