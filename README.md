@@ -11,9 +11,9 @@
 - zshrc / zshenv / bashrc
 - Neovim config (LazyVim-based)
 - starship prompt config
-- vimrc / gvimrc
+- vimrc
 - wezterm
-- powconfig / gitignore
+- gitignore
 
 ## Setup Flow
 
