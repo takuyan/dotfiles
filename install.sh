@@ -2,6 +2,10 @@
 
 set -euo pipefail
 
+ROOT_DIR="$(cd "$(dirname "$0")" && pwd)"
+BREWFILE="$ROOT_DIR/Brewfile"
+OPTIONAL_BREWFILE="$ROOT_DIR/Brewfile.optional"
+
 RBENV_ROOT="$HOME/.rbenv"
 RBENV_BIN="$RBENV_ROOT/bin/rbenv"
 
@@ -11,6 +15,25 @@ link_file()
   local dst="$2"
   mkdir -p "$(dirname "$dst")"
   ln -sfn "$src" "$dst"
+}
+
+install_homebrew_packages()
+{
+  if ! command -v brew >/dev/null 2>&1; then
+    echo "[ERROR] Homebrew is not installed. Install from https://brew.sh/"
+    exit 1
+  fi
+
+  echo "[RUN] brew bundle (baseline)"
+  brew bundle --file "$BREWFILE"
+
+  if [ "${DOTFILES_INCLUDE_OPTIONAL:-0}" = "1" ] && [ -f "$OPTIONAL_BREWFILE" ]; then
+    echo "[RUN] brew bundle (optional)"
+    brew bundle --file "$OPTIONAL_BREWFILE"
+  else
+    echo "[SKIP] Optional packages"
+    echo "       Set DOTFILES_INCLUDE_OPTIONAL=1 to install Brewfile.optional"
+  fi
 }
 
 rbenv_install_or_update()
@@ -93,6 +116,7 @@ symlink_files()
 #
 # Main Start
 #
+install_homebrew_packages 1
 rbenv_install_or_update 1
 delete_old_files 1
 symlink_files 1
