@@ -1,40 +1,26 @@
+# Minimal bash compatibility config.
+# Primary interactive shell settings live in zshrc.
+
 alias ll='ls -la'
-alias r='rails'
-alias rs='bundle exec rspec --drb --color'
 
-alias gb='git branch'
-alias gc='git checkout'
-alias gs='git status'
-alias ga='git add'
-alias gc='git commit'
-
-function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-}
-function precmd() {
-  PROMPT="\h@\u:\W\$(parse_git_branch) \$ "
-}
-function proml {
-  PS1="\h@\u:\W\$(parse_git_branch) \$ "
-}
-proml
-
-export JAVA_HOME=/Library/Java/Home 
-export AWS_RDS_HOME=$HOME/Dropbox/aws/RDSCli-1.4.007
-export PATH=$AWS_RDS_HOME/bin:$PATH
-export EC2_CERT=$HOME/Dropbox/aws/dev_freebell_net/cert-C7QZZPDKQ4HTSEOANS6GUTK3QXWUWQRS.pem
-export EC2_PRIVATE_KEY=$HOME/Dropbox/aws/dev_freebell_net/pk-C7QZZPDKQ4HTSEOANS6GUTK3QXWUWQRS.pem
-export EC2_URL=https://ec2.ap-northeast-1b.amazonaws.com
-export EC2_REGION=ap-northeast-1
-
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
-# added by travis gem
-if [ -d ~/.travis ]; then
-  source ~/.travis/travis.sh
+# Ruby
+if [ -d "$HOME/.rbenv/bin" ] ; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+fi
+if command -v rbenv >/dev/null 2>&1 ; then
+  eval "$(rbenv init - bash)"
 fi
 
+# Node.js
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+if [ -s "$NVM_DIR/nvm.sh" ] ; then
+  . "$NVM_DIR/nvm.sh"
+fi
+if [ -s "$NVM_DIR/bash_completion" ] ; then
+  . "$NVM_DIR/bash_completion"
+fi
+
+# Machine-local overrides (secrets, work-only paths, etc.)
+if [ -f "$HOME/.bashrc.local" ] ; then
+  . "$HOME/.bashrc.local"
+fi
