@@ -103,24 +103,15 @@ fi
 
 # Homebrew
 export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 # Added by Rails binstubs (append only to avoid accidental command shadowing)
 if [ -d "./bin" ] ; then
   export PATH="$PATH:./bin"
 fi
 
-# v8
-export PATH="/usr/local/opt/v8@3.15/bin:$PATH"
-
 if [ -d ${HOME}/.plenv ] ; then
   export PATH="$HOME/.plenv/bin:$PATH"
   eval "$(plenv init -)"
-fi
-
-# added by travis gem
-if [ -d ${HOME}/.travis ] ; then
-  source ~/.travis/travis.sh
 fi
 
 if [ -e ${HOME}/.zshrc_ext ] ; then
@@ -130,9 +121,6 @@ fi
 export EDITOR=nvim
 
 eval "$(direnv hook zsh)"
-
-# java
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
 # rbenv
 export PATH=$HOME/.rbenv/shims:$PATH
