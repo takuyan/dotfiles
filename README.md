@@ -22,3 +22,7 @@
 ./install.sh
 ```
 
+## Local Overrides
+
+- Keep machine-specific values (secrets, work-only paths) out of this repo.
+- Put bash-only local overrides in `~/.bashrc.local`.
