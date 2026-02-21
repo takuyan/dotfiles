@@ -120,7 +120,9 @@ fi
 
 export EDITOR=nvim
 
-eval "$(direnv hook zsh)"
+if command -v direnv > /dev/null 2>&1; then
+  eval "$(direnv hook zsh)"
+fi
 
 # rbenv
 export PATH=$HOME/.rbenv/shims:$PATH
