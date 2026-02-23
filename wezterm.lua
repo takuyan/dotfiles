@@ -3,6 +3,34 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
+local function file_exists(path)
+  local f = io.open(path, "r")
+  if f ~= nil then
+    f:close()
+    return true
+  end
+  return false
+end
+
+wezterm.on("window-focus-changed", function(window, _)
+  if not window:is_focused() then
+    return
+  end
+
+  -- Prefer im-select when available; fallback to EISU key event via osascript.
+  if file_exists("/opt/homebrew/bin/im-select") then
+    wezterm.run_child_process({ "/opt/homebrew/bin/im-select", "com.apple.keylayout.ABC" })
+  elseif file_exists("/usr/local/bin/im-select") then
+    wezterm.run_child_process({ "/usr/local/bin/im-select", "com.apple.keylayout.ABC" })
+  else
+    wezterm.run_child_process({
+      "osascript",
+      "-e",
+      'tell application "System Events" to key code 102',
+    })
+  end
+end)
+
 -- 見た目系
 config.color_scheme = 'Catppuccin Mocha'
 
@@ -25,6 +53,7 @@ config.window_decorations = "RESIZE" -- タイトルバー消してスッキリ
 config.hide_mouse_cursor_when_typing = true -- タイピング中はマウスカーソルを非表示
 
 -- 便利系
+-- Keep IME available; focus hook above moves input source back to ABC.
 config.use_ime = true
 config.default_prog = { "/bin/zsh", "--login" }
 config.automatically_reload_config = true
