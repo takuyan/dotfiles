@@ -150,3 +150,8 @@ unset __conda_setup
 if command -v starship >/dev/null 2>&1 ; then
   eval "$(starship init zsh)"
 fi
+
+# OpenClaw Completion
+if [ -r "$HOME/.openclaw/completions/openclaw.zsh" ]; then
+  source "$HOME/.openclaw/completions/openclaw.zsh"
+fi
